@@ -1,0 +1,23 @@
+.button__component {
+    background-color: var(--gold);
+    color: var(--black-verdi);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &.primary {
+        background-color: var(--gold);
+        color: var(--black-verdi);
+    }
+
+    &.black {
+        background-color: var(--black-verdi);
+        color: var(--white);
+    }
+
+    &.white {
+        background-color: transparent;
+        color: var(--black-verdi);
+        border: 1px solid var(--black-verdi);
+    }
+}
