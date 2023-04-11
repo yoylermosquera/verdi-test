@@ -12,9 +12,9 @@ export const BaseLayout = ({ title, children }: Props ) => {
         <title>{ title }</title>
       </Head>
 
-      <main className='m-5'>
+      <div>
         { children }
-      </main>
+      </div>
     </>
   )
 }
