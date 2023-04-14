@@ -19,8 +19,8 @@ export default function AuthLayout({
           grow ${imgClassName}
           bg-auth-hero bg-no-repeat 
           md:bg-center bg-cover
-          md:h-full
           w-full
+          md:h-full
         `}
       >
         <div className="absolute top-6 md:top-10 left-[calc(50%_-_60px)]">

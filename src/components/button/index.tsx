@@ -30,7 +30,7 @@ function Button(props: ButtonProps) {
   
   const varianValue = styles[variant as any] as any;
 
-  const className = `${classNameProp} ${styles.button__component} ${varianValue} text-button__line h-12 ${buttonSize}`;
+  const className = `${styles.button__component} ${varianValue} text-button__line h-12 ${buttonSize} ${classNameProp}`;
 
   return (
     <button {...restProps} className={className}>
