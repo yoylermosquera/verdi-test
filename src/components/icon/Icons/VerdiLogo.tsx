@@ -13,7 +13,7 @@ export function VerdiLogo(props: IconProps) {
       fill={color}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_468_16045)">
+      <g clipPath="url(#clip0_468_16045)">
         <path
           d="M34.6175 37.296L40.3862 21.8809H42.8257L34.6175 43.3017L26.4133 21.8809H28.8528L34.6175 37.296Z"
           fill="white"
