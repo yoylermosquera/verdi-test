@@ -1,7 +1,6 @@
 import React from 'react';
 
 import * as IconsObject from './Icons';
-
 export type IconName = keyof typeof IconsObject;
 
 export interface IconProps extends React.ComponentPropsWithoutRef<'svg'> {

@@ -19,11 +19,17 @@ const RegisterPage: NextPageWithLayout = () => {
       <Button variant="white" size="full">
         <span>BOTON</span>
       </Button>
+
+      <br />
       <Icon size={50} color={'blue'} iconName='Metrics' />
       <Icon size={50} color={'orange'} iconName='CotizationList' />
       <Icon size={50} color={'yellow'} iconName='Heart' />
       <Icon size={50} color={'pink'} iconName='Profile' />
       <Icon size={50} color={'red'} iconName='Home' />
+      <br />
+      <br />
+      
+      
     </div>
   );
 };
