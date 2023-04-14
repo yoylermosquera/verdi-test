@@ -1,3 +1,4 @@
+export { VerdiLogo } from './VerdiLogo';
 export { Metrics } from './Metrics'
 export {  CotizationList } from './CotizationList'
 export {  Heart } from './Heart'

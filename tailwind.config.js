@@ -51,7 +51,11 @@ module.exports = {
         letterSpacing: '0.07em',
       }]
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'auth-hero': 'url("../assets/images/EstudioTextil.Tapetesencobre.Tapetesenfibrasnaturales.png")',
+      }
+    },
   },
   plugins: [],
 }
