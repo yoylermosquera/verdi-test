@@ -19,7 +19,7 @@ function Input(props: InputProps) {
   }
 
   return (
-    <div className='w-full h-8 flex border-b border-black-verdi focus-visible:ring'>
+    <div className='w-full h-6 flex border-b border-black-verdi focus-visible:ring'>
       <input {...props} className={className} type={ showPassword ? 'text' : type }  />
       {
         type === 'password' ? (

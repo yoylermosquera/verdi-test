@@ -1,30 +1,46 @@
 import React from 'react';
+import Link from 'next/link';
 import { NextPageWithLayout } from '../_app';
-import AuthLayout from '../../components/layouts/AuthLayout';
+import AuthLayout from '@/components/layouts/AuthLayout';
 import Button from '@/components/button';
-import Icon from '@/components/icon';
+import Select from '@/components/select';
+import Input from '@/components/input';
+
+const typeUserList = [
+  { value: 'comercial', label: 'USUARIO' },
+  { value: 'user', label: 'USUARIO RETAIL' },
+]
 
 const RegisterPage: NextPageWithLayout = () => {
   return (
-    <div>
-      <h2>REGISTER PAGE</h2>
-      <Button variant="primary" size="medium">
-        <span>BOTON</span>
-      </Button>
-      <br />
-      <Button size="small" variant="black">
-        <span>BOTON</span>
-      </Button>
-      <br />
-      <Button variant="white" size="full">
-        <span>BOTON</span>
-      </Button>
-
-      <br />
-      <Icon size={50} color={'blue'} iconName='Metrics' />
-      <Icon size={50} color={'orange'} iconName='CotizationList' />
-      <Icon size={50} color={'pink'} iconName='Profile' />
-      <br />
+    <div className='h-full px-4 pt-11 pb-13 md:flex justify-center md:flex-col items-center md:p-0 '> 
+        <h1 className='text-title text-center mb-6'>REGISTRO</h1>
+        <form className='md:max-w-[350px]'>
+          <section className='px-2.5 flex flex-col gap-4 mb-8'>
+            <Select
+              options={typeUserList}
+              placeholder={'Tipo de usuario'}
+            />
+            <Input placeholder='nombre' />
+            <Input placeholder='apellido' />
+            <Input placeholder='apellido' />
+            <Input placeholder='fecha nacimiento' type={'date'} />
+            <Input placeholder='ciudad y pais' />
+            <Input placeholder='dirección' />
+            <Input placeholder='nombre de la compañía' />
+            <Input placeholder='sitio web' />
+            <Select
+              options={typeUserList}
+              placeholder={'how you found out verdi'}
+            />
+          </section>
+          <section className='flex flex-col justify-center '>
+            <Button type='button' className='mb-4' size='full'>Enviar solicitud</Button>
+            <Link href={'#'} className={'text-center text-input underline underline-offset-1'}>
+              Ya tengo una cuenta
+            </Link>
+          </section>
+        </form>
     </div>
   );
 };

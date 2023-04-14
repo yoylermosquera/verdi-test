@@ -64,7 +64,7 @@ export default function Select(props: SelectProps) {
           };
         },
         placeholder(base, props) {
-          return { ...base, color: Colors.blackVerdi };
+          return { ...base, color: Colors.blackVerdi, fontStyle: 'italic' };
         },
         input(base, props) {
           return {
