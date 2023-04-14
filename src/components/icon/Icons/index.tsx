@@ -1,8 +1,8 @@
-export { Metrics } from './Metrics'
-export {  CotizationList } from './CotizationList'
-export {  Heart } from './Heart'
-export {  Profile } from './Profile'
-export {  Home } from './Home'
+export { Metrics } from './extra-icons/Metrics'
+export {  CotizationList } from './extra-icons/CotizationList'
+
+export {  Profile } from './extra-icons/Profile'
+
 export { Folder11 } from './icons-Folder/Folder11'
 export { Folder12 } from './icons-Folder/Folder12'
 export { Folder13 } from './icons-Folder/Folder13'

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconProps } from '..';
+import { IconProps } from '../../index';
 
 export function CotizationList(props: IconProps) {
   const { size, color, ...restSVGProps } = props;
