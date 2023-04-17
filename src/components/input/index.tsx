@@ -11,7 +11,7 @@ function Input(props: InputProps) {
   const [showPassword, setShowPassword] = useState(false);
 
   const className = `w-full ${styles.input__component} 
-    placeholder:italic placeholder:text-input placeholder:uppercase
+    placeholder:italic placeholder:text-input placeholder:uppercase 
   `;
 
   const handleTogglePassword = () => {
