@@ -43,7 +43,7 @@ export function VerdiLogo(props: IconProps) {
         <clipPath id="clip0_468_16045">
           <rect
             width={size}
-            height="64.7322"
+            height={size}
             fill="white"
             transform="translate(0.927734)"
           />

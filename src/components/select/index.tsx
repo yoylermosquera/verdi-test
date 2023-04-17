@@ -17,7 +17,7 @@ export default function Select(props: SelectProps) {
           return `border-b-black-verdi`;
         },
         placeholder(props) {
-          return `uppercase text-input text-black-verdi`;
+          return `uppercase text-input text-red-500`;
         },
         indicatorsContainer(props) {
           return `text-black-verdi`;
@@ -71,7 +71,11 @@ export default function Select(props: SelectProps) {
             ...base,
             margin: 0,
             padding: 0,
+            color: Colors.gold
           };
+        },
+        singleValue(base, props) {
+          return { ...base, color: Colors.blackVerdi };
         },
         dropdownIndicator(base, props) {
           const { menuIsOpen } = props.selectProps;

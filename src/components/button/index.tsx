@@ -17,7 +17,7 @@ type ObjectButtonSize = {
 const sizesWidth: ObjectButtonSize = {
     small: 'w-[90px] py-4 px-6',
     medium: 'w-[188px] py-4 px-16',
-    full: 'w-full py-4 px-[5.375rem]',
+    full: 'w-full py-4 px-21',
 }
 
 function Button(props: ButtonProps) {
