@@ -11,4 +11,5 @@ export const Colors = {
     beigeLight: '#F5F3ED',
     gold: '#B8B09D',
     goldDark: '#918B7C',
+    needChanges: '#DB3500',
 }

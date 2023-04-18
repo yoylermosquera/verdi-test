@@ -2,8 +2,11 @@ import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app';
 import localFont from "next/font/local";
+import { Toaster } from 'react-hot-toast';
+
 
 import '@/styles/globals.scss';
+import { API } from '@/helpers/axios';
 
 const Futura = localFont({
   fallback: ['system-ui', 'arial'],
@@ -38,7 +41,8 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <main className={`${Futura.className}`}>
-      {getLayout(<Component {...pageProps} />)}
+        {getLayout(<Component {...pageProps} />)}
+      <Toaster position={"top-right"} />
     </main>
   )
 }

@@ -1,10 +1,26 @@
 import React from 'react';
+import { useRouter } from 'next/router'
+import { z } from 'zod';
+
 import { NextPageWithLayout } from '../_app';
 import { getAuthLayout } from '../../components/layouts/AuthLayout';
 import Input from '@/components/input';
 import Button from '@/components/button';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const SetPasswordSchema = z.object({
+  password: z.string().min(8),
+  confirm_password: z.string().min(8),
+})
 
 const SetPasswordPage: NextPageWithLayout = () => {
+  const router = useRouter();
+  const { } = useForm({
+    resolver: zodResolver(SetPasswordSchema),
+  })
+  // const { token = '' } = router.query
+  // console.log({ token })
   return (
     <div className="h-full px-4 pt-11 pb-13 md:flex justify-center md:flex-col items-center md:p-0 ">
       <h1 className="text-title text-center mb-6">ESTABLECER CONTRASEÑA</h1>

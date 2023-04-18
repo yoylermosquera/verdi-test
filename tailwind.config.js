@@ -13,6 +13,7 @@ module.exports = {
       'beige-light': 'var(--beige-light)',
       'gold': 'var(--gold)',
       'gold-dark': 'var(--gold-dark)',
+      'need-changes': 'var(--need-changes)',
     },
     fontSize: {
       title: ['16px', {
