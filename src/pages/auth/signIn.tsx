@@ -1,16 +1,3 @@
-// import { getAuthLayout } from '@/components/layouts/AuthLayout';
-// import React from 'react'
-
-// function SingIn() {
-//   return (
-//     <div>LOGIN</div>
-//   )
-// }
-
-// SingIn.getLayout = getAuthLayout;
-
-// export default SingIn;
-
 import React from 'react';
 import Link from 'next/link';
 import { NextPageWithLayout } from '../_app';
@@ -36,8 +23,7 @@ const SignInPage: NextPageWithLayout = () => {
             </Link>
             
             <div className='flex items-left mb-24   md:justify-center md:mb-0  md:mt-24' >
-              {/* Aquí deseo que en la pantalla de la versión de escritorio, 
-              el contenido de este div se vaya al fondo de su contenedor padre.   */}
+              
               <input type="checkbox" placeholder='Recordar mis datos' className={'w-3 h-3 mr-2.5 md:mb-0'} />
 
               <span className=' text-left italic md:mb-0 '>Recordar mis datos.</span> 
