@@ -8,8 +8,10 @@ export const handleRequestError = (error: any, customMsg: string = ''): string =
     if (typeof errorList === 'object') {
       msg = errorList[0];
     }
-    return `${customMsg} ${msg || ''}`;
+    return msg;
   }
 
+  if(error?.message) return error.message;
+  
   return `${customMsg || 'Error'}`;
 };
