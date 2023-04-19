@@ -183,7 +183,7 @@ const RecoveryPassWordPage: NextPageWithLayout = () => {
 
 RecoveryPassWordPage.getLayout = (page) => {
   return (
-    <AuthLayout imgClassName="h-[44%]" contentClassName="h-[56%]">
+    <AuthLayout>
       {page}
     </AuthLayout>
   );

@@ -59,7 +59,6 @@ const RegisterPage: NextPageWithLayout = () => {
         },
       }
     )
-    console.log({ data });
   };
 
   return (
@@ -212,7 +211,7 @@ const RegisterPage: NextPageWithLayout = () => {
             Enviar solicitud
           </Button>
           <Link
-            href={'#'}
+            href={'/auth/signin'}
             className={'text-center text-input underline underline-offset-1'}
           >
             Ya tengo una cuenta
@@ -225,7 +224,7 @@ const RegisterPage: NextPageWithLayout = () => {
 
 RegisterPage.getLayout = (page) => {
   return (
-    <AuthLayout imgClassName="h-[22%]" contentClassName="h-[78%]">
+    <AuthLayout title='Registro desde layout' imgClassName="h-[22%]" contentClassName="h-[78%]">
       {page}
     </AuthLayout>
   );
