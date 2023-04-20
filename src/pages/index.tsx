@@ -1,18 +1,23 @@
-import Header from '@/components/header';
-import BottomNavigationBar from '@/components/header/BottomNavigationBar';
+import { BaseLayout } from '@/components/layouts';
 import SwiperVerdi from '@/components/swiper';
 import { useSession } from 'next-auth/react';
 import React from 'react'
+import { NextPageWithLayout } from './_app';
 
-const HomePage = () => {
+const HomePage: NextPageWithLayout = () => {
     const { data: session, status } = useSession()
   return (
     <div>
-        <Header />
-        {/* <SwiperVerdi /> */}
-
-        {/* <BottomNavigationBar /> */}
+        <SwiperVerdi />  
     </div>
+  )
+}
+
+HomePage.getLayout = (page) => {
+  return (
+    <BaseLayout title='HOME - VERDI'>
+      {page}
+    </BaseLayout>
   )
 }
 

@@ -59,7 +59,7 @@ const SwiperVerdi = () => {
     >
       {[1, 2, 3, 4].map((item) => (
         <SwiperSlide key={item}>
-          <div className="h-56 lg:h-auto lg:max-h-[500px] w-full bg-black border flex justify-center items-center">
+          <div className="h-56 lg:h-auto lg:max-h-[500px] w-full bg-black flex justify-center items-center">
             <Image
               className="w-full h-full lg:cover"
               src={ImgTest}

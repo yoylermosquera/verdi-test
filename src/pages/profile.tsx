@@ -1,8 +1,18 @@
 import React from 'react'
+import { NextPageWithLayout } from './_app';
+import { BaseLayout } from '../components/layouts/BaseLayout';
 
-function ProfilePage() {
+const  ProfilePage: NextPageWithLayout = () => {
   return (
     <div>ProfilePage</div>
+  )
+}
+
+ProfilePage.getLayout = (page) => {
+  return (
+    <BaseLayout title='PERFIL'>
+      {page}
+    </BaseLayout>
   )
 }
 

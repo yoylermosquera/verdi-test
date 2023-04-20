@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 interface WindowSize {
   width: number;
@@ -11,7 +11,7 @@ function useWindowSize(): WindowSize {
     height: 0,
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (typeof window === 'undefined') {
       return;
     }
