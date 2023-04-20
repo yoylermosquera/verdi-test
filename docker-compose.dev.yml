@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: verdi_front
+    image: desarrolloant/verdi_front:dev
+    ports:
+      - 4033:4033
+    restart: "always"

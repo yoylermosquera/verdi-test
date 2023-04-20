@@ -1,0 +1,20 @@
+FROM node:16
+
+# Set working directory
+RUN mkdir -p /usr/src
+WORKDIR /usr/src
+
+# Copiar el directorio y su contenido
+COPY ./dist ./
+
+# Dar permiso para ejecutar la applicación
+RUN adduser --disabled-password verdi_front
+RUN chown -R verdi_front ./
+USER verdi_front
+
+# Limpiar el caché
+RUN yarn cache clean --force
+
+RUN yarn install --production
+
+CMD [ "yarn","start" ]
