@@ -16,8 +16,8 @@ export const TickBoxLarge = (props: IconProps) => {
       <path d="M58 21L31.4 51L20 39.75" 
       stroke={color}
       stroke-width="2" 
-      stroke-linecap="round" 
-      stroke-linejoin="round"
+      strokeLinecap="round" 
+      strokeLinejoin="round"
       />  
       <rect  x="0.5" y="0.5" width="74" height="74" 
       stroke={color}

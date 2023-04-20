@@ -1,3 +1,4 @@
+import { Colors } from '@/styles/config/base';
 import React from 'react';
 
 import * as IconsObject from './Icons';
@@ -16,10 +17,10 @@ type IconWrapperProps = IconProps & {
 export const Icon = ({
   iconName = 'Metrics',
   size = 16,
-  color = 'black',
+  color = Colors.blackVerdi,
   ...restProps
 }: IconWrapperProps) => {
-  const IconComponent = IconsObject[iconName];
+  const IconComponent = IconsObject[iconName]
   return <IconComponent {...restProps} size={size} color={color} />;
 };
 

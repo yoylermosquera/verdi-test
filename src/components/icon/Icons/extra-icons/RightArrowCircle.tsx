@@ -17,9 +17,9 @@ export const RightArrowCircle = (props: IconProps) => {
       
       <path xmlns="http://www.w3.org/2000/svg" d="M14.7692 11L18 14L14.7692 17M17.5513 14L11 14" 
       stroke={color} 
-      stroke-miterlimit="10" 
-      stroke-linecap="round" 
-      stroke-linejoin="round"
+      strokeMiterlimit="10" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
       />     
       
     </svg>

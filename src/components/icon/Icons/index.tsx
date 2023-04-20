@@ -1,4 +1,4 @@
-export { VerdiLogo } from './VerdiLogo';
+// export { VerdiLogo } from './VerdiLogo';
 export { Metrics } from './extra-icons/Metrics'
 export {  CotizationList } from './extra-icons/CotizationList'
 export {  Profile } from './extra-icons/Profile'
@@ -19,6 +19,8 @@ export { PurseLarge } from './icons-Folder/PurseLarge'
 export { DottedCookieLarge } from './icons-Folder/DottedCookieLarge'  
 export { PillowLarge } from './icons-Folder/PillowLarge'
 export { TowelLarge } from './icons-Folder/TowelLarge'
+export { BagHeader } from './icons-Folder/BagHeader'
+export { Lupe } from './icons-Folder/Lupe'
 
 export { Sofa } from './icons-Small/Sofa'
 export { RolledCarpet } from './icons-Small/RolledCarpet'
@@ -51,6 +53,7 @@ export { InstagramIcon } from './icons-Small/InstagramIcon'
 export { ListIcon } from './icons-Small/ListIcon'
 export { DownArrow } from './icons-Small/DownArrow'
 export { UpArrow } from './icons-Small/UpArrow'
+export { ArrowForward} from './icons-Small/ArrowForward'
 
 export { AddIconBlack } from './extra-icons/AddIconBlack'
 export { AddIconWhite } from './extra-icons/AddIconWhite'

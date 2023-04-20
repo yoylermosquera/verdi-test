@@ -17,7 +17,7 @@ function CheckBox(props: CheckBoxProps) {
         type="checkbox"
         {...restProps}
       />
-      {labelText && <label htmlFor={props.id} className=' text-left text-input md:mb-0 '>{labelText}</label> }
+      {labelText && <label htmlFor={props.id} className=' text-left text-input lg:mb-0 '>{labelText}</label> }
     
     </div>
   );

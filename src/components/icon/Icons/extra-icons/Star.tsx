@@ -16,7 +16,7 @@ export const Star = (props: IconProps) => {
         <path d="M21 8.17949H13.3214L11 1L8.67857 8.17949H1L7.25 12.4872L4.83929 19.6667L11 15.1795L17.1607 19.6667L14.75 12.4872L21 8.17949Z" 
         stroke={color} 
         stroke-width="2" 
-        stroke-linejoin="round"
+        strokeLinejoin="round"
         />
     </svg>
   );

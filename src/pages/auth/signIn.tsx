@@ -44,7 +44,7 @@ const SignInPage: NextPageWithLayout = () => {
   };
 
   return (
-    <div className="h-full px-4 pt-11 pb-13 md:flex justify-center md:flex-col items-center md:p-0 ">
+    <div className="h-full px-4 pt-11 pb-13 lg:flex justify-center lg:flex-col items-center lg:p-0 ">
       <Head>
         <title>Registro verdi</title>
       </Head>
@@ -52,7 +52,7 @@ const SignInPage: NextPageWithLayout = () => {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="md:max-w-[350px] w-full"
+        className="lg:max-w-[350px] w-full"
       >
         <section className="px-2.5 flex flex-col gap-4">
           <Controller
@@ -89,7 +89,7 @@ const SignInPage: NextPageWithLayout = () => {
             Olvidé mi contraseña
           </Link>
 
-          <div className="flex items-left mb-24   md:justify-center md:mb-0  md:mt-24">
+          <div className="flex items-left mb-24   lg:justify-center lg:mb-0  lg:mt-24">
             <CheckBox id="test" labelText="Recordar mis datos." />
 
             {/* Cambiar tipo de fuente  */}

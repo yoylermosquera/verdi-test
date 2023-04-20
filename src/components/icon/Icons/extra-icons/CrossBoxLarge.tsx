@@ -16,8 +16,8 @@ export const CrossBoxLarge = (props: IconProps) => {
       <path d="M53 54L21 22M53 22L21 54" 
       stroke={color} 
       stroke-width="2" 
-      stroke-linecap="round" 
-      stroke-linejoin="round"
+      strokeLinecap="round" 
+      strokeLinejoin="round"
       />  
       <rect  x="0.5" y="0.5" width="74" height="74" 
       stroke={color}

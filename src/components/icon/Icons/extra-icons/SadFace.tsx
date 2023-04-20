@@ -21,7 +21,7 @@ export const SadFace = (props: IconProps) => {
         stroke={color}/>
         <path d="M29 57C44.464 57 57 44.464 57 29C57 13.536 44.464 1 29 1C13.536 1 1 13.536 1 29C1 44.464 13.536 57 29 57Z" 
         stroke={color} 
-        stroke-miterlimit="10"/>   
+        strokeMiterlimit="10"/>   
     
     </svg>
   );

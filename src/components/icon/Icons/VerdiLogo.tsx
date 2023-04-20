@@ -1,14 +1,18 @@
 import React from 'react';
 import { IconProps } from '../index';
 
-export function VerdiLogo(props: IconProps) {
-  const { size, color, ...restSVGProps } = props;
+interface LogoVerdiProps extends IconProps {
+  height?: number;
+  fill?: string;
+}
+export function VerdiLogo(props: LogoVerdiProps) {
+  const { size, color, height, fill = 'white', ...restSVGProps } = props;
 
   return (
     <svg
       {...restSVGProps}
       width={size}
-    //   height={size}
+      height={ height || size}
       viewBox="0 0 121 65"
       fill={color}
       xmlns="http://www.w3.org/2000/svg"
@@ -16,27 +20,27 @@ export function VerdiLogo(props: IconProps) {
       <g clipPath="url(#clip0_468_16045)">
         <path
           d="M34.6175 37.296L40.3862 21.8809H42.8257L34.6175 43.3017L26.4133 21.8809H28.8528L34.6175 37.296Z"
-          fill="white"
+          fill={fill}
         />
         <path
           d="M45.0188 21.8809H55.5012V23.9732H47.2737V29.9775H55.2629V32.0685H47.2737V40.004H55.504V42.095H45.0216L45.0188 21.8809Z"
-          fill="white"
+          fill={fill}
         />
         <path
           d="M61.5869 42.095H59.3347V21.8809H62.2563C66.0898 21.8809 69.656 22.9002 69.656 27.4582C69.656 30.5671 67.6986 32.7655 64.5883 33.0341L71.0224 42.095H68.2675L62.1502 33.2215H61.5882L61.5869 42.095ZM61.5869 31.2379H62.288C64.8349 31.2379 67.408 30.7558 67.408 27.618C67.408 24.2942 64.9685 23.9732 62.2604 23.9732H61.591L61.5869 31.2379Z"
-          fill="white"
+          fill={fill}
         />
         <path
           d="M73.8584 21.8809H77.6657C80.6961 21.8809 83.1617 22.2831 85.5475 24.3217C87.8533 26.3052 88.8988 29.0133 88.8988 32.0148C88.8988 34.9639 87.8258 37.5646 85.6012 39.5481C83.1879 41.6928 80.7801 42.095 77.612 42.095H73.8584V21.8809ZM77.7456 40.004C80.2126 40.004 82.276 39.6556 84.126 37.9131C84.9333 37.1541 85.5742 36.2357 86.0081 35.2162C86.442 34.1966 86.6595 33.098 86.6467 31.99C86.6467 29.6841 85.7624 27.4596 84.0185 25.9292C82.17 24.2942 80.1313 23.9732 77.7456 23.9732H76.1161V40.004H77.7456Z"
-          fill="white"
+          fill={fill}
         />
         <path
           d="M94.3454 42.095H92.0933V21.8809H94.3454V42.095Z"
-          fill="white"
+          fill={fill}
         />
         <path
           d="M120.071 64.7308H0.927734V0H120.078L120.071 64.7308ZM1.75421 63.9043H119.251V0.826474H1.75421V63.9043Z"
-          fill="white"
+          fill={fill}
         />
       </g>
       <defs>
@@ -44,7 +48,7 @@ export function VerdiLogo(props: IconProps) {
           <rect
             width={size}
             height={size}
-            fill="white"
+            fill={fill}
             transform="translate(0.927734)"
           />
         </clipPath>

@@ -17,7 +17,7 @@ export const StarFilled = (props: IconProps) => {
         fill={color} 
         stroke={color} 
         stroke-width="2" 
-        stroke-linejoin="round"
+        strokeLinejoin="round"
         />
     </svg>
   );

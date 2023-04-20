@@ -1,6 +1,7 @@
 import { PropsWithChildren, ReactElement } from 'react';
 import Head from 'next/head';
 import Icon from '../icon';
+import { VerdiLogo } from '../icon/Icons/VerdiLogo';
 
 type AuthLayoutProps = PropsWithChildren & {
   imgClassName?: string;
@@ -15,7 +16,7 @@ export default function AuthLayout({
   title
 }: AuthLayoutProps) {
   return (
-    <div className="w-full h-screen flex flex-col md:flex-row">
+    <div className="w-full h-screen flex flex-col lg:flex-row">
       <Head>
         <title>{title}</title>
         <meta name="description" content="TEST"/>
@@ -25,16 +26,16 @@ export default function AuthLayout({
           relative
           grow ${imgClassName}
           bg-auth-hero bg-no-repeat 
-          md:bg-center bg-cover
+          lg:bg-center bg-cover
           w-full
-          md:h-full
+          lg:h-full
         `}
       >
-        <div className="absolute top-6 md:top-10 left-[calc(50%_-_60px)]">
-          <Icon iconName="VerdiLogo" size={120} />
+        <div className="absolute top-6 lg:top-10 left-[calc(50%_-_60px)]">
+          <VerdiLogo size={120} />
         </div>
       </section>
-      <section className={`${contentClassName} w-full md:h-full grow`}>
+      <section className={`${contentClassName} w-full lg:h-full grow`}>
         {children}
       </section>
     </div>
