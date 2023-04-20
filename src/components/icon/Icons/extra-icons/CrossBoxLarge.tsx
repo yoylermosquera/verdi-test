@@ -21,7 +21,7 @@ export const CrossBoxLarge = (props: IconProps) => {
       />  
       <rect  x="0.5" y="0.5" width="74" height="74" 
       stroke={color}
-      />   
+      />  
       
     </svg>
   );
