@@ -15,8 +15,12 @@ export const LeftArrowCircle = (props: IconProps) => {
     >
       <circle cx="14" cy="14" r="13.5" stroke={color}/>
       
-      <path d="M14 7L1 4L4.23077 1M1.44872 4H8" stroke={color} stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-       
+      <path d="M13.2308 17L10 14L13.2308 11M10.4487 14H17" 
+        stroke={color} 
+        strokeMiterlimit="10" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      />       
       
     </svg>
   );

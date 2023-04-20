@@ -1,7 +1,10 @@
-import type { ReactElement, ReactNode } from 'react'
-import type { NextPage } from 'next'
+import type { ReactElement, ReactNode } from 'react';
+import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
-import localFont from "next/font/local";
+import localFont from 'next/font/local';
+import { Toaster } from 'react-hot-toast';
+import { SessionProvider } from 'next-auth/react';
+
 
 import '@/styles/globals.scss';
 
@@ -20,25 +23,27 @@ const Futura = localFont({
     {
       path: '../assets/fonts/Futura_Std_Bold.otf',
       weight: '700',
-    }
-  ]
-})
+    },
+  ],
+});
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-  getLayout?: (page: ReactElement) => ReactNode
-}
+  getLayout?: (page: ReactElement) => ReactNode;
+};
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
-}
+  Component: NextPageWithLayout;
+};
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
-
-  const getLayout = Component.getLayout ?? ((page) => page)
+  const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
     <main className={`${Futura.className}`}>
-      {getLayout(<Component {...pageProps} />)}
+      <SessionProvider session={pageProps.session}>
+        {getLayout(<Component {...pageProps} />)}
+        <Toaster position={'top-right'} />
+      </SessionProvider>
     </main>
-  )
+  );
 }

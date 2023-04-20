@@ -14,7 +14,7 @@ export const AddIconBlack = (props: IconProps) => {
       xmlns="http://www.w3.org/2000/svg"
     >
         <circle cx="14" cy="14" r="13.5" fill={color}/>
-        <path d="M14 6V22M22 14H6" stroke="transparent" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 6V22M22 14H6" stroke="#E9E7E1" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );
 };

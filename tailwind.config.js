@@ -13,6 +13,8 @@ module.exports = {
       'beige-light': 'var(--beige-light)',
       'gold': 'var(--gold)',
       'gold-dark': 'var(--gold-dark)',
+      'need-changes': 'var(--need-changes)',
+      'transparent': 'var(--transparent)',
     },
     fontSize: {
       title: ['16px', {
@@ -54,6 +56,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         'auth-hero': 'url("../assets/images/EstudioTextil.Tapetesencobre.Tapetesenfibrasnaturales.png")',
+      },
+      gridTemplateColumns: {
+        'header': '2fr 1fr 2fr',
       }
     },
   },
