@@ -1,58 +1,69 @@
 import React from 'react';
 import Icon from '../icon';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { VerdiLogo } from '../icon/Icons/VerdiLogo';
 import Input from '../input';
 
 import { Colors } from '@/styles/config/base';
-import useWindowSize from '../../hooks/useWindowSize';
-import NavLinkItem from './NavLink';
+import useWindowSize from '@/hooks/useWindowSize';
 import BottomNavigationBar from './BottomNavigationBar';
+import NavLinkItem, { NavLinkItemProps } from './NavLink';
 
-const LinksHeaderIntermediary = {
+type ListIconsHeader = {
+  [key in 'left' | 'rigth']: NavLinkItemProps[];
+};
+
+const LinksHeaderIntermediary: ListIconsHeader = {
   left: [
     {
       text: 'INICIO',
       link: '/',
+      iconName: 'Home',
     },
     {
       text: 'COTIZACIONES',
       link: '/icons',
+      iconName: 'CotizationList',
     },
   ],
   rigth: [
     {
       text: 'FAVORITOS',
       link: '',
+      iconName: 'Heart',
     },
     {
       text: 'PERFIL',
-      link: '',
+      link: '/profile',
+      iconName: 'Profile',
     },
   ],
 };
 
-const LinksHeaderComercial = {
+const LinksHeaderComercial: ListIconsHeader = {
   left: [
     {
       text: 'METRICAS',
       link: '/metrics',
+      iconName: 'Metrics',
     },
     {
       text: 'COTIZACIONES',
       link: '/icons',
+      iconName: 'CotizationList',
     },
   ],
   rigth: [
     {
       text: 'ACCESOS',
       link: '',
+      iconName: 'HandAccess',
     },
     {
       text: 'PERFIL',
-      link: '',
+      link: '/profile',
+      iconName: 'Profile',
     },
   ],
 };
@@ -68,10 +79,17 @@ function Header() {
     return router.pathname === path;
   };
 
-  const isComercial = true;
+  const isComercial = false;
+
   const headerLinks = isComercial
     ? LinksHeaderComercial
     : LinksHeaderIntermediary;
+
+  const allLinksWithIconAndActiveStatu = headerLinks.left
+    .concat(headerLinks.rigth)
+    ?.map((link) => {
+      return { ...link, active: isActive(link.link) };
+    });
 
   return (
     <header className="h-[4.5rem] w-full flex justify-center bg-beige-light items-center lg:h-[7.5rem] ">
@@ -103,7 +121,7 @@ function Header() {
             />
           </div>
 
-          {/* rigth */}
+          {/* items rigth */}
           <div className="flex justify-end lg:justify-start items-center gap-4 lg:gap-[3.25rem]">
             {headerLinks.rigth.map((linkItem) => (
               <NavLinkItem
@@ -132,7 +150,7 @@ function Header() {
           </div>
         </section>
       </nav>
-      <BottomNavigationBar />
+      <BottomNavigationBar links={allLinksWithIconAndActiveStatu} />
     </header>
   );
 }
