@@ -13,6 +13,8 @@ import Input from '@/components/input';
 import { createUser } from '../../services/user/createUser';
 import { isAxiosError } from 'axios';
 import { handleRequestError } from '@/util/error';
+import Head from 'next/head';
+import LanguageChangerBox from '@/components/languageChanger';
 
 const typeUserList = [
   { value: 'user', label: 'USUARIO RETAIL' },
@@ -61,8 +63,24 @@ const RegisterPage: NextPageWithLayout = () => {
     )
   };
 
-  return (
-    <div className="h-full px-4 pt-11 pb-13 lg:flex justify-center lg:flex-col items-center lg:p-0 ">
+  const handleLanguageChange = () => {
+    // Código que se ejecuta cuando se hace click en cualquier de las 2 opciones 
+  }
+
+    return (
+    <div className="h-full px-4 pt-0 pb-13 md:flex justify-center md:flex-col items-center md:p-0 ">
+      <Head>
+        <title>Registro verdi</title>
+        <meta name='description' 
+        content='Regístrate para obtener una cuenta en nuestro sitio web.
+         Ingresa tus datos personales y elige una contraseña segura.'/>
+         Inicia sesión en nuestra plataforma para acceder a todos nuestros servicios y disfrutar de una experiencia personalizada. Ingresa tu correo electrónico y contraseña para comenzar a utilizar nuestros servicios.
+        
+
+      </Head>
+
+      <LanguageChangerBox language={'ES'} onLanguageChange={handleLanguageChange} />
+
       <h1 className="text-title text-center mb-6">REGISTRO</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}

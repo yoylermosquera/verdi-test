@@ -12,6 +12,7 @@ import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/router';
 import CheckBox from '@/components/checkbox';
 import Head from 'next/head';
+import LanguageChangerBox from '@/components/languageChanger';
 
 const LoginSchema = z.object({
   email: z.string(),
@@ -43,11 +44,20 @@ const SignInPage: NextPageWithLayout = () => {
     toast.dismiss(id);
   };
 
+  const handleLanguageChange = () => {
+    // Código que se ejecuta cuando se hace click en cualquier de las 2 opciones. 
+  }
+
   return (
     <div className="h-full px-4 pt-11 pb-13 lg:flex justify-center lg:flex-col items-center lg:p-0 ">
       <Head>
-        <title>Registro verdi</title>
+        <title>Iniciar Sesión</title>
+        <meta name='description' 
+        content='Inicia sesión en nuestra plataforma para acceder a todos nuestros servicios y disfrutar de una experiencia personalizada. Ingresa tu correo electrónico y contraseña para comenzar a utilizar nuestros servicios.'/>
+        
       </Head>
+      <LanguageChangerBox language={'EN'} onLanguageChange={handleLanguageChange} />
+
       <h1 className="text-title text-center mb-11">INGRESO</h1>
 
       <form
@@ -92,7 +102,6 @@ const SignInPage: NextPageWithLayout = () => {
           <div className="flex items-left mb-24   lg:justify-center lg:mb-0  lg:mt-24">
             <CheckBox id="test" labelText="Recordar mis datos." />
 
-            {/* Cambiar tipo de fuente  */}
           </div>
         </section>
 
