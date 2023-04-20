@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start -p 4033",
     "lint": "next lint",
-    "build_start:docker": "yarn build && docker-compose up --build",
     "build:image": "docker buildx build --platform linux/amd64 -t desarrolloant/verdi_front:dev -f ./Dockerfile.dev .",
     "push:image": "docker push desarrolloant/verdi_front:dev",
     "deploy:dev": "yarn build:image && yarn push:image"
