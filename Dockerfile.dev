@@ -1,48 +1,21 @@
-# Install dependencies only when needed
-FROM node:18-alpine3.15 AS deps
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat
-WORKDIR /app
-
-# Copy neccesary files
-COPY package.json yarn.lock ./
-COPY ./.next ./.next
-COPY ./package.json ./
-COPY ./next.config.js ./
-COPY ./.env.production ./
-
-# Install dependencies
-RUN yarn install --frozen-lockfile
-
-# Build the app with cache dependencies
-FROM node:18-alpine3.15 AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
-RUN yarn build
-
-
-# Production image, copy all the files and run the app
-FROM node:18-alpine3.15 AS runner
+FROM node:16
 
 # Set working directory
-WORKDIR /usr/src/app
+RUN mkdir -p /usr/src
+WORKDIR /usr/src
 
-# Copy neccesary files
-COPY package.json yarn.lock ./
+# Copiar el directorio y su contenido
 COPY ./.next ./.next
-COPY ./package.json ./
-COPY ./next.config.js ./
-COPY ./.env.production ./
+COPY ./package.json ./package.json
+COPY ./next.config.js ./next.config.js
+COPY ./.env.production ./.env.production
 
-RUN yarn install --prod
-
-# Get data from builder container
-COPY --from=builder /app/.next ./.next
-
-# Create user with permissions
+# Dar permiso para ejecutar la applicación
 RUN adduser --disabled-password verdi_front
 RUN chown -R verdi_front ./
 USER verdi_front
 
-CMD [ "yarn", "start" ]
+# Limpiar el caché
+RUN yarn cache clean --force
+
+CMD [ "yarn","serve:prod" ]
