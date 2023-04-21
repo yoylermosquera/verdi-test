@@ -41,7 +41,7 @@ const SwiperVerdi = () => {
       slidesPerView={1}
       spaceBetween={10}
       onSlideChange={(e) => setCurrentSlide(e.activeIndex)}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSwiper={(swiper) => console.log(swiper)}
       pagination={{
         clickable: true,
         el: '#custom_pagination',

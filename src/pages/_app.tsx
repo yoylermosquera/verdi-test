@@ -5,8 +5,10 @@ import localFont from 'next/font/local';
 import { Toaster } from 'react-hot-toast';
 import { SessionProvider } from 'next-auth/react';
 
-
 import '@/styles/globals.scss';
+import 'animate.css';
+
+import AppContextProvider from '../context/app/provider';
 
 const Futura = localFont({
   fallback: ['system-ui', 'arial'],
@@ -41,8 +43,10 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <main className={`${Futura.className}`}>
       <SessionProvider session={pageProps.session}>
-        {getLayout(<Component {...pageProps} />)}
-        <Toaster position={'top-right'} />
+        <AppContextProvider>
+          {getLayout(<Component {...pageProps} />)}
+          <Toaster position={'top-right'} />
+        </AppContextProvider>
       </SessionProvider>
     </main>
   );

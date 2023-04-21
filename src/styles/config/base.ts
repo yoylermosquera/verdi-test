@@ -13,3 +13,5 @@ export const Colors = {
     goldDark: '#918B7C',
     needChanges: '#DB3500',
 }
+
+export const HEADER_HEIGHT = '4.5rem';

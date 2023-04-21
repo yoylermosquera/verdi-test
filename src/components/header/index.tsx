@@ -5,10 +5,12 @@ import { useRouter } from 'next/router';
 import { VerdiLogo } from '../icon/Icons/VerdiLogo';
 import Input from '../input';
 
-import { Colors } from '@/styles/config/base';
+import { Colors, HEADER_HEIGHT } from '@/styles/config/base';
 import useWindowSize from '@/hooks/useWindowSize';
 import BottomNavigationBar from './BottomNavigationBar';
 import NavLinkItem, { NavLinkItemProps } from './NavLink';
+import SidenBar from '../sidebar';
+import useAppContext from '../../hooks/useAppContext';
 
 type ListIconsHeader = {
   [key in 'left' | 'rigth']: NavLinkItemProps[];
@@ -73,6 +75,8 @@ function Header() {
 
   const { width } = useWindowSize();
 
+  const { toggleSidebar, showSidebar } = useAppContext()
+
   const isDesktop = width > 768;
 
   const isActive = (path: string) => {
@@ -92,14 +96,14 @@ function Header() {
     });
 
   return (
-    <header className="h-[4.5rem] w-full flex justify-center bg-beige-light items-center lg:h-[7.5rem] ">
+    <header className={`h-[${HEADER_HEIGHT}] w-full flex justify-center bg-beige-light items-center lg:h-[7.5rem] `}>
       <nav className="max-w-[80rem] px-4 lg:px-o w-full">
         <section className="grid grid-cols-header">
           {/* items left  */}
           <div className="flex items-center  gap-4 lg:gap-[3.25rem]">
             {!isComercial ? (
               <div className="grow">
-                <Icon iconName="ListIcon" size={22} />
+                <Icon onClick={toggleSidebar} iconName={ showSidebar ? 'Close' : 'ListIcon' } size={18} />
               </div>
             ) : null}
 
