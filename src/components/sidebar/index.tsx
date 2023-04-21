@@ -21,7 +21,7 @@ function SidenBar() {
       className={`fixed h-full w-full lg:w-[19.75rem] z-20 bg-beige-light animate__animated ${
         showSidebar
           ? 'animate__bounceInLeft animate__faster'
-          : 'animate__bounceOutLeft'
+          : 'animate__bounceOutLeft animate__faster'
       }  `}
     >
       <section className="hidden lg:flex h-16 bg-gold pl-5 pr-4 w-full justify-between items-center">
