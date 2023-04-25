@@ -11,10 +11,10 @@ import Button from '@/components/button';
 import Select from '@/components/select';
 import Input from '@/components/input';
 import { createUser } from '../../services/user/createUser';
-import { isAxiosError } from 'axios';
 import { handleRequestError } from '@/util/error';
 import Head from 'next/head';
 import LanguageChangerBox from '@/components/languageChanger';
+import { countriesSelectsOptions } from '../../helpers/countries';
 
 const typeUserList = [
   { value: 'user', label: 'USUARIO RETAIL' },
@@ -31,7 +31,10 @@ const RegisterSchema = z.object({
   name: z.string(),
   last_name: z.string(),
   birth_date: z.string(),
-  country_city: z.string(),
+  //country_city: z.string(),
+  country: z.string(),
+  department: z.string(),
+  city: z.string(),
   address: z.string(),
   company_name: z.string(),
   url: z.string().url('Ingresa una url valida'),
@@ -51,35 +54,39 @@ const RegisterPage: NextPageWithLayout = () => {
   const { errors } = formState;
 
   const onSubmit = async (data: IRegisterUser) => {
-    toast.promise(
-      createUser(data),
-      {
-        loading: 'Cargando...',
-        success: 'Registro exitoso',
-        error: (e) => {
-          return handleRequestError(e);
-        },
-      }
-    )
+    toast.promise(createUser(data), {
+      loading: 'Cargando...',
+      success: 'Registro exitoso',
+      error: (e) => {
+        return handleRequestError(e);
+      },
+    });
   };
 
   const handleLanguageChange = () => {
-    // Código que se ejecuta cuando se hace click en cualquier de las 2 opciones 
-  }
+    // Código que se ejecuta cuando se hace click en cualquier de las 2 opciones
+  };
 
-    return (
+  return (
     <div className="h-full px-4 pt-0 pb-13 md:flex justify-center md:flex-col items-center md:p-0 ">
       <Head>
         <title>Registro verdi</title>
-        <meta name='description' 
-        content='Regístrate para obtener una cuenta en nuestro sitio web.
-         Ingresa tus datos personales y elige una contraseña segura.'/>
-         Inicia sesión en nuestra plataforma para acceder a todos nuestros servicios y disfrutar de una experiencia personalizada. Ingresa tu correo electrónico y contraseña para comenzar a utilizar nuestros servicios.
-        
-
+        <meta
+          name="description"
+          content="Regístrate para obtener una cuenta en nuestro sitio web.
+         Ingresa tus datos personales y elige una contraseña segura."
+        />
+        Inicia sesión en nuestra plataforma para acceder a todos nuestros
+        servicios y disfrutar de una experiencia personalizada. Ingresa tu
+        correo electrónico y contraseña para comenzar a utilizar nuestros
+        servicios.
       </Head>
-
-      <LanguageChangerBox language={'ES'} onLanguageChange={handleLanguageChange} />
+      <div className="lg:max-w-[350px] mt-2 mb-9 w-full flex justify-end">
+        <LanguageChangerBox
+          language={'ES'}
+          onLanguageChange={handleLanguageChange}
+        />
+      </div>
 
       <h1 className="text-title text-center mb-6">REGISTRO</h1>
       <form
@@ -162,15 +169,50 @@ const RegisterPage: NextPageWithLayout = () => {
           />
 
           <Controller
-            name={'country_city'}
+            name={'country'}
+            control={control}
+            render={({ field }) => {
+              const { ref, ...resField } = field;
+              return (
+                <Select
+                  {...resField}
+                  isMulti={false}
+                  options={countriesSelectsOptions}
+                  placeholder={'Pais'}
+                  value={typeUserList?.find((opt) => opt.value === field.value)}
+                  onChange={(e: any) => {
+                    setValue('country', e?.value);
+                  }}
+                  errorMsg={errors?.country?.message}
+                />
+              );
+            }}
+          />
+
+          <Controller
+            name={'department'}
             control={control}
             render={({ field }) => (
               <Input
                 {...field}
-                name="country_city"
+                name="department"
                 required
-                placeholder="ciudad y pais"
-                errorMsg={errors?.country_city?.message}
+                placeholder="Estado"
+                errorMsg={errors?.department?.message}
+              />
+            )}
+          />
+
+          <Controller
+            name={'city'}
+            control={control}
+            render={({ field }) => (
+              <Input
+                {...field}
+                name="city"
+                required
+                placeholder="Ciudad"
+                errorMsg={errors?.city?.message}
               />
             )}
           />
@@ -242,7 +284,11 @@ const RegisterPage: NextPageWithLayout = () => {
 
 RegisterPage.getLayout = (page) => {
   return (
-    <AuthLayout title='Registro desde layout' imgClassName="h-[22%]" contentClassName="h-[78%]">
+    <AuthLayout
+      title="Registro desde layout"
+      imgClassName="h-[22%]"
+      contentClassName="h-[78%]"
+    >
       {page}
     </AuthLayout>
   );

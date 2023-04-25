@@ -16,7 +16,7 @@ type IconWrapperProps = IconProps & {
 
 export const Icon = ({
   iconName = 'Metrics',
-  size = 16,
+  size,
   color = Colors.blackVerdi,
   ...restProps
 }: IconWrapperProps) => {

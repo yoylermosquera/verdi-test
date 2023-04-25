@@ -15,10 +15,11 @@ const mockCategoryList = [
 ];
 
 function SidenBar() {
-  const { showSidebar, toggleSidebar } = useAppContext();
+  const { showSidebar, toggleSidebar, categories } = useAppContext();
+  //overflow-y-auto sticky h-full w-full lg:w-[19.75rem] lg:pb-10 z-20 bg-beige-light animate__animated
   return (
     <div
-      className={`fixed h-full w-full lg:w-[19.75rem] z-20 bg-beige-light animate__animated ${
+      className={`overflow-y-auto sticky h-full w-full lg:w-[19.75rem] lg:pb-10 z-20 bg-beige-light animate__animated ${
         showSidebar
           ? 'animate__bounceInLeft animate__faster'
           : 'animate__bounceOutLeft animate__faster'
@@ -29,11 +30,11 @@ function SidenBar() {
         <Icon onClick={toggleSidebar} iconName={'Close'} size={12} />
       </section>
 
-      <div className="w-full">
-        {mockCategoryList.map((category) => (
+      <div className="w-full flex flex-col">
+        {categories?.map((category) => (
           <CategorySection
-            key={category}
-            name={category}
+            key={category?.id}
+            category={category}
             // active={category === 'RUGS'}
           />
         ))}

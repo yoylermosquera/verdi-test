@@ -56,7 +56,8 @@ const SignInPage: NextPageWithLayout = () => {
         content='Inicia sesión en nuestra plataforma para acceder a todos nuestros servicios y disfrutar de una experiencia personalizada. Ingresa tu correo electrónico y contraseña para comenzar a utilizar nuestros servicios.'/>
         
       </Head>
-      <LanguageChangerBox language={'EN'} onLanguageChange={handleLanguageChange} />
+      
+      {/* <LanguageChangerBox language={'EN'} onLanguageChange={handleLanguageChange} /> */}
 
       <h1 className="text-title text-center mb-11">INGRESO</h1>
 
@@ -100,7 +101,7 @@ const SignInPage: NextPageWithLayout = () => {
           </Link>
 
           <div className="flex items-left mb-24   lg:justify-center lg:mb-0  lg:mt-24">
-            <CheckBox id="test" labelText="Recordar mis datos." />
+            <CheckBox color='black-verdi' id="test" labelText="Recordar mis datos." />
 
           </div>
         </section>

@@ -11,6 +11,8 @@ import BottomNavigationBar from './BottomNavigationBar';
 import NavLinkItem, { NavLinkItemProps } from './NavLink';
 import SidenBar from '../sidebar';
 import useAppContext from '../../hooks/useAppContext';
+import LanguageChangerBox from '../languageChanger';
+import useMediaQuery from '@/hooks/useMediaQuery';
 
 type ListIconsHeader = {
   [key in 'left' | 'rigth']: NavLinkItemProps[];
@@ -73,11 +75,12 @@ const LinksHeaderComercial: ListIconsHeader = {
 function Header() {
   const router = useRouter();
 
-  const { width } = useWindowSize();
+
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+
 
   const { toggleSidebar, showSidebar } = useAppContext()
 
-  const isDesktop = width > 768;
 
   const isActive = (path: string) => {
     return router.pathname === path;
@@ -97,15 +100,19 @@ function Header() {
 
   return (
     <header className={`h-[${HEADER_HEIGHT}] w-full flex justify-center bg-beige-light items-center lg:h-[7.5rem] `}>
-      <nav className="max-w-[80rem] px-4 lg:px-o w-full">
+      <nav className="max-w-lg-wrapper px-4 lg:px-o w-full">
         <section className="grid grid-cols-header">
           {/* items left  */}
-          <div className="flex items-center  gap-4 lg:gap-[3.25rem]">
+          <div className="flex items-center lg:justify-evenly gap-4 lg:gap-[3.25rem]">
             {!isComercial ? (
-              <div className="grow">
+              <div className="cursor-pointer">
                 <Icon onClick={toggleSidebar} iconName={ showSidebar ? 'Close' : 'ListIcon' } size={18} />
               </div>
             ) : null}
+
+            <div className='hidden lg:block'>
+              <LanguageChangerBox language='ES' />
+            </div>
 
             {headerLinks.left.map((linkItem) => (
               <NavLinkItem

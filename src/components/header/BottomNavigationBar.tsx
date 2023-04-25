@@ -9,7 +9,7 @@ interface BottomNavigationBarProps {
 
 function BottomNavigationBar({ links = [] }: BottomNavigationBarProps) {
   return (
-    <div className="lg:hidden fixed bottom-[0] left-0 w-full h-[5.625rem] py-3 bg-beige-light z-0">
+    <div className="lg:hidden fixed bottom-[0] left-0 w-full h-[5.625rem] py-3 bg-beige-light z-40">
       <section className="flex w-full justify-evenly">
         {links.map((linkItem, index) => (
           <Link
