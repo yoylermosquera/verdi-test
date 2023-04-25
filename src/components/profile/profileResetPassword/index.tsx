@@ -9,9 +9,15 @@ function ResetPassword() {
   return (
     <div className='h-full px-8'>
       
-      <section className=' grid justify-center mt-4'>
-        <section className=' w-36 h-40'>
-          Foto
+      <section className='mt-4 w-full flex justify-between '>
+        <section className='w-[2.5rem]'>
+          
+        </section>
+        <section className='w-36 h-[9.5rem] ml border-2 justify-center '>
+          FOTO!
+        </section>
+        <section className='text-input text-center underline underline-offset-1 hover: cursor-pointer w-[2.5rem]'>
+          Editar
         </section>
       </section>
 

@@ -7,9 +7,9 @@ import ProfileInfo from '@/components/profile/profileInfo';
 
 const  ProfilePage: NextPageWithLayout = () => {
   return (
-    <ProfileInfo/>
-    //<EditInfo />
-    // <ResetPassword/>
+    // <ProfileInfo/>
+    // <EditInfo />
+    <ResetPassword/>
   )
 }
 
