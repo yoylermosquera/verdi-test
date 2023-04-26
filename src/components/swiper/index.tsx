@@ -71,7 +71,7 @@ const HeroSwiper = () => {
 
       <section className="flex h-24 lg:h-40 flex-col justify-center items-center absolute bottom-0 left-0 w-full">
 
-        <div className=" h-10 w-10 lg:w-[3.75rem] lg:h-[3.75rem] -bottom-5 right-[.875rem] lg:bottom-6 lg:right-16 flex justify-center items-center absolute bg-[#B5AE9E] z-50 rounded-full  ">
+        <div className="hidden lg:flex absolute justify-center items-center w-[3.75rem] h-[3.75rem] bottom-6 right-16 bg-[#B5AE9E] z-50 rounded-full  ">
           <Icon iconName="Mail" className="z-50" size={20} color={'white'} />
         </div>
 

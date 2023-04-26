@@ -8,6 +8,7 @@ import HeroSwiper from '@/components/swiper';
 import productSample from '@/assets/images/examples/productSample.png';
 import LanguageChangerBox from '@/components/languageChanger';
 import useAppContext from '@/hooks/useAppContext';
+import Icon from '@/components/icon';
 
 const mockData = Array.from({ length: 20 }).map((_, i) => ({
   id: `${i + 1}`,
@@ -21,7 +22,7 @@ const HomePage: NextPageWithLayout = () => {
 
   return (
     <div>
-      <section className="lg:hidden h-14 flex justify-end items-center px-4">
+      <section className="relative lg:hidden h-14 flex justify-end items-center px-4">
         <span className="w-full"></span>
         <h1 className=" text-title text-center uppercase">
           ¡hola {user?.name}!
@@ -31,6 +32,10 @@ const HomePage: NextPageWithLayout = () => {
         </div>
       </section>
       <HeroSwiper />
+
+      <div className="flex absolute justify-center items-center h-10 w-10 top-[330px] right-[.875rem] bg-[#B5AE9E] z-50 rounded-full lg:hidden">
+        <Icon iconName="Mail" className="z-50" size={20} color={'white'} />
+      </div>
 
       <div className="flex flex-col gap-3 lg:mb-9">
         <SectionSlider
