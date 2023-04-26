@@ -29,4 +29,10 @@
       display: flex;
     }
   }
+
+  &.gold{
+    &::after{
+      color: var(--gold);
+    }
+  }
 }

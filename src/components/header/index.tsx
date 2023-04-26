@@ -1,58 +1,73 @@
 import React from 'react';
 import Icon from '../icon';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { VerdiLogo } from '../icon/Icons/VerdiLogo';
 import Input from '../input';
 
-import { Colors } from '@/styles/config/base';
-import useWindowSize from '../../hooks/useWindowSize';
-import NavLinkItem from './NavLink';
+import { Colors, HEADER_HEIGHT_DESKTOP, HEADER_HEIGHT_MOBILE } from '@/styles/config/base';
+import useWindowSize from '@/hooks/useWindowSize';
 import BottomNavigationBar from './BottomNavigationBar';
+import NavLinkItem, { NavLinkItemProps } from './NavLink';
+import SidenBar from '../sidebar';
+import useAppContext from '../../hooks/useAppContext';
+import LanguageChangerBox from '../languageChanger';
+import useMediaQuery from '@/hooks/useMediaQuery';
 
-const LinksHeaderIntermediary = {
+type ListIconsHeader = {
+  [key in 'left' | 'rigth']: NavLinkItemProps[];
+};
+
+const LinksHeaderIntermediary: ListIconsHeader = {
   left: [
     {
       text: 'INICIO',
       link: '/',
+      iconName: 'Home',
     },
     {
       text: 'COTIZACIONES',
       link: '/icons',
+      iconName: 'CotizationList',
     },
   ],
   rigth: [
     {
       text: 'FAVORITOS',
       link: '',
+      iconName: 'Heart',
     },
     {
       text: 'PERFIL',
-      link: '',
+      link: '/profile',
+      iconName: 'Profile',
     },
   ],
 };
 
-const LinksHeaderComercial = {
+const LinksHeaderComercial: ListIconsHeader = {
   left: [
     {
       text: 'METRICAS',
       link: '/metrics',
+      iconName: 'Metrics',
     },
     {
       text: 'COTIZACIONES',
       link: '/icons',
+      iconName: 'CotizationList',
     },
   ],
   rigth: [
     {
       text: 'ACCESOS',
       link: '',
+      iconName: 'HandAccess',
     },
     {
       text: 'PERFIL',
-      link: '',
+      link: '/profile',
+      iconName: 'Profile',
     },
   ],
 };
@@ -60,30 +75,44 @@ const LinksHeaderComercial = {
 function Header() {
   const router = useRouter();
 
-  const { width } = useWindowSize();
 
-  const isDesktop = width > 768;
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+
+
+  const { toggleSidebar, showSidebar } = useAppContext()
+
 
   const isActive = (path: string) => {
     return router.pathname === path;
   };
 
-  const isComercial = true;
+  const isComercial = false;
+
   const headerLinks = isComercial
     ? LinksHeaderComercial
     : LinksHeaderIntermediary;
 
+  const allLinksWithIconAndActiveStatu = headerLinks.left
+    .concat(headerLinks.rigth)
+    ?.map((link) => {
+      return { ...link, active: isActive(link.link) };
+    });
+
   return (
-    <header className="h-[4.5rem] w-full flex justify-center bg-beige-light items-center lg:h-[7.5rem] ">
-      <nav className="max-w-[80rem] px-4 lg:px-o w-full">
+    <header className={`h-h_sm w-full flex justify-center bg-beige-light items-center lg:h-h_lg `}>
+      <nav className="max-w-lg-wrapper px-4 lg:px-o w-full">
         <section className="grid grid-cols-header">
           {/* items left  */}
-          <div className="flex items-center  gap-4 lg:gap-[3.25rem]">
+          <div className="flex items-center lg:justify-evenly gap-4 lg:gap-[3.25rem]">
             {!isComercial ? (
-              <div className="grow">
-                <Icon iconName="ListIcon" size={22} />
+              <div className="cursor-pointer">
+                <Icon onClick={toggleSidebar} iconName={ showSidebar ? 'Close' : 'ListIcon' } size={18} />
               </div>
             ) : null}
+
+            <div className='hidden lg:block'>
+              <LanguageChangerBox language='ES' />
+            </div>
 
             {headerLinks.left.map((linkItem) => (
               <NavLinkItem
@@ -103,7 +132,7 @@ function Header() {
             />
           </div>
 
-          {/* rigth */}
+          {/* items rigth */}
           <div className="flex justify-end lg:justify-start items-center gap-4 lg:gap-[3.25rem]">
             {headerLinks.rigth.map((linkItem) => (
               <NavLinkItem
@@ -132,7 +161,7 @@ function Header() {
           </div>
         </section>
       </nav>
-      <BottomNavigationBar />
+      <BottomNavigationBar links={allLinksWithIconAndActiveStatu} />
     </header>
   );
 }

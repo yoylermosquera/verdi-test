@@ -13,3 +13,6 @@ export const Colors = {
     goldDark: '#918B7C',
     needChanges: '#DB3500',
 }
+
+export const HEADER_HEIGHT_MOBILE = '4.5rem';
+export const HEADER_HEIGHT_DESKTOP = '7.5rem';

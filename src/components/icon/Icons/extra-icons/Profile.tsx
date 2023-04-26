@@ -6,6 +6,7 @@ export function Profile(props: IconProps) {
 
   return (
     <svg
+      {...restSVGProps}
       width={size}
       height={size}
       viewBox="0 0 16 18"

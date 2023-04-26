@@ -1,14 +1,17 @@
 import Link from "next/link";
+import { IconName } from "../icon";
 
+export interface NavLinkItemProps  {
+    active?: boolean;
+    text: string;
+    link: string;
+    iconName?: IconName
+}
 const NavLinkItem = ({
     active,
     text,
     link,
-  }: {
-    active: boolean;
-    text: string;
-    link: string;
-  }) => {
+  }: NavLinkItemProps) => {
     return (
       <div
         className={`${

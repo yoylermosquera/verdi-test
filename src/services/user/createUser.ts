@@ -7,7 +7,7 @@ export const createUser = (data: IRegisterUser) => {
     const { type_user, ...restData } = data
     const dataToSave = {
         ...restData,
-        role_id: roleIntermediario
+        // role_id: roleIntermediario
     }
     return API.post('/users', dataToSave)
 }

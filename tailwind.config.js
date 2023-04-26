@@ -15,6 +15,7 @@ module.exports = {
       'gold-dark': 'var(--gold-dark)',
       'need-changes': 'var(--need-changes)',
       'transparent': 'var(--transparent)',
+      'black30': 'rgba(0, 0, 0, 0.3)'
     },
     fontSize: {
       title: ['16px', {
@@ -54,11 +55,27 @@ module.exports = {
       }]
     },
     extend: {
+      spacing: {
+        'h_sm': '4.5rem',
+        'h_lg': '7.5rem',
+      },        
       backgroundImage: {
         'auth-hero': 'url("../assets/images/EstudioTextil.Tapetesencobre.Tapetesenfibrasnaturales.png")',
       },
       gridTemplateColumns: {
         'header': '2fr 1fr 2fr',
+      },
+      gridTemplateRows: {
+        'product_card_base': '8fr 2fr',
+        'product_card_small': '7fr 3fr',
+      },
+      maxWidth: {
+        'lg-wrapper': '80rem',
+        'slider-wrapper': '1084px',
+      },
+      inset: {
+        'header_mobile': '4.5rem',
+        'header_dektop': '7.5rem',
       }
     },
   },

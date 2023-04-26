@@ -30,7 +30,7 @@ const sliderItems = [
   },
 ];
 
-const SwiperVerdi = () => {
+const HeroSwiper = () => {
   const [curentSlide, setCurrentSlide] = useState(0);
 
   const currentItem = sliderItems[curentSlide];
@@ -39,9 +39,9 @@ const SwiperVerdi = () => {
       modules={[Pagination, Autoplay, Navigation]}
       className="relative"
       slidesPerView={1}
-      spaceBetween={10}
+      spaceBetween={0}
       onSlideChange={(e) => setCurrentSlide(e.activeIndex)}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSwiper={(swiper) => console.log(swiper)}
       pagination={{
         clickable: true,
         el: '#custom_pagination',
@@ -59,7 +59,7 @@ const SwiperVerdi = () => {
     >
       {[1, 2, 3, 4].map((item) => (
         <SwiperSlide key={item}>
-          <div className="h-56 lg:h-auto lg:max-h-[500px] w-full bg-black border flex justify-center items-center">
+          <div className="h-56 lg:h-auto lg:max-h-[500px] w-full bg-black flex justify-center items-center">
             <Image
               className="w-full h-full lg:cover"
               src={ImgTest}
@@ -68,7 +68,13 @@ const SwiperVerdi = () => {
           </div>
         </SwiperSlide>
       ))}
-      <section className="flex h-24 lg:h-40 border flex-col justify-center items-center absolute bottom-0 left-0 w-full">
+
+      <section className="flex h-24 lg:h-40 flex-col justify-center items-center absolute bottom-0 left-0 w-full">
+
+        <div className=" h-10 w-10 lg:w-[3.75rem] lg:h-[3.75rem] -bottom-5 right-[.875rem] lg:bottom-6 lg:right-16 flex justify-center items-center absolute bg-[#B5AE9E] z-50 rounded-full  ">
+          <Icon iconName="Mail" className="z-50" size={20} color={'white'} />
+        </div>
+
         <div className="absolute top-0 left-0 w-full h-full gradient__carusel_controler isolate"></div>
 
         <div className="max-w-[1000px] w-full isolate z-10 items-center flex flex-col lg:items-start gap-3 ">
@@ -117,4 +123,4 @@ const SwiperVerdi = () => {
   );
 };
 
-export default SwiperVerdi;
+export default HeroSwiper;

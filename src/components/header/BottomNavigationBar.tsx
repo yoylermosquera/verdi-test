@@ -1,18 +1,31 @@
-import Link from 'next/link'
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
 import Icon from '../icon/index';
+import { NavLinkItemProps } from './NavLink';
 
-function BottomNavigationBar() {
-  return (
-    <div className='lg:hidden fixed bottom-0 left-0 w-full h-[5.625rem] py-3 bg-beige-light ' >
-        <section className='flex'>
-            <Link href={''} className={`w-[4.375rem] h-16 ${true ? 'bg-white' : ''} rounded flex flex-col gap-5 `}>
-                <Icon iconName='Metrics' size={18} />
-                <span>METRICAS</span>
-            </Link>
-        </section>
-    </div>
-  )
+interface BottomNavigationBarProps {
+  links?: NavLinkItemProps[];
 }
 
-export default BottomNavigationBar
+function BottomNavigationBar({ links = [] }: BottomNavigationBarProps) {
+  return (
+    <div className="lg:hidden fixed bottom-[0] left-0 w-full h-[5.625rem] py-3 bg-beige-light z-40">
+      <section className="flex w-full justify-evenly">
+        {links.map((linkItem, index) => (
+          <Link
+            key={index}
+            href={linkItem.link}
+            className={`w-[4.375rem] h-16 ${
+              linkItem.active ? 'bg-white' : ''
+            } rounded flex flex-col justify-center items-center gap-4 `}
+          >
+            <Icon iconName={linkItem.iconName!} size={18} />
+            <span className="text-menu text-[10px]">{linkItem.text}</span>
+          </Link>
+        ))}
+      </section>
+    </div>
+  );
+}
+
+export default BottomNavigationBar;
