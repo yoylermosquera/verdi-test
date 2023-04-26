@@ -13,7 +13,7 @@ function LanguageChangerBox({language, onLanguageChange = () => {}}:LanguageChan
     
     return (
         <section className='' >
-            <section className='flex justify-center items-center  h-4 italic  ' > 
+            <section className='flex h-4 text-paragraph justify-center items-center italic' > 
                 <span 
                     className={`mr-3 hover:underline underline-offset-1 hover:cursor-pointer ${ language === "ES" ? 'text-gold-dark' : "text-black-verdi"} `} 
                     onClick={() => onLanguageChange(language)}
