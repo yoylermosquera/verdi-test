@@ -76,7 +76,7 @@ function Header() {
   const router = useRouter();
 
 
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
 
   const { toggleSidebar, showSidebar } = useAppContext()
@@ -103,7 +103,7 @@ function Header() {
       <nav className="max-w-lg-wrapper px-4 lg:px-o w-full">
         <section className="grid grid-cols-header">
           {/* items left  */}
-          <div className="flex items-center lg:justify-evenly gap-4 lg:gap-[3.25rem]">
+          <div className="flex items-center lg:justify-evenly gap-4 xl:gap-[3.25rem]">
             {!isComercial ? (
               <div className="cursor-pointer">
                 <Icon onClick={toggleSidebar} iconName={ showSidebar ? 'Close' : 'ListIcon' } size={18} />
@@ -133,7 +133,7 @@ function Header() {
           </div>
 
           {/* items rigth */}
-          <div className="flex justify-end lg:justify-start items-center gap-4 lg:gap-[3.25rem]">
+          <div className="flex justify-end lg:justify-start items-center gap-4 xl:gap-[3.25rem]">
             {headerLinks.rigth.map((linkItem) => (
               <NavLinkItem
                 key={linkItem.text}
