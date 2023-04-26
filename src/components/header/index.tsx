@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { VerdiLogo } from '../icon/Icons/VerdiLogo';
 import Input from '../input';
 
-import { Colors, HEADER_HEIGHT } from '@/styles/config/base';
+import { Colors, HEADER_HEIGHT_DESKTOP, HEADER_HEIGHT_MOBILE } from '@/styles/config/base';
 import useWindowSize from '@/hooks/useWindowSize';
 import BottomNavigationBar from './BottomNavigationBar';
 import NavLinkItem, { NavLinkItemProps } from './NavLink';
@@ -99,7 +99,7 @@ function Header() {
     });
 
   return (
-    <header className={`h-[${HEADER_HEIGHT}] w-full flex justify-center bg-beige-light items-center lg:h-[7.5rem] `}>
+    <header className={`h-h_sm w-full flex justify-center bg-beige-light items-center lg:h-h_lg `}>
       <nav className="max-w-lg-wrapper px-4 lg:px-o w-full">
         <section className="grid grid-cols-header">
           {/* items left  */}

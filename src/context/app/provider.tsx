@@ -11,7 +11,7 @@ function AppContextProvider({ children }: AppContextProviderProps) {
   const { data } = useSession()
   const [showSidebar, setShowSidebar] = useState(false);
 
-  const { user } = data!
+  const { user } = data! || {};
 
 
   const toggleSideBar = () => {

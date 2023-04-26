@@ -2,32 +2,29 @@ import React from 'react';
 import Input from '@/components/input';
 import Button from '@/components/button';
 import Icon from '@/components/icon';
+import ProfileAvatar from '../avatar/ProfileAvatar';
+import Link from 'next/link';
 
 const handleSubmit = () => {
   // Función que se ejecutará para cambiar la contraseña. 
 }
 function EditInfo() {
   return (
-    <div className='h-full px-8 '>
-        <section className=' mt-4 w-full flex justify-between  '>
-          <section className='w-[2.5rem]'>
-            
+    <div className='h-full px-8 flex flex-col  grow '>
+      <div>
+        <section className='mt-4 w-full flex justify-center mb-9'>
+            <ProfileAvatar showEditIcon />
           </section>
-          <section className='w-36 h-[9.5rem] ml border-2 justify-center '>
-            FOTO!
-          </section>
-          <section className='text-input text-center underline underline-offset-1 hover: cursor-pointer w-[2.5rem]'>
-            Editar
-          </section>
-        </section>
 
-      <h1 className='text-title text-center  mb-8 '>MI PERFIL</h1>
+        <h1 className='text-title text-center mb-8 '>MI PERFIL</h1>
+      </div>
+        
 
       <form
         onSubmit={handleSubmit}
-        className="lg:max-w-[360px] w-full h-full"
+        className="lg:max-w-[360px] flex flex-col justify-between w-full pb-7 grow"
       >
-        <section className="flex flex-col gap-6 mt-0 ">
+        <section className="flex flex-col gap-6 mt-0  ">
           <Input placeholder="Nombre:"  />
           <Input placeholder="Tipo de usuario?"  />
           <Input placeholder="Email"  />
@@ -35,17 +32,18 @@ function EditInfo() {
         </section>
         
         
-        <section className="flex flex-col justify-center mt-[9.875rem] ">
+        <section className="flex flex-col justify-center">
           <Button type="submit" size="full">
             CONTINUAR
           </Button>
 
-          <span 
+          <Link
+            href={'/profile'} 
           className={'text-center text-input underline underline-offset-1 hover:cursor-pointer mt-2'}
           onClick={() => { }}
           > 
           Cancelar
-          </span>
+          </Link>
         </section>
       </form>
       

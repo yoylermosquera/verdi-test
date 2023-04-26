@@ -55,6 +55,10 @@ module.exports = {
       }]
     },
     extend: {
+      spacing: {
+        'h_sm': '4.5rem',
+        'h_lg': '7.5rem',
+      },        
       backgroundImage: {
         'auth-hero': 'url("../assets/images/EstudioTextil.Tapetesencobre.Tapetesenfibrasnaturales.png")',
       },
@@ -68,6 +72,10 @@ module.exports = {
       maxWidth: {
         'lg-wrapper': '80rem',
         'slider-wrapper': '1084px',
+      },
+      inset: {
+        'header_mobile': '4.5rem',
+        'header_dektop': '7.5rem',
       }
     },
   },

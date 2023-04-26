@@ -1,70 +1,64 @@
 import React from 'react';
-import Input from '@/components/input';
 import Button from '@/components/button';
 import Icon from '@/components/icon';
+import ProfileAvatar from '../avatar/ProfileAvatar';
+import Link from 'next/link';
 
-const handleSubmit = () => {
-  // Función que se ejecutará para cambiar la contraseña. 
-}
 function ProfileInfo() {
   return (
     <div className='h-full px-8 '>
-        <section className='mt-4 w-full flex justify-between '>
-          <section className='w-[2.5rem]'>
-            
+        <section className='mt-4 w-full flex justify-center relative'>
+          <section className='w-36 h-[9.5rem]'>
+            <ProfileAvatar />
           </section>
-          <section className='w-36 h-[9.5rem] ml border-2 justify-center '>
-            FOTO!
-          </section>
-          <section className='text-input text-center underline underline-offset-1 hover: cursor-pointer w-[2.5rem]'>
+          <Link href={'/profile/edit'} className='right-0 absolute text-input text-center underline underline-offset-1 hover: cursor-pointer w-[2.5rem]'>
              Editar
-          </section>
+          </Link>
         </section>
 
       <h1 className='text-title text-center  mt-[1.375rem] mb-0 '> DENNIS HERRERA</h1>
       <h2 className='text-title text-center  mt-2 mb-6 '>Equipo Comercial</h2>
 
-      <form
-        onSubmit={handleSubmit}
+      <div
         className="lg:max-w-[360px] w-full  h-full"
       >
-        <section className="flex flex-col mt-0 mb-4">
+        <section className="flex flex-col mt-0 mb-7">
           <section className='h-14 w-full flex items-center justify-between border-y border-y-gold-dark'>
-            <h1 className='text-title text-center'>
+            <h3 className='text-title text-center'>
                 CORREO
-            </h1>
+            </h3>
 
-            <span className='text-input text-center'>
+            <span className='text-title text-center'>
                 dennis.sierra@antpack.co 
             </span>
           </section>
 
-            <section className='h-14 w-full flex items-center justify-between border-gold-dark'>
-                <h1 className='text-title text-center'>
+            <section className='h-14 w-full flex items-center justify-between border-b border-gold-dark'>
+                <h3 className='text-title text-center'>
                     TELÉFONO
-                </h1>
+                </h3>
 
-                <span className='text-input text-center'>
+                <span className='text-title text-center'>
                     +593 98 479 0449 
                 </span>
             </section>
 
             <section className='h-14 w-full flex items-center justify-between '>
-                <h1 className='text-title text-center'>
+                <h3 className='text-title text-center'>
                     COTIZACIONES ABIERTAS
-                </h1>
+                </h3>
 
-                <span className='text-input text-center'>
+                <span className='text-title text-center'>
                     420 
                 </span>
             </section>
 
             <section className='h-14 w-full flex items-center justify-between '>
-                <h1 className='text-title text-center'>
+                <h3 className='text-title text-center'>
                     COTIZACIONES CERRADAS
-                </h1>
+                </h3>
 
-                <span className='text-input text-center'>
+                <span className='text-title text-center'>
                     69
                 </span>
             </section>
@@ -72,23 +66,24 @@ function ProfileInfo() {
         
         
         <section className="flex flex-col justify-center ">
-          <Button type="submit" size="full">
+          <Button type="submit" size="full" className='mb-6'>
             VER COTIZACIONES PENDIENTES
           </Button>
 
-          <span 
-          className={'text-center text-input underline hover:cursor-pointer mt-6'}
+          <Link 
+            href={'/profile/change-password'} 
+          className={'text-center text-button__line underline hover:cursor-pointer '}
           onClick={() => { }}
           > 
-            Cancelar
-          </span>
+            Cambiar contraseña
+          </Link>
 
           <section 
-          className={' text-center text-input hover:cursor-pointer mt-4  underline underline-offset-1 '}
+          className={' text-center text-button__line hover:cursor-pointer mt-4  underline underline-offset-1 '}
           onClick={() => { }}
           >
             <span 
-            className={'text-input mr-1'}
+            className={'text-button__line mr-1'}
             > 
                 Cerrar sesión
             </span>
@@ -101,7 +96,7 @@ function ProfileInfo() {
             />
           </section>
         </section>
-      </form>
+      </div>
       
     </div>
     
