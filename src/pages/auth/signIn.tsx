@@ -100,14 +100,14 @@ const SignInPage: NextPageWithLayout = () => {
             Olvidé mi contraseña
           </Link>
 
-          <div className="flex items-left mb-24   lg:justify-center lg:mb-0  lg:mt-24">
+          <div className="flex items-left mb-24 lg:justify-center lg:mb-3 lg:mt-20">
             <CheckBox color='black-verdi' id="test" labelText="Recordar mis datos." />
 
           </div>
         </section>
 
         <section className="flex flex-col justify-center  ">
-          <Button type="submit" className="mb-4  " size="full">
+          <Button type="submit" className="mb-4" size="full">
             INGRESAR
           </Button>
           <Link
