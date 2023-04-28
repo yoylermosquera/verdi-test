@@ -9,7 +9,6 @@ interface ProductCardProps {
   img: string;
   title: string;
   description: string;
-
 }
 
 
@@ -19,7 +18,6 @@ function ProductCard({
   description,
 }: ProductCardProps) {
   const matches = useMediaQuery('(min-width: 768px)');
-
   const iconSize = matches ? 16 : 20;
 
   return (

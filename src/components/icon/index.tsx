@@ -8,6 +8,7 @@ export interface IconProps extends React.ComponentPropsWithoutRef<'svg'> {
   size?: number;
   color?: string;
   iconName?: IconName;
+  strokeWidth?: number;
 }
 
 type IconWrapperProps = IconProps & {

@@ -78,7 +78,6 @@ function Header() {
 
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
-
   const { toggleSidebar, showSidebar } = useAppContext()
 
 

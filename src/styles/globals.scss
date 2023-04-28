@@ -12,6 +12,7 @@
   --gold-dark: #918b7c;
   --need-changes: #db3500;
   --transparent: transparent;
+  --orange: #EAAD11
 }
 
 // GRADIANTS products sliders
@@ -27,6 +28,18 @@
 
 .swiper-pagination-bullet-active {
   background-color: var(--gold) !important;
+}
+
+#productSwiper .swiper-pagination-bullet {
+  width: 0.7rem;
+  height: 0.7rem;
+  margin: 0px 7px;
+  opacity: 1 !important;
+  background-color: var(--white) !important;
+}
+
+#productSwiper .swiper-pagination-bullet-active {
+  background-color: var(--orange) !important;
 }
 
 // rangeSlider
