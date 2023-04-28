@@ -19,7 +19,7 @@ export const CharacteristicsProduct = ({
 }: Props) => {
   return (
     <section className={`flex flex-col gap-4 mx-5 text-title uppercase overflow-hidden hide__scroll_bar lg:mx-0 lg:overflow-y-scroll ${className}`}>
-      <div className="flex justify-between">
+      <div className="flex gap-7 justify-between items-center">
         <h1>Measures</h1>
         <h1 className='overflow-ellipsis overflow-hidden'>
           MIN {minMeasure} M - MAX {maxMeasure} M
@@ -30,16 +30,16 @@ export const CharacteristicsProduct = ({
 
       {tags.map(({ id, name, type }, index) => (
         <div key={id} className="flex flex-col gap-4">
-          <div className="flex gap-5 justify-between">
+          <div className="flex gap-7 justify-between items-center">
             <h1>{type}</h1>
-            <h1 className='overflow-ellipsis overflow-hidden'>{name}</h1>
+            <h1 className='overflow-ellipsis overflow-hidden'>{name}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
           </div>
 
           <div className="border border-gold opacity-30" />
         </div>
       ))}
 
-      <div className="flex justify-between">
+      <div className="flex gap-7 justify-between items-center">
         <h1>Price</h1>
         <h1 className='overflow-ellipsis overflow-hidden'>
           ${minPrice} USD - ${maxPrice}

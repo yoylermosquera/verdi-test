@@ -71,7 +71,7 @@ const ProductPage: NextPageWithLayout<Props> = ({ product }) => {
       </div>
 
       {/* Product carousel */}
-      <div className="hidden lg:flex lg:flex-col lg:gap-3 lg:mb-16">
+      <div className="hidden xl:flex xl:flex-col xl:gap-3 xl:mb-16 xl:px-20">
         <SectionSlider
           sectionTitle="Te pueden interesar"
           products={mockData}

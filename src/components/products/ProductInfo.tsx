@@ -27,7 +27,7 @@ export const ProductInfo = ({
   imgs = [productSample, productSample, productSample, productSample];
 
   return (
-    <section className="relative lg:flex lg:pt-10 lg:px-[10rem] 2xl:px-[40rem] lg:gap-10 lg:h-96">
+    <section className="relative lg:flex lg:pt-10 lg:px-[10rem] xl:px-[20rem] 2xl:px-[35rem] lg:gap-10 lg:h-96">
       <div className="mx-5 overflow-hidden lg:hidden">
         <div className="flex justify-between items-center">
           <h1 className="text-paragraph font-normal uppercase">{name}</h1>
