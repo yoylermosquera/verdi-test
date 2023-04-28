@@ -6,7 +6,7 @@ import ResetPassword from '../../components/profile/profileResetPassword';
 
 const  ProfileChangePasswordPage: NextPageWithLayout = () => {
   return (
-    <div className='h-full flex flex-col grow'>
+    <div className='h-full flex flex-col grow lg:flex-row lg:justify-center'>
       <ResetPassword />
     </div>
   )

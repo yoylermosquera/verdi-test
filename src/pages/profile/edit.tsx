@@ -8,7 +8,7 @@ import ProfileInfo from '@/components/profile/profileInfo';
 
 const  ProfileEditPage: NextPageWithLayout = () => {
   return (
-    <div className='h-full flex flex-col grow'>
+    <div className='h-full flex flex-col grow lg:flex-row lg:justify-center'>
       <EditInfo />
     </div>
   )
