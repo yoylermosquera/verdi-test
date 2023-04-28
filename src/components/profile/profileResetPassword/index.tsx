@@ -5,16 +5,16 @@ import ProfileAvatar from '../avatar/ProfileAvatar';
 import Link from 'next/link';
 
 const handleSubmit = () => {
-  // Función que se ejecutará para cambiar la contraseña. 
+  // Función que se ejecutará para cambiar la info. 
 }
 function ResetPassword() {
   return (
-    <div className='h-full px-8 flex flex-col  grow'>
+    <div className='h-full px-8 flex flex-col justify-center  grow'>
 
       <div>
         <section className='mt-4 w-full flex justify-center mb-9'>
             <ProfileAvatar  />
-          </section>
+        </section>
 
         <h1 className='text-title text-center  mb-8 '>CAMBIAR CONTRASEÑA</h1>
 

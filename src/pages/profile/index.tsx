@@ -7,7 +7,7 @@ import ProfileInfo from '@/components/profile/profileInfo';
 const  ProfilePage: NextPageWithLayout = () => {
 
   return (
-    <div className='h-full flex flex-col grow'>
+    <div className='h-full flex flex-col grow lg:flex-row lg:justify-center'>
       <ProfileInfo />
     </div>
   )
