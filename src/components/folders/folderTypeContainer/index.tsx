@@ -12,9 +12,7 @@ function FolderTypeContainer({
 description,
 }: FolderTypeContainerProps
 ) {
-  const matches = useMediaQuery('(min-width: 768px)');
-  // const iconSize = matches ? 16 : 20;
-
+  
   return (
     <section className=' w-[9.625rem] h-[16.5rem] flex flex-row justify-center bg-gold lg:w-full lg:h-[12.75rem]' >
         
