@@ -1,6 +1,4 @@
-import useMediaQuery from '@/hooks/useMediaQuery';
 import React from 'react';
-import Icon from '../../icon';
 import Button from '../../button';
 import Input from '@/components/input';
 

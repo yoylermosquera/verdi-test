@@ -5,6 +5,7 @@ import FolderPage from '@/components/folders/folderPage';
 import ProductCard from '@/components/productCard';
 import NoProductsContainer from '@/components/folders/noProducts/index';
 import FolderNameModal from '@/components/modals/folderName/index';
+import ErrorMessageModal from '@/components/modals/errorMessage';
 const  FoldersPage: NextPageWithLayout = () => {
 
   return (
@@ -13,8 +14,8 @@ const  FoldersPage: NextPageWithLayout = () => {
       {/* <FolderTypeContainer description='NUEVA CARPETA' /> */}
       {/* <FolderPage /> */}
       {/* <NoProductsContainer /> */}
-      <FolderNameModal />
-
+      {/* <FolderNameModal /> */}
+      <ErrorMessageModal/>
     </div>
   )
 }
