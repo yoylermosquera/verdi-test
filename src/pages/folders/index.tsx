@@ -6,6 +6,7 @@ import ProductCard from '@/components/productCard';
 import NoProductsContainer from '@/components/folders/noProducts/index';
 import FolderNameModal from '@/components/modals/folderName/index';
 import ErrorMessageModal from '@/components/modals/errorMessage';
+import SuccessMessageModal from '@/components/modals/successMessage';
 const  FoldersPage: NextPageWithLayout = () => {
 
   return (
@@ -15,7 +16,8 @@ const  FoldersPage: NextPageWithLayout = () => {
       {/* <FolderPage /> */}
       {/* <NoProductsContainer /> */}
       {/* <FolderNameModal /> */}
-      <ErrorMessageModal/>
+      {/* <ErrorMessageModal/> */}
+      <SuccessMessageModal/>
     </div>
   )
 }
