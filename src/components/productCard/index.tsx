@@ -6,8 +6,9 @@ import Icon from '../icon';
 
 interface ProductCardProps {
   id: string;
-  // img no debería ser string. Revisar eso... Se procede a cambiar a "any" 
+  // img no debería ser string. Revisar eso... Se procede a cambiar a "any. BY: Dennis" 
   img: any;
+  // img: string | StaticImport;
   title: string;
   description: string;
 }

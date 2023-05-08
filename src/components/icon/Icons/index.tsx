@@ -1,8 +1,6 @@
 // export { VerdiLogo } from './VerdiLogo';
-export { Metrics } from './extra-icons/Metrics'
-export {  CotizationList } from './extra-icons/CotizationList'
-export {  Profile } from './extra-icons/Profile'
 
+// Icons Folder ( para las carpetas)
 export { RolledCarpetLarge } from './icons-Folder/RolledCarpetLarge'
 export { CarpetLarge } from './icons-Folder/CarpetLarge'
 export { CurtainLarge } from './icons-Folder/CurtainLarge'
@@ -22,6 +20,8 @@ export { TowelLarge } from './icons-Folder/TowelLarge'
 export { BagHeader } from './icons-Folder/BagHeader'
 export { Lupe } from './icons-Folder/Lupe'
 
+//Icons Small
+
 export { Sofa } from './icons-Small/Sofa'
 export { RolledCarpet } from './icons-Small/RolledCarpet'
 export { Carpet } from './icons-Small/Carpet'
@@ -30,7 +30,6 @@ export { Portrait } from './icons-Small/Portrait'
 export { EmptyBox } from './icons-Small/EmptyBox'
 export { ChekedBox } from './icons-Small/ChekedBox'
 export { Bricks } from './icons-Small/Bricks'
-
 export { SearchIcon } from './icons-Small/SearchIcon'
 export { Bag } from './icons-Small/Bag'
 export { Person } from './icons-Small/Person'
@@ -38,7 +37,6 @@ export { ShareIcon } from './icons-Small/ShareIcon'
 export { Purse } from './icons-Small/Purse'
 export { FilterIcon } from './icons-Small/FilterIcon'
 export { PlusIcon } from './icons-Small/PlusIcon'
-
 export { Mail } from './icons-Small/Mail'
 export { Heart } from './icons-Small/Heart'
 export { LeftArrow } from './icons-Small/LeftArrow'
@@ -46,7 +44,6 @@ export { RightArrow } from './icons-Small/RightArrow'
 export { Suitcase } from './icons-Small/Suitcase'
 export { TrashCan } from './icons-Small/TrashCan'
 export { MinusIcon } from './icons-Small/MinusIcon'
-
 export { FacebookIcon } from './icons-Small/FacebookIcon'
 export { TwitterIcon } from './icons-Small/TwitterIcon'
 export { InstagramIcon } from './icons-Small/InstagramIcon'
@@ -57,6 +54,8 @@ export { ArrowForward} from './icons-Small/ArrowForward'
 export { ArrowUp } from './icons-Small/ArrowUp'
 export { ArrowDown } from './icons-Small/ArrowDown'
 export { Close } from './icons-Small/Close'
+
+//Extra Icons
 
 export { AddIconBlack } from './extra-icons/AddIconBlack'
 export { AddIconWhite } from './extra-icons/AddIconWhite'
@@ -75,3 +74,6 @@ export { Galery } from './extra-icons/Galery'
 export { Upload } from './extra-icons/Upload'
 export { SignOut } from './extra-icons/SignOut'
 export { Download } from './extra-icons/Download'
+export { Metrics } from './extra-icons/Metrics'
+export {  CotizationList } from './extra-icons/CotizationList'
+export {  Profile } from './extra-icons/Profile'

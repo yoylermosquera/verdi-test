@@ -61,6 +61,7 @@ module.exports = {
       },        
       backgroundImage: {
         'auth-hero': 'url("../assets/images/EstudioTextil.Tapetesencobre.Tapetesenfibrasnaturales.png")',
+        'folder-bg': 'url("../assets/images/folderTypeBackground.png")',
       },
       gridTemplateColumns: {
         'header': '2fr 1fr 2fr',

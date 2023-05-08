@@ -25,6 +25,7 @@ function FolderPage({
   
   return (
    <section className='w-full h-full'>
+    {/* Mobile */}
     <section className='w-full h-full pt-4 px-4 flex flex-row justify-between lg:hidden'>
       <section className='flex flex-col gap-6 w-full px-2'>
         <FolderTypeContainer description='NUEVA CARPETA' folderIconName='CarpetLarge' className=' mx-auto'/>

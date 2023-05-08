@@ -23,7 +23,7 @@ export const BaseLayout = ({ title, children }: Props) => {
         </div>
       )}
 {/* Le puse el mt-[4.5rem] lg:mt-[7.5rem] para que el contenido de la página no se sobreponga en el Header. */}
-      <div className="z-10 pb-24 lg:pb-0 grow flex flex-col mt-[4.5rem] lg:mt-[7.5rem]">{children}</div>
+      <div className="z-10 pb-24 lg:pb-0 grow flex flex-col mt-[4.5rem] lg:mt-[7.5rem]  ">{children}</div>
     </div>
   );
 };
