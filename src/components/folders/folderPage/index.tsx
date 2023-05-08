@@ -3,6 +3,15 @@ import Image from 'next/image';
 import React from 'react';
 import Icon from '../../icon';
 import FolderTypeContainer from '../folderTypeContainer';
+import ProductCard from '@/components/productCard';
+import productSample from '@/assets/images/examples/productSample.png';
+
+const mockData = Array.from({ length: 20 }).map((_, i) => ({
+  id: `${i + 1}`,
+  title: `Tapete Heritage - ${i + 1}`,
+  description: 'Crin de caballo tejido',
+  img: productSample,
+}));
 
 interface FolderPageProps {
 // description: string;
@@ -13,33 +22,46 @@ function FolderPage({
 // description,
 }: FolderPageProps
 ) {
-  const matches = useMediaQuery('(min-width: 768px)');
   
   return (
-    <section className=' w-full h-full pt-4 px-4 border'>
-        <section className=' grid gap-6 grid-cols-2 grid-rows-4'>
-            <FolderTypeContainer description='NUEVA CARPETA' />
-
-        </section>
+   <section className='w-full h-full'>
+    <section className='w-full h-full pt-4 px-4 flex flex-row justify-between lg:hidden'>
+      <section className='flex flex-col gap-6 w-full px-2'>
+        <FolderTypeContainer description='NUEVA CARPETA' folderIconName='CarpetLarge' className=' mx-auto'/>
+        {
+          mockData.map((product, index) =>{
+            if (index % 2 === 0) return null
+            return <ProductCard {...product}/>
+          })
+        }
+      </section>
+      <section className='flex flex-col gap-6 w-full px-2  '>
+        {
+          mockData.map((product, index) =>{
+            if (index % 2 != 0) return null
+            return <ProductCard {...product}/>
+          })
+        }
+      </section>
     </section>
-    // <article
-    //   className={`h-56 lg:h-[20.75rem] lg:max-h-[500px] w-full flex flex-col`}
-    // >
-    //   <section className="h-3/5 lg:h-4/5 relative">
-    //     <Image
-    //       className="w-full h-full object-fill"
-    //       src={img}
-    //       alt={title}
-    //     />
-    //     <div className="bg-blend-multiply bg-black30 w-6 h-6 absolute bottom-1 right-1  flex justify-center items-center ">
-    //       <Icon iconName="Heart" color="white" size={iconSize} />
-    //     </div>
-    //   </section>
-    //   <section className=" h-2/5 lg:h-1/5 pt-5">
-    //     <h2 className="text-input font-normal mb-4">{title}</h2>
-    //     <p className="text-input">{description}</p>
-    //   </section>
-    // </article>
+    
+    {/* Desktop */}
+    <section className=' hidden w-full h-full px-[11.25rem] pt-6 lg:flex lg:flex-col gap-4 pb-[8.625rem] '>
+      <FolderTypeContainer description='NUEVA CARPETA' folderIconName='CarpetLarge'/>
+      <section>
+        FILTER BOX HERE PLEASE!!! jeje
+      </section>
+      <section className=' grid grid-cols-4 gap-10  '>
+        {
+          mockData.map((product) => (
+            <ProductCard
+              {...product}
+            />
+          ))
+        }
+      </section>
+    </section>
+   </section>
   );
 }
 

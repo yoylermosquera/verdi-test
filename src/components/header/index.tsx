@@ -98,7 +98,8 @@ function Header() {
     });
 
   return (
-    <header className={`h-h_sm w-full flex justify-center bg-beige-light items-center lg:h-h_lg `}>
+    // en el header, al final puse el "fixed" para que su contenido permanezca fijo cuando se deslize en la página y el header no desaparezca.
+    <header className={`h-h_sm w-full flex justify-center bg-beige-light items-center lg:h-h_lg fixed`}>
       <nav className="max-w-lg-wrapper px-4 lg:px-o w-full">
         <section className="grid grid-cols-header">
           {/* items left  */}

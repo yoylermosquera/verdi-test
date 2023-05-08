@@ -5,6 +5,7 @@ interface SectionSliderProps {
   sectionTitle: string;
   products: {
     id: string;
+    // Corregir el "any" dentro de img. By:Dennis
     img: any;
     title: string;
     description: string;

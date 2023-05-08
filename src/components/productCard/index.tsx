@@ -6,7 +6,8 @@ import Icon from '../icon';
 
 interface ProductCardProps {
   id: string;
-  img: string;
+  // img no debería ser string. Revisar eso... Se procede a cambiar a "any" 
+  img: any;
   title: string;
   description: string;
 }
@@ -14,6 +15,7 @@ interface ProductCardProps {
 
 function ProductCard({
   img,
+  id,
   title,
   description,
 }: ProductCardProps) {
@@ -22,7 +24,8 @@ function ProductCard({
 
   return (
     <article
-      className={`h-56 lg:h-[20.75rem] lg:max-h-[500px] w-full flex flex-col`}
+      className={`max-h-[16.65rem] h-56 lg:h-[20.75rem] lg:max-h-[500px] w-full flex flex-col`}
+      key={id}
     >
       <section className="h-3/5 lg:h-4/5 relative">
         <Image
