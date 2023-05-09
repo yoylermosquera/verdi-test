@@ -9,6 +9,7 @@ const  FoldersPage: NextPageWithLayout = () => {
   return (
     <div className='h-full flex flex-col grow lg:flex-row lg:justify-center'>
       <QuitationContainer 
+      quotationType='recibida'
       productName='Tapetes Hotel Neura'
       dateQuoteCreated='02/04/21'
       cotizationNumber='1234'
@@ -20,8 +21,6 @@ const  FoldersPage: NextPageWithLayout = () => {
       productCost='1,000,000'
       />
       {/* <FolderPage /> */}
-      
-      
       
     </div>
   )
