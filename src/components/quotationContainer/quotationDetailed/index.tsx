@@ -1,34 +1,33 @@
 import React from 'react';
 
 interface FolderTypeContainerProps {
-quotationType?: string;
-productName?: string;
-dateQuoteCreated?: string;
-cotizationNumber?: string;
-dateQuoteAccepted?: string;
-productType?: string;
-productDescription?: string;
-userType?: string;
-userName?: string;
-className?: string;
-productCost?: string;
+  quotationType?: string;
+  productName?: string;
+  dateQuoteCreated?: string;
+  quotationNumber?: string;
+  dateQuoteAccepted?: string;
+  productType?: string;
+  productDescription?: string;
+  userType?: string;
+  userName?: string;
+  className?: string;
+  productCost?: string;
  }
 
-function QuitationContainer({
-quotationType,
+function QuotationContainer({
+  quotationType,
 
-productName,
-cotizationNumber,
-dateQuoteCreated,
-dateQuoteAccepted,
-productType,
-productDescription,
-userType,
-userName,
-productCost,
+  productName,
+  quotationNumber,
+  dateQuoteCreated,
+  dateQuoteAccepted,
+  productType,
+  productDescription,
+  userType,
+  userName,
+  productCost,
 
-
-className,
+  className,
 }: FolderTypeContainerProps
 ) {
 
@@ -44,7 +43,7 @@ className,
 
           </section>
           <section className='flex flex-col items-end gap-1'>
-              {cotizationNumber && <h1 className='text-button__line bg-white text-center  max-w-[5rem] '>#{cotizationNumber}</h1>}                
+              {quotationNumber && <h1 className='text-button__line bg-white text-center  max-w-[5rem] '>#{quotationNumber}</h1>}                
               {quotationType==='recibida'? 
               <span className='text-paragraph mt-1'>Recibida {dateQuoteAccepted}</span> : 
               <span className='text-paragraph'>{dateQuoteAccepted}</span>}
@@ -62,6 +61,7 @@ className,
           {productDescription && <span className='text-paragraph text-justify'>{productDescription}</span>}
         </section>
 
+        {/* Esta seccion, de la línea 65 a la 69 variará en el tipo de solicitud, esto si el usuario es comercial o solicitante. */}
         <section className='flex flex-row justify-between'>
           {userType && <span className='text-title my-auto'> {userType}:</span>}
           {userName && <span className='text-title my-auto'>{userName}</span>}
@@ -109,13 +109,9 @@ className,
 
           </section>
         }
-
-        
-
-
       </section>
     </section>
   );
 }
 
-export default QuitationContainer;
+export default QuotationContainer;
