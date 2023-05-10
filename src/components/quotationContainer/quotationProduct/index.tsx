@@ -31,7 +31,7 @@ function QuotationProduct({
           alt={imgTitle}
         />
       </section>
-      <section className='w-3/5 h-full flex flex-col gap-2 lg:gap-4 border px-3 py-2'>
+      <section className='w-3/5 h-full flex flex-col gap-2 lg:gap-4  px-3 py-2'>
         <section className='flex flex-row '>
           <span className='text-title my-auto'>{productName} #{quotationNumber}</span>
         </section>

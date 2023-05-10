@@ -14,6 +14,8 @@ module.exports = {
       'gold': 'var(--gold)',
       'gold-dark': 'var(--gold-dark)',
       'need-changes': 'var(--need-changes)',
+      'green-accept': 'var(--green-accept)',
+      'red-cancel': 'var(--red-cancel)',
       'transparent': 'var(--transparent)',
       'black30': 'rgba(0, 0, 0, 0.3)'
     },

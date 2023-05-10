@@ -5,6 +5,7 @@ import FolderPage from '@/components/folders/folderPage';
 import QuotationContainer from '@/components/quotationContainer/quotationDetailed';
 import QuotationProduct from '@/components/quotationContainer/quotationProduct';
 import productSample from '@/assets/images/examples/productSample.png';
+import UserDetailsContainer from '@/components/userDetailsContainer';
 
 const  FoldersPage: NextPageWithLayout = () => {
 
@@ -23,12 +24,25 @@ const  FoldersPage: NextPageWithLayout = () => {
       productCost='1,000,000'
       /> */}
 
-      <QuotationProduct
+      {/* <QuotationProduct
         img={productSample}
         imgTitle='Tapete'
         productName='Tapete'
         quotationNumber='1234'
         productDescription='Tapete de fibras naturales y alambre chino'
+      /> */}
+
+      <UserDetailsContainer
+        userName='Dennis Herrera'
+        dateOfBirth='23 de Febrero de 1998'
+        city='Quito'
+        country='Ecuador'
+        adress='Calle falsa 123'
+        companyName='Hotel Neura'
+        companyUrl='www.hotelneura.com'
+        email='jZlKG@example.com'
+        methodOfknow='Voz a voz'
+        userType='Usuario Directo'
       />
 
       {/* <FolderPage /> */}
