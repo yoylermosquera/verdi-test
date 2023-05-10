@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { NextPageWithLayout } from '../_app';
 import { BaseLayout } from '../../components/layouts/BaseLayout';
 import FolderPage from '@/components/folders/folderPage';
@@ -7,10 +7,9 @@ import QuotationProduct from '@/components/quotationContainer/quotationProduct';
 import productSample from '@/assets/images/examples/productSample.png';
 import UserDetailsContainer from '@/components/userDetailsContainer';
 
-const  FoldersPage: NextPageWithLayout = () => {
-
+const FoldersPage: NextPageWithLayout = () => {
   return (
-    <div className='h-full flex flex-col grow lg:flex-row lg:justify-center'>
+    <div className="h-full flex flex-col lg:flex-row lg:justify-center">
       {/* <QuotationContainer 
       quotationType='recibida'
       productName='Tapetes Hotel Neura'
@@ -33,30 +32,25 @@ const  FoldersPage: NextPageWithLayout = () => {
       /> */}
 
       <UserDetailsContainer
-        userName='Dennis Herrera'
-        dateOfBirth='23 de Febrero de 1998'
-        city='Quito'
-        country='Ecuador'
-        adress='Calle falsa 123'
-        companyName='Hotel Neura'
-        companyUrl='www.hotelneura.com'
-        email='jZlKG@example.com'
-        methodOfknow='Voz a voz'
-        userType='Usuario Directo'
+        userName="Dennis Herrera"
+        dateOfBirth="23 de Febrero de 1998"
+        city="Quito"
+        country="Ecuador"
+        adress="Calle falsa 123"
+        companyName="Hotel Neura"
+        companyUrl="www.hotelneura.com"
+        email="jZlKG@example.com"
+        methodOfknow="Voz a voz"
+        userType="Usuario Directo"
       />
 
       {/* <FolderPage /> */}
-      
     </div>
-  )
-}
+  );
+};
 
 FoldersPage.getLayout = (page) => {
-  return (
-    <BaseLayout title='Perfil'>
-      {page}
-    </BaseLayout>
-  )
-}
+  return <BaseLayout title="Perfil">{page}</BaseLayout>;
+};
 
-export default FoldersPage
+export default FoldersPage;

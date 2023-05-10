@@ -40,6 +40,11 @@ module.exports = {
         lineHeight: '19px',
         letterSpacing: '0.07em',
       }],
+      'font_18': ['18px', {
+        fontWeight: 300,
+        lineHeight: '21px',
+        letterSpacing: '0.07em',
+      }],
       button: ['16px', {
         fontWeight: 400,
         lineHeight: '19px',
