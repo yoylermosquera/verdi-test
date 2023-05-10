@@ -51,7 +51,7 @@ const ProductPage: NextPageWithLayout<Props> = ({ product }) => {
         tags={tags}
         iconSize={iconSize}
       />
-
+      HELLO WORLD!!!
       {/* Tags */}
       <ListTags tags={tags} className='lg:hidden' classNameTitle='mx-5' classNameTags='px-5'/>
 
