@@ -32,7 +32,7 @@ export const CharacteristicsProduct = ({
         <div key={id} className="flex flex-col gap-4">
           <div className="flex gap-7 justify-between items-center">
             <h1>{type}</h1>
-            <h1 className='overflow-ellipsis overflow-hidden'>{name}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+            <h1 className='overflow-ellipsis overflow-hidden'>{name}</h1>
           </div>
 
           <div className="border border-gold opacity-30" />

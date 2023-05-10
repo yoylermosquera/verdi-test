@@ -83,7 +83,7 @@ const ProductPage: NextPageWithLayout<Props> = ({ product }) => {
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
   const { data } = await getProducts();
-  const products = data.data;
+  const products = data?.data?.rows;
 
   return {
     paths: products.map(({ key }) => ({

@@ -20,3 +20,8 @@ export interface IProduct {
   material:        IMaterial;
   characteristics: Characteristic[];
 }
+
+export interface IProducts {
+  count:           number;
+  rows:            IProduct[];
+}
