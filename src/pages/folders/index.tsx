@@ -6,6 +6,8 @@ import QuotationContainer from '@/components/quotationContainer/quotationDetaile
 import QuotationProduct from '@/components/quotationContainer/quotationProduct';
 import productSample from '@/assets/images/examples/productSample.png';
 import UserDetailsContainer from '@/components/userDetailsContainer';
+import FolderCard from '@/components/folderCard';
+import ProductCard from '@/components/productCard';
 
 const FoldersPage: NextPageWithLayout = () => {
   return (
@@ -15,7 +17,7 @@ const FoldersPage: NextPageWithLayout = () => {
       productName='Tapetes Hotel Neura'
       dateQuoteCreated='02/04/21'
       quotationNumber='1234'
-      dateQuoteAccepted='02/04/21'
+      dateQuoteAccepted='02/0/21'
       productType='Tapete'
       productDescription={'Tapete tejido con lana de alpaca y bordados de metales finos con acabados en materiales naturales'}
       userType='Comercial'
@@ -31,7 +33,7 @@ const FoldersPage: NextPageWithLayout = () => {
         productDescription='Tapete de fibras naturales y alambre chino'
       /> */}
 
-      <UserDetailsContainer
+      {/* <UserDetailsContainer
         userName="Dennis Herrera"
         dateOfBirth="23 de Febrero de 1998"
         city="Quito"
@@ -42,7 +44,24 @@ const FoldersPage: NextPageWithLayout = () => {
         email="jZlKG@example.com"
         methodOfknow="Voz a voz"
         userType="Usuario Directo"
-      />
+      /> */}
+
+      <section className='w-[155px] lg:w-[257px]'>
+        <FolderCard
+          img1={productSample}
+          img2={productSample}
+          img3={productSample}
+          title1='Tapete'
+          title2='Tapete'
+          title3='Tapete'
+          folderTitle='Todos mis favoritos'
+          productsAmmount='20'
+        /> 
+      </section>
+      
+  
+       
+      
 
       {/* <FolderPage /> */}
     </div>
