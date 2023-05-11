@@ -46,13 +46,8 @@ pipeline {
                             cd ${project_path}
                             sudo docker-compose pull
                             sudo docker-compose up -d
-                        "
-                    '''
-
-                    sh 'sleep 5'
-
-                    sh '''
-                        ssh ${user_ip} "
+                            cd
+                            sleep 5
                             bash cleanImages.sh '${project_name}'
                         "
                     '''
