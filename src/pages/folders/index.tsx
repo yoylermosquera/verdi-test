@@ -2,6 +2,7 @@ import React from 'react';
 import { NextPageWithLayout } from '../_app';
 import { BaseLayout } from '../../components/layouts/BaseLayout';
 import FolderPage from '@/components/folders/folderPage';
+import ProductsPage from '@/components/folders/productsPage';
 import QuotationContainer from '@/components/quotationContainer/quotationDetailed';
 import QuotationProduct from '@/components/quotationContainer/quotationProduct';
 import productSample from '@/assets/images/examples/productSample.png';
@@ -46,7 +47,7 @@ const FoldersPage: NextPageWithLayout = () => {
         userType="Usuario Directo"
       /> */}
 
-      <section className='w-[155px] lg:w-[257px]'>
+      {/* <section className='w-[155px] lg:w-[257px]'>
         <FolderCard
           img1={productSample}
           img2={productSample}
@@ -58,12 +59,9 @@ const FoldersPage: NextPageWithLayout = () => {
           productsAmmount='20'
         /> 
       </section>
-      
-  
-       
-      
+       */}
 
-      {/* <FolderPage /> */}
+      <FolderPage />
     </div>
   );
 };
