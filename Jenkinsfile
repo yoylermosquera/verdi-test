@@ -57,7 +57,7 @@ pipeline {
 
     post {
         always {
-            sh 'cd ~ && bash cleanImages.sh'
+            sh 'cd ~ && bash cleanImages.sh \'${project_name}\''
         }
     }
 }
