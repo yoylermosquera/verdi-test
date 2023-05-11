@@ -25,6 +25,7 @@ pipeline {
         //         sh 'yarn test'
         //     }
         // }
+
         stage('Build Image') {
             steps {
                 script {
