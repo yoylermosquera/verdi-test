@@ -25,7 +25,7 @@ pipeline {
         //         sh 'yarn test'
         //     }
         // }
-        
+
         stage('Build Image') {
             steps {
                 script {
@@ -43,11 +43,11 @@ pipeline {
                 sshagent(['key-0d6fd19ee66cd2a5c']) {
                     sh '''
                         ssh ${user_ip} "
-                            cd \'${project_path}\'
+                            cd ${project_path}
                             sudo docker-compose pull
                             sudo docker-compose up -d
                             cd
-                            bash cleanImages.sh \'${project_name}\'
+                            bash cleanImages.sh '${project_name}'
                         "
                     '''
                 }
@@ -57,7 +57,7 @@ pipeline {
 
     post {
         always {
-            sh 'cd ~ && bash cleanImages.sh \'${project_name}\''
+            sh 'cd ~ && bash cleanImages.sh ${project_name}'
         }
     }
 }
