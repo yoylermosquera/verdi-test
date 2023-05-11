@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     parameters {
+        string(name:'project_name', defaultValue:'verdi', description:'Project name')
         string(name:'project_path', defaultValue:'/var/www/apis/verdi_front', description:'Project path')
         string(name:'user_ip', defaultValue:'ubuntu@3.138.205.220', description:'User and ip of the remote server')
     }
@@ -39,10 +40,23 @@ pipeline {
         stage('Deploy') {
             steps {
                 sshagent(['key-0d6fd19ee66cd2a5c']) {
-                    sh 'ssh ${user_ip} sudo docker-compose -f ${project_path}/docker-compose.yml pull'
-                    sh 'ssh ${user_ip} sudo docker-compose -f ${project_path}/docker-compose.yml up -d'
+                    sh '''
+                        ssh ${user_ip} "
+                            cd \'${project_path}\'
+                            sudo docker-compose pull
+                            sudo docker-compose up -d
+                            cd
+                            bash cleanImages.sh \'${project_name}\'
+                        "
+                    '''
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            sh 'cd ~ && bash cleanImages.sh'
         }
     }
 }
