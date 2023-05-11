@@ -1,8 +1,8 @@
 import React from 'react';
 import { NextPageWithLayout } from './_app';
 
-import { BaseLayout } from '@/components/layouts';
 import SectionSlider from '@/components/sectionSlider';
+import { BaseLayout } from '@/components/layouts';
 import HeroSwiper from '@/components/swiper';
 
 import productSample from '@/assets/images/examples/productSample.png';
