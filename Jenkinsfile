@@ -47,6 +47,7 @@ pipeline {
                             sudo docker-compose pull
                             sudo docker-compose up -d
                             cd
+                            sleep 5
                             bash cleanImages.sh '${project_name}'
                         "
                     '''
@@ -57,7 +58,7 @@ pipeline {
 
     post {
         always {
-            sh 'cd ~ && bash cleanImages.sh ${project_name}'
+            sh 'cd ~ && sleep 5 && bash cleanImages.sh ${project_name}'
         }
     }
 }
