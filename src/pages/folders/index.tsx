@@ -61,7 +61,9 @@ const FoldersPage: NextPageWithLayout = () => {
       </section>
        */}
 
-      <FolderPage />
+      {/* <FolderPage /> */}
+      
+      <ProductsPage   />
     </div>
   );
 };

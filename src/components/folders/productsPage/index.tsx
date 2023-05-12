@@ -5,6 +5,7 @@ import Icon from '../../icon';
 import { Colors } from '@/styles/config/base';
 import FolderCard from '@/components/folderCard';
 import productSample from '@/assets/images/examples/productSample.png';
+import ReturnContainer from '@/components/returnContainer';
 
 const mockData = Array.from({ length: 20 }).map((_, i) => ({
   id: `${i + 1}`,
@@ -31,15 +32,12 @@ function ProductsPage({
 const matches = useMediaQuery('(min-width: 768px)');
 const iconSize = matches ? 17 : 24;
   return (
-   <section className='w-full h-full px-4 pt-7 lg:pt-12'>
-     <div className='border flex flex-col gap-5'>
-        <section className=' flex flex-row'>
-          <Icon iconName='LeftArrow' size={iconSize} color={Colors.blackVerdi} className='justify-start'/>
-
-        </section>
-     </div>
+   <section className='w-full h-full  px-4 pt-7 lg:pt-12'>
+        <ReturnContainer
+          title='Mis favoritos'
+        />
+     
    </section>
   );
 }
-
 export default ProductsPage;
