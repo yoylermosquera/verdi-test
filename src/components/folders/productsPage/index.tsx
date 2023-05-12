@@ -2,6 +2,7 @@ import React from 'react';
 import FolderCard from '@/components/folderCard';
 import productSample from '@/assets/images/examples/productSample.png';
 import ReturnContainer from '@/components/returnContainer';
+import Icon from '@/components/icon';
 
 const mockData = Array.from({ length: 20 }).map((_, i) => ({
   id: `${i + 1}`,
@@ -30,7 +31,9 @@ FolderPageProps) {
             <FolderCard {...product} />
           ))}
         </section>
+
       </section>
+
     </section>
   );
 }
