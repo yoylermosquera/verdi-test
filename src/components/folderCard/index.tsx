@@ -17,10 +17,10 @@ interface ProductCardProps {
 }
 
 function FolderCard({
+  id,
   img1,
   img2,
   img3,
-  id,
   title1,
   title2,
   title3,
