@@ -22,7 +22,7 @@ function QuotationProduct({
 }: FolderTypeContainerProps) {
   return (
     <section
-      className={`w-[20.5rem] h-[9.25rem] lg:w-[21.75rem] flex flex-row border-2 border-beige ${className}`}
+      className={`w-full max-w-[30rem] h-[9.25rem] lg:w-[21.75rem] flex flex-row border-2 border-beige ${className}`}
     >
       <section className="w-2/5 h-full">
         <Image className="w-full h-full object-fill" src={img} alt={imgTitle} />
