@@ -14,7 +14,6 @@ const mockData = Array.from({ length: 20 }).map((_, i) => ({
   title3: `Tapete Heritage - ${i + 1}`,
   folderTitle: 'Todos mis favoritos',
   productsAmmount: '20',
-  
 }));
 
 interface FolderPageProps {

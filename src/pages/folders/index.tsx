@@ -10,6 +10,7 @@ import UserDetailsContainer from '@/components/userDetailsContainer';
 import FolderCard from '@/components/folderCard';
 import ProductCard from '@/components/productCard';
 import QuotationPage from '@/components/quotationContainer/quotationPage';
+import QuotationType from '@/components/quotationType';
 
 const FoldersPage: NextPageWithLayout = () => {
   return (
@@ -64,9 +65,11 @@ const FoldersPage: NextPageWithLayout = () => {
 
       {/* <FolderPage /> */}
       
-      <ProductsPage   />
+      <ProductsPage/>
       
       {/* <QuotationPage /> */}
+
+      {/* <QuotationType/> */}
 
     </div>
   );
