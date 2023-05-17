@@ -23,13 +23,13 @@ FolderPageProps) {
     <section className="w-full h-full lg:flex lg:flex-row lg:justify-center ">
       <section className=" w-full  flex flex-col  px-2 lg-w-[65.75rem] lg:max-w-[75rem]">
         <ReturnContainer title="Cotizaciones" className="my-7 lg:my-12 align-items-left" />
-        <section className="w-full h-full px-4 grid grid-cols-1 items-center justify-items-center lg:grid lg:grid-cols-3  ">
+        <section className="w-full h-full px-4 grid grid-cols-1 items-center justify-items-center gap-4 lg:grid lg:grid-cols-3  ">
           {mockData.map((product) => (
             <QuotationProduct {...product} />
           ))}
         </section>
         <div className='w-full mt-6 mb-2'>
-        <Button className='mx-auto' size='full'>Enviar</Button>
+        <Button className='mx-auto' size='large'>Enviar</Button>
         </div>
       </section>
     </section>

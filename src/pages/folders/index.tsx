@@ -13,6 +13,7 @@ import QuotationPage from '@/components/quotationContainer/quotationPage';
 import QuotationType from '@/components/quotationType';
 import QuotationDetailedPage from '@/components/quotationContainer/quotationDetailedPage';
 
+
 const FoldersPage: NextPageWithLayout = () => {
   return (
     <div className="h-full flex flex-col lg:flex-row lg:justify-center">
@@ -66,13 +67,15 @@ const FoldersPage: NextPageWithLayout = () => {
 
       {/* <FolderPage /> */}
       
-      {/* <ProductsPage/> */}
+      <ProductsPage/>
       
       {/* <QuotationPage /> */}
 
       {/* <QuotationType/> */}
 
-      <QuotationDetailedPage/>
+      {/* <QuotationDetailedPage/> */}
+
+     
 
     </div>
   );
