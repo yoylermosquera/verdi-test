@@ -13,7 +13,7 @@ export interface Categorie {
     key:         string;
     createdAt:   string;
     updatedAt:   string;
-    deletedAt:   null;
+    deletedAt:   null | string;
     collections?: Collection[];
     filters:     CategoryFilter[];
 }

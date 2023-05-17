@@ -1,5 +1,7 @@
 import React from 'react';
 import ProductsCarusel from '../swiper/ProductsCarusel';
+// Import Swiper styles
+import 'swiper/swiper-bundle.min.css';
 
 interface SectionSliderProps {
   sectionTitle: string;

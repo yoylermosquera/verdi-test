@@ -5,6 +5,8 @@ import Icon from '../../icon';
 import FolderTypeContainer from '../folderTypeContainer';
 import ProductCard from '@/components/productCard';
 import productSample from '@/assets/images/examples/productSample.png';
+import Select from '@/components/select';
+import { Colors } from '../../../styles/config/base';
 
 const mockData = Array.from({ length: 20 }).map((_, i) => ({
   id: `${i + 1}`,
@@ -32,7 +34,7 @@ function FolderPage({
         {
           mockData.map((product, index) =>{
             if (index % 2 === 0) return null
-            return <ProductCard {...product}/>
+            return <ProductCard key={index} {...product}/>
           })
         }
       </section>
@@ -40,7 +42,7 @@ function FolderPage({
         {
           mockData.map((product, index) =>{
             if (index % 2 != 0) return null
-            return <ProductCard {...product}/>
+            return <ProductCard key={index} {...product}/>
           })
         }
       </section>
@@ -50,12 +52,32 @@ function FolderPage({
     <section className=' hidden w-full h-full px-[11.25rem] pt-6 lg:flex lg:flex-col gap-4 pb-[8.625rem] '>
       <FolderTypeContainer description='NUEVA CARPETA' folderIconName='CarpetLarge'/>
       <section>
-        FILTER BOX HERE PLEASE!!! jeje
+        <div
+          style={{
+            height: 65,
+          }}
+        >
+        <Select
+          className='h-full'
+          isMulti
+          height={65}
+          bgColorControl={Colors.beigeLight}
+          showBottomBorder={false}
+          options={[
+            { value: '1', label: '1' },
+            { value: '2', label: '2' },
+            { value: '3', label: '3' },
+          ]}
+        />
+        </div>
+    
+    
       </section>
       <section className=' grid grid-cols-4 gap-10  '>
         {
-          mockData.map((product) => (
+          mockData.map((product, index) => (
             <ProductCard
+              key={index}
               {...product}
             />
           ))

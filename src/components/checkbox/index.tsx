@@ -23,7 +23,7 @@ function CheckBox(props: CheckBoxProps) {
       className={`checkbox__wrapper ${colorClass} flex items-center gap-2.5 ${containerClassName}`}
     >
       <input
-        className={`${styles.checkbox__container} ${colorClass} flex justify-center items-center  w-3 h-3 border border-${color} ${className}`}
+        className={`${styles.checkbox__container} ${colorClass} flex justify-center items-center  w-4 h-4 border-2 border-${color} ${className}`}
         type="checkbox"
         {...restProps}
       />

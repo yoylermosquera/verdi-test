@@ -10,8 +10,8 @@ const  FoldersPage: NextPageWithLayout = () => {
   return (
     <div className='h-full flex flex-col grow lg:flex-row lg:justify-center'>
       {/* <QuitationContainer/> */}
-      {/* <FolderPage /> */}
-      <NoProductsContainer/>
+      <FolderPage />
+      {/* <NoProductsContainer/> */}
       {/* <FoldersContainer/> */}
       
       

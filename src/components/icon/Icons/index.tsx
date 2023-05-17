@@ -3,6 +3,7 @@
 // Icons Folder ( para las carpetas)
 export { RolledCarpetLarge } from './icons-Folder/RolledCarpetLarge'
 export { CarpetLarge } from './icons-Folder/CarpetLarge'
+export { RugsCarpet } from './icons-Folder/Rugs'
 export { CurtainLarge } from './icons-Folder/CurtainLarge'
 export { RolledCurtainLarge } from './icons-Folder/RolledCurtainLarge'
 export { ClothLarge } from './icons-Folder/ClothLarge'

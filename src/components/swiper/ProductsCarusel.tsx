@@ -1,7 +1,6 @@
-import React, { useId } from 'react';
+import React from 'react';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
 
 import useMediaQuery from '@/hooks/useMediaQuery';
 import Icon from '../icon';
