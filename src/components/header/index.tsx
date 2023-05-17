@@ -34,7 +34,7 @@ const LinksHeaderIntermediary: ListIconsHeader = {
   rigth: [
     {
       text: 'FAVORITOS',
-      link: '',
+      link: '/folders',
       iconName: 'Heart',
     },
     {

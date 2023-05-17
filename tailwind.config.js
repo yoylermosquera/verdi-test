@@ -14,6 +14,8 @@ module.exports = {
       'gold': 'var(--gold)',
       'gold-dark': 'var(--gold-dark)',
       'need-changes': 'var(--need-changes)',
+      'green-accept': 'var(--green-accept)',
+      'red-cancel': 'var(--red-cancel)',
       'transparent': 'var(--transparent)',
       'black30': 'rgba(0, 0, 0, 0.3)'
     },
@@ -36,6 +38,16 @@ module.exports = {
       'button__line': ['16px', {
         fontWeight: 400,
         lineHeight: '19px',
+        letterSpacing: '0.07em',
+      }],
+      'font_18': ['18px', {
+        fontWeight: 300,
+        lineHeight: '21px',
+        letterSpacing: '0.07em',
+      }],
+      'font_10': ['10px', {
+        fontWeight: 400,
+        lineHeight: '15px',
         letterSpacing: '0.07em',
       }],
       button: ['16px', {

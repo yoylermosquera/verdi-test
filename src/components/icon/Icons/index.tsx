@@ -55,6 +55,7 @@ export { ArrowForward} from './icons-Small/ArrowForward'
 export { ArrowUp } from './icons-Small/ArrowUp'
 export { ArrowDown } from './icons-Small/ArrowDown'
 export { Close } from './icons-Small/Close'
+export { ArrowBackward } from './icons-Small/ArrowBackward'
 
 //Extra Icons
 
@@ -78,3 +79,4 @@ export { Download } from './extra-icons/Download'
 export { Metrics } from './extra-icons/Metrics'
 export {  CotizationList } from './extra-icons/CotizationList'
 export {  Profile } from './extra-icons/Profile'
+export { ThreeDots } from './extra-icons/ThreeDots'
