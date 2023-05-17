@@ -33,17 +33,16 @@ function QuotationContainer({
 
   return (
     <section className={`w-full lg:w-[21.75rem] flex flex-col ${className}`} >
-      <section className='bg-beige border h-[4.5rem] w-full flex flex-row justify-between px-4 py-4'>
-          <section className='flex flex-col gap-1'>
+      <section className='bg-beige border h-[4.5rem] w-full flex flex-col gap-1 px-4 py-4'>
+          <section className='flex flex-row justify-between'>
               {productName && <h1 className='text-button__line '>{productName}</h1>}
-              
-              {quotationType==='recibida'? 
+              {quotationNumber && <h1 className='text-button__line bg-white text-center  max-w-[5rem] '>#{quotationNumber}</h1>}  
+          </section>
+          <section className='flex flex-row justify-between'>
+          {quotationType==='recibida'? 
               <span className='text-paragraph mt-1'>Solcitud {dateQuoteCreated}</span> : 
               <span className='text-paragraph'>{dateQuoteCreated}</span>}
-
-          </section>
-          <section className='flex flex-col items-end gap-1'>
-              {quotationNumber && <h1 className='text-button__line bg-white text-center  max-w-[5rem] '>#{quotationNumber}</h1>}                
+                            
               {quotationType==='recibida'? 
               <span className='text-paragraph mt-1'>Recibida {dateQuoteAccepted}</span> : 
               <span className='text-paragraph'>{dateQuoteAccepted}</span>}
