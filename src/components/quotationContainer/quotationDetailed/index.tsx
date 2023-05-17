@@ -32,7 +32,7 @@ function QuotationContainer({
 ) {
 
   return (
-    <section className={`w-[21.2rem] lg:w-[21.75rem] flex flex-col ${className}`} >
+    <section className={`w-full lg:w-[21.75rem] flex flex-col ${className}`} >
       <section className='bg-beige border h-[4.5rem] w-full flex flex-row justify-between px-4 py-4'>
           <section className='flex flex-col gap-1'>
               {productName && <h1 className='text-button__line '>{productName}</h1>}
