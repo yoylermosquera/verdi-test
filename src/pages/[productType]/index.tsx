@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NextPageWithLayout } from '../_app';
 import { BaseLayout } from '../../components/layouts/BaseLayout';
 import { useRouter } from 'next/router';
-import FolderTypeHero from '@/components/folders/folderTypeContainer';
+import FolderTypeHero from '@/components/folders/folderTypeHero';
 import CategorySection from '@/components/sidebar/CategorySections';
 import useAppContext from '@/hooks/useAppContext';
 import { getAllFiltersByCategory } from '../../util/getAllFiltersByCategory';

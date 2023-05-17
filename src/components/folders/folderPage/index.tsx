@@ -1,95 +1,38 @@
-import useMediaQuery from '@/hooks/useMediaQuery';
-import Image from 'next/image';
 import React from 'react';
-import Icon from '../../icon';
-import FolderTypeHero from '../folderTypeContainer';
-import ProductCard from '@/components/productCard';
+import FolderCard from '@/components/folderCard';
 import productSample from '@/assets/images/examples/productSample.png';
-import Select from '@/components/select';
-import { Colors } from '../../../styles/config/base';
+import ReturnContainer from '@/components/returnContainer';
+import Icon from '@/components/icon';
 
 const mockData = Array.from({ length: 20 }).map((_, i) => ({
   id: `${i + 1}`,
-  title: `Tapete Heritage - ${i + 1}`,
-  description: 'Crin de caballo tejido',
-  img: productSample,
+  img1: productSample,
+  img2: productSample,
+  img3: productSample,
+  title1: `Tapete Heritage - ${i + 1}`,
+  title2: `Tapete Heritage - ${i + 1}`,
+  title3: `Tapete Heritage - ${i + 1}`,
+  folderTitle: 'Todos mis favoritos',
+  productsAmmount: '20',
 }));
 
 interface FolderPageProps {
-// description: string;
- }
-
-
-function FolderPage({
-// description,
-}: FolderPageProps
-) {
-  
-  return (
-   <section className='w-full h-full'>
-    {/* Mobile */}
-    <section className='w-full h-full pt-4 px-4 flex flex-row justify-between lg:hidden'>
-      <section className='flex flex-col gap-6 w-full px-2'>
-        <FolderTypeHero description='NUEVA CARPETA' folderIconName='CarpetLarge' className=' mx-auto'/>
-        {
-          mockData.map((product, index) =>{
-            if (index % 2 === 0) return null
-            return <ProductCard key={index} {...product}/>
-          })
-        }
-      </section>
-      <section className='flex flex-col gap-6 w-full px-2  '>
-        {
-          mockData.map((product, index) =>{
-            if (index % 2 != 0) return null
-            return <ProductCard key={index} {...product}/>
-          })
-        }
-      </section>
-    </section>
-    
-    {/* Desktop */}
-    <section className=' hidden w-full h-full px-[11.25rem] pt-6 lg:flex lg:flex-col gap-4 pb-[8.625rem] '>
-      <FolderTypeHero description='NUEVA CARPETA' folderIconName='CarpetLarge'/>
-      <section>
-        <div
-          style={{
-            height: 65,
-          }}
-        >
-        <Select
-          className='h-full'
-          isMulti
-          height={65}
-          bgColorControl={Colors.beigeLight}
-          showBottomBorder={false}
-          options={[
-            { value: '1', label: '1' },
-            { value: '2', label: '2' },
-            { value: '3', label: '3' },
-          ]}
-        />
-        </div>
-    
-    
-      </section>
-      <section className=' grid grid-cols-4 gap-10  '>
-        {
-          mockData.map((product, index) => (
-            <ProductCard
-              key={index}
-              {...product}
-            />
-          ))
-        }
-      </section>
-    </section>
-   </section>
-  );
+  // description: string;
 }
 
+function FolderPage({}: // description,
+FolderPageProps) {
+  return (
+    <section className="w-full h-full lg:flex lg:flex-row lg:justify-center ">
+      <section className=" w-full px-4 lg-w-[65.75rem] lg:max-w-[75rem]">
+        <ReturnContainer title="Mis favoritos" className="my-7 lg:my-12 " />
+        <section className="w-full h-full px-4 grid grid-cols-2 gap-2 justify-between lg:grid-cols-4 lg:gap-8 ">
+          {mockData.map((product) => (
+            <FolderCard {...product} />
+          ))}
+        </section>
+      </section>
+    </section>
+  );
+}
 export default FolderPage;
-
-
-
-

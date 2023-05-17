@@ -1,8 +1,8 @@
 import React from 'react';
 import { NextPageWithLayout } from '../_app';
 import { BaseLayout } from '../../components/layouts/BaseLayout';
+import FolderProductsPage from '@/components/folders/folderProductsPage';
 import FolderPage from '@/components/folders/folderPage';
-import ProductsPage from '@/components/folders/productsPage';
 import QuotationContainer from '@/components/quotationContainer/quotationDetailed';
 import QuotationProduct from '@/components/quotationContainer/quotationProduct';
 import productSample from '@/assets/images/examples/productSample.png';
@@ -67,7 +67,7 @@ const FoldersPage: NextPageWithLayout = () => {
 
       {/* <FolderPage /> */}
       
-      <ProductsPage/>
+      <FolderProductsPage/>
       
       {/* <QuotationPage /> */}
 
@@ -75,7 +75,7 @@ const FoldersPage: NextPageWithLayout = () => {
 
       {/* <QuotationDetailedPage/> */}
 
-     
+    
 
     </div>
   );
