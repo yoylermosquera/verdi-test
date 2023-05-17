@@ -2,17 +2,17 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 import React from 'react';
 import Icon, { IconName } from '../../icon';
 
-interface FolderTypeContainerProps {
+interface FolderTypeHero {
   description: string;
   folderIconName: IconName;
   className?: string;
 }
 
-function FolderTypeContainer({
+function FolderTypeHero({
   description,
   folderIconName,
   className,
-}: FolderTypeContainerProps) {
+}: FolderTypeHero) {
   const matches = useMediaQuery('(min-width: 768px)');
   const iconSize = matches ? 50 : 70;
   return (
@@ -32,4 +32,4 @@ function FolderTypeContainer({
   );
 }
 
-export default FolderTypeContainer;
+export default FolderTypeHero;

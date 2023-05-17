@@ -3,7 +3,7 @@ import Icon from '@/components/icon';
 import { Colors } from '@/styles/config/base';
 import Image from 'next/image';
 
-interface FolderTypeContainerProps {
+interface FolderTypeHeroProps {
   img: any;
   imgTitle: string;
   productName?: string;
@@ -19,7 +19,7 @@ function QuotationProduct({
   productDescription,
   quotationNumber,
   className,
-}: FolderTypeContainerProps) {
+}: FolderTypeHeroProps) {
   return (
     <section
       className={`w-full max-w-[30rem] h-[9.25rem] lg:w-[21.75rem] flex flex-row border-2 border-beige ${className}`}

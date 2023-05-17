@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface FolderTypeContainerProps {
+interface FolderTypeHeroProps {
   quotationType?: string;
   productName?: string;
   dateQuoteCreated?: string;
@@ -28,7 +28,7 @@ function QuotationContainer({
   productCost,
 
   className,
-}: FolderTypeContainerProps
+}: FolderTypeHeroProps
 ) {
 
   return (

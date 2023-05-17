@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NextPageWithLayout } from '../_app';
 import { BaseLayout } from '../../components/layouts/BaseLayout';
 import { useRouter } from 'next/router';
-import FolderTypeContainer from '@/components/folders/folderTypeContainer';
+import FolderTypeHero from '@/components/folders/folderTypeContainer';
 import CategorySection from '@/components/sidebar/CategorySections';
 import useAppContext from '@/hooks/useAppContext';
 import { getAllFiltersByCategory } from '../../util/getAllFiltersByCategory';
@@ -37,7 +37,7 @@ const ProductFilterPage: NextPageWithLayout = () => {
     <div className="h-full flex flex-col grow items-center">
       <div className="w-full max-w-lg-wrapper">
         <div className="hidden lg:block lg:mt-6 lg:mb-4 ">
-          <FolderTypeContainer
+          <FolderTypeHero
             description="TAPETES"
             folderIconName="RugsCarpet"
           />

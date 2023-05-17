@@ -2,7 +2,7 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 import Image from 'next/image';
 import React from 'react';
 import Icon from '../../icon';
-import FolderTypeContainer from '../folderTypeContainer';
+import FolderTypeHero from '../folderTypeContainer';
 import ProductCard from '@/components/productCard';
 import productSample from '@/assets/images/examples/productSample.png';
 import Select from '@/components/select';
@@ -30,7 +30,7 @@ function FolderPage({
     {/* Mobile */}
     <section className='w-full h-full pt-4 px-4 flex flex-row justify-between lg:hidden'>
       <section className='flex flex-col gap-6 w-full px-2'>
-        <FolderTypeContainer description='NUEVA CARPETA' folderIconName='CarpetLarge' className=' mx-auto'/>
+        <FolderTypeHero description='NUEVA CARPETA' folderIconName='CarpetLarge' className=' mx-auto'/>
         {
           mockData.map((product, index) =>{
             if (index % 2 === 0) return null
@@ -50,7 +50,7 @@ function FolderPage({
     
     {/* Desktop */}
     <section className=' hidden w-full h-full px-[11.25rem] pt-6 lg:flex lg:flex-col gap-4 pb-[8.625rem] '>
-      <FolderTypeContainer description='NUEVA CARPETA' folderIconName='CarpetLarge'/>
+      <FolderTypeHero description='NUEVA CARPETA' folderIconName='CarpetLarge'/>
       <section>
         <div
           style={{

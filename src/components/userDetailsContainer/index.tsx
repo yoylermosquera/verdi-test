@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from '@/components/icon';
 import { Colors } from '@/styles/config/base';
 
-interface FolderTypeContainerProps {
+interface FolderTypeHeroProps {
   userName: string;
   dateOfBirth: string;
   city?: string;
@@ -30,7 +30,7 @@ function UserDetailsContainer({
   userType,
 
   className,
-}: FolderTypeContainerProps) {
+}: FolderTypeHeroProps) {
   const [showDetails, setShowDetails] = React.useState(false);
 
   return (
