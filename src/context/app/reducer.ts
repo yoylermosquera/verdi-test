@@ -3,7 +3,7 @@ import { Categorie } from '@/services/categories/getCateriesAndFilters';
 export type ActionType = {
   type: 'GET_ALL_CATEGORIES_AND_FILTERS';
   payload: Categorie[];
-};
+}
 
 type State = {
   categories?: Categorie[];

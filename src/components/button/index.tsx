@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '@/styles/components/button/styles.module.scss';
 
-type ButtonSizes = 'small' | 'medium' | 'full';
+type ButtonSizes = 'small' | 'medium' | 'full' | 'large';
 
 type ButtonVariant = 'primary' | 'white' | 'black';
 
@@ -17,6 +17,7 @@ type ObjectButtonSize = {
 const sizesWidth: ObjectButtonSize = {
     small: 'w-[90px] py-4 px-6',
     medium: 'w-[188px] py-4 px-16',
+    large: 'w-[328px] py-4 px-16',
     full: 'w-full py-4 px-21',
 }
 

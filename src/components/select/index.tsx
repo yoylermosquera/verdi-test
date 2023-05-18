@@ -5,10 +5,13 @@ import { Colors } from '@/styles/config/base';
 
 interface SelectProps extends Props {
   errorMsg?: string;
+  height?: number;
+  bgColorControl?: string;
+  showBottomBorder?: boolean;
 }
 
 export default function Select(props: SelectProps) {
-  const { className, errorMsg = '', ...restProps } = props;
+  const { className, errorMsg = '', height, bgColorControl, showBottomBorder = true, ...restProps } = props;
   return (
     <div className="w-full">
       <SelectComponent
@@ -16,10 +19,10 @@ export default function Select(props: SelectProps) {
         classNamePrefix={`select ${className}`}
         classNames={{
           container(props) {
-            return `w-full`;
+            return `w-full h-full`;
           },
           control(props) {
-            return `border-b-black-verdi`;
+            return `border-b-black-verdi h-full`;
           },
           placeholder(props) {
             return `uppercase text-input text-red-500`;
@@ -56,10 +59,12 @@ export default function Select(props: SelectProps) {
               ...base,
               border: 'none',
               borderRadius: 'none',
-              borderBottom: '1px solid',
+              borderBottom: showBottomBorder ? '1px solid' : '',
               minHeight: '24px',
               boxShadow: 'none',
               cursor: 'poiner',
+              backgroundColor: bgColorControl || base.backgroundColor,
+              height: height || base.height,
               ':hover': {
                 border: 'none',
                 borderBottom: '1px solid',

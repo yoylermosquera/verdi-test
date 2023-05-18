@@ -34,7 +34,7 @@ const LinksHeaderIntermediary: ListIconsHeader = {
   rigth: [
     {
       text: 'FAVORITOS',
-      link: '',
+      link: '/folders',
       iconName: 'Heart',
     },
     {
@@ -98,7 +98,8 @@ function Header() {
     });
 
   return (
-    <header className={`h-h_sm w-full flex justify-center bg-beige-light items-center lg:h-h_lg `}>
+    
+    <header className={`h-h_sm w-full flex justify-center bg-beige-light items-center lg:h-h_lg fixed z-50`}>
       <nav className="max-w-lg-wrapper px-4 lg:px-o w-full">
         <section className="grid grid-cols-header">
           {/* items left  */}

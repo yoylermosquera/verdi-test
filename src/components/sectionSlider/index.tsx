@@ -1,10 +1,13 @@
 import React from 'react';
 import ProductsCarusel from '../swiper/ProductsCarusel';
+// Import Swiper styles
+import 'swiper/swiper-bundle.min.css';
 
 interface SectionSliderProps {
   sectionTitle: string;
   products: {
     id: string;
+    // Corregir el "any" dentro de img. By:Dennis
     img: any;
     title: string;
     description: string;

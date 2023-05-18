@@ -12,6 +12,8 @@ export const Colors = {
     gold: '#B8B09D',
     goldDark: '#918B7C',
     needChanges: '#DB3500',
+    greenAccept: '#15BC80',
+    redCancel: '#DF3B58',
 }
 
 export const HEADER_HEIGHT_MOBILE = '4.5rem';
