@@ -13,6 +13,7 @@ function ReturnContainer({ title, className }: ReturnContainerProps) {
       className={`w-full h-6 flex flex-row justify-between lg:w-[17.5rem] lg:max-w-[31.25rem] ${className}`}
     > 
     <div className="hover:cursor-pointer"
+    // TODO implementar next router
     onClick={() => window.history.back()}>
     <Icon
         iconName="ArrowBackward"

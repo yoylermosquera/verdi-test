@@ -34,7 +34,7 @@ function ProductCard({
           src={img}
           alt={title}
         />
-        <div className="bg-blend-multiply bg-black30 w-6 h-6 absolute bottom-1 right-1  flex justify-center items-center ">
+        <div className="bg-blend-multiply bg-black30 w-6 h-6 absolute bottom-1 right-1 cursor-pointer flex justify-center items-center ">
           <Icon iconName="Heart" color="white" size={iconSize} />
         </div>
       </section>

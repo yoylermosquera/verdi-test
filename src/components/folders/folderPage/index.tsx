@@ -27,8 +27,8 @@ FolderPageProps) {
       <section className=" w-full px-4 lg-w-[65.75rem] lg:max-w-[75rem]">
         <ReturnContainer title="Mis favoritos" className="my-7 lg:my-12 " />
         <section className="w-full h-full px-4 grid grid-cols-2 gap-2 justify-between lg:grid-cols-4 lg:gap-8 ">
-          {mockData.map((product) => (
-            <FolderCard {...product} />
+          {mockData.map((product, idx) => (
+            <FolderCard key={idx} {...product} />
           ))}
         </section>
       </section>
