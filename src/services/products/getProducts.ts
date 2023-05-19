@@ -1,8 +1,8 @@
-import { API } from "@/helpers/axios";
-import { DataResponse, IProducts } from "@/interfaces";
+import { API } from '@/helpers/axios';
+import { DataResponse, IProducts } from '@/interfaces';
 
-type GetProductResponse = DataResponse<IProducts>
+type GetProductResponse = DataResponse<IProducts>;
 
 export const getProducts = () => {
-    return API.get<GetProductResponse>(`/products`)
-}
+  return API.post<GetProductResponse>(`/products`);
+};

@@ -12,7 +12,6 @@ import { BaseLayout } from '@/components/layouts';
 // Import Swiper styles
 import 'swiper/swiper-bundle.min.css';
 
-
 import {
   CharacteristicsProduct,
   ListTags,
@@ -53,7 +52,12 @@ const ProductPage: NextPageWithLayout<Props> = ({ product }) => {
       />
 
       {/* Tags */}
-      <ListTags tags={tags} className='lg:hidden' classNameTitle='mx-5' classNameTags='px-5'/>
+      <ListTags
+        tags={tags}
+        className="lg:hidden"
+        classNameTitle="mx-5"
+        classNameTags="px-5"
+      />
 
       {/* Characteristics */}
       <CharacteristicsProduct
@@ -72,10 +76,7 @@ const ProductPage: NextPageWithLayout<Props> = ({ product }) => {
 
       {/* Product carousel */}
       <div className="hidden xl:flex xl:flex-col xl:gap-3 xl:mb-16 xl:px-20">
-        <SectionSlider
-          sectionTitle="Te pueden interesar"
-          products={mockData}
-        />
+        <SectionSlider sectionTitle="Te pueden interesar" products={mockData} />
       </div>
     </div>
   );
