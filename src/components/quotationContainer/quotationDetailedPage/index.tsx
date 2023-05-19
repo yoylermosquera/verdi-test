@@ -12,7 +12,8 @@ const mockData = Array.from({ length: 6 }).map((_, i) => ({
   quotationNumber: '1234',
   dateQuoteAccepted: '02/0/21',
   productType: 'Tapete',
-  productDescription: 'Tapete tejido con lana de alpaca y bordados de metales finos con acabados en materiales naturales',
+  productDescription:
+    'Tapete tejido con lana de alpaca y bordados de metales finos con acabados en materiales naturales',
   userType: 'Comercial',
   userName: 'Juan Perez',
   productCost: '1,000,000',
@@ -26,16 +27,19 @@ function QuotationDetailedPage({}: // description,
 FolderPageProps) {
   return (
     <section className="w-full h-full lg:w-[67.75rem] lg:mt-12 ">
-      <div className='px-4 flex flex-col mb-7 lg:mb-16'>
-        <QuotationType className='my-4'/>
-        <section className='w-full flex flex-row justify-center my-4'>
-          <span className=' text-paragraph underline underline-offset-8'>
+      <div className="px-4 flex flex-col mb-7 lg:mb-16">
+        <QuotationType className="my-4" />
+        <section className="w-full flex flex-row justify-center my-4">
+          <span className=" text-paragraph underline underline-offset-8">
             NUMERO DE COTIZACIONES
           </span>
-        </section >
+        </section>
         <section className="w-full grid grid-cols-1 gap-6 mt-4 lg:grid-cols-3">
-          {mockData.map((product) => (
-            <QuotationContainer {...product} />
+          {mockData.map((product, i) => (
+            <QuotationContainer
+              key={`${i}-${product?.productName}`}
+              {...product}
+            />
           ))}
         </section>
       </div>
