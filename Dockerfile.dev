@@ -13,6 +13,11 @@ RUN adduser --disabled-password verdi_front \
 
 USER verdi_front
 
+RUN apk add --no-cache bash curl && curl -1sLf \
+    'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.alpine.sh' | bash \
+    && apk add infisical
+
+
 # Copy project files
 COPY ./.next ./.next
 COPY ./package.json ./package.json
@@ -20,4 +25,4 @@ COPY ./next.config.js ./next.config.js
 COPY ./.env.production ./.env.production
 
 # Run app
-CMD [ "yarn","serve:prod" ]
+CMD ["infisical", "run", "--env=front", "--", "yarn serve:prod"]

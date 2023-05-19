@@ -25,7 +25,7 @@ function EditInfo() {
       >
         <section className="flex flex-col mt-0 mb-3 lg:flex-row lg:justify-between ">
           
-          <section className=' my-0 lg:w-[28.625rem] lg:h-36 lg:bg-beige-light lg:pl-5 lg:pr-7 '>
+          <section className='my-0 lg:w-[28.625rem] lg:h-36 lg:bg-beige-light lg:pl-5 lg:pr-7 '>
             <section className='h-14 w-full flex items-center justify-between border-y border-y-gold-dark lg:border-t-0'>
               <h3 className='text-title text-center '>
                   CORREO
@@ -72,7 +72,7 @@ function EditInfo() {
         </section>
 
         <section className=" flex-col mt-0 mb-3 hidden lg:flex lg:flex-row lg:justify-between lg:bg-beige-light ">
-          <section className=' my-0 lg:w-[28.625rem] lg:h-36 lg: '>
+          <section className='my-0 lg:w-[28.625rem] lg:h-36 lg: '>
             <section className='h-14 w-full flex items-center justify-between '>
               <h3 className='text-title text-center lg:ml-5 lg:mr-7'>
                   CONTRASEÑA
@@ -104,7 +104,7 @@ function EditInfo() {
           </Button>
 
           <section 
-          className={' text-center text-button__line hover:cursor-pointer underline underline-offset-1 lg:mb-4 '}
+          className={'text-center text-button__line hover:cursor-pointer underline underline-offset-1 lg:mb-4 '}
           onClick={() => { }}
           >
             <Link
@@ -117,37 +117,9 @@ function EditInfo() {
           </section>
         </section>
       </div>
-
-      {/* <form
-        onSubmit={handleSubmit}
-        className="lg:max-w-[360px] flex flex-col justify-between w-full pb-7 grow"
-      >
-        <section className="flex flex-col gap-6 mt-0  ">
-          <Input placeholder="Nombre:"  />
-          <Input placeholder="Tipo de usuario?"  />
-          <Input placeholder="Email"  />
-          <Input placeholder="Teléfono"  />
-        </section>
-        
-        
-        <section className="flex flex-col justify-center">
-          <Button type="submit" size="full">
-            CONTINUAR
-          </Button>
-
-          <Link
-            href={'/profile'} 
-          className={'text-center text-input underline underline-offset-1 hover:cursor-pointer mt-2'}
-          onClick={() => { }}
-          > 
-          Cancelar
-          </Link>
-        </section>
-      </form> */}
       
     </div>
-    
-    
+
   )
 } 
 export default  EditInfo  ;

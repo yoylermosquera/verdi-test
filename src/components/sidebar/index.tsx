@@ -2,6 +2,8 @@ import React from 'react';
 import Icon from '../icon';
 import useAppContext from '../../hooks/useAppContext';
 import CategorySection from './CategorySections';
+import { getAllFiltersByCategory } from '../../util/getAllFiltersByCategory';
+import CategoryFilters from './CategoryFilters';
 
 const mockCategoryList = [
   'RUGS',
@@ -16,7 +18,6 @@ const mockCategoryList = [
 
 function SidenBar() {
   const { showSidebar, toggleSidebar, categories } = useAppContext();
-  //overflow-y-auto sticky h-full w-full lg:w-[19.75rem] lg:pb-10 z-20 bg-beige-light animate__animated
   return (
     <div
       className={`overflow-y-auto  h-full w-full lg:w-[19.75rem] lg:pb-10 z-20 bg-beige-light animate__animated ${
@@ -32,11 +33,15 @@ function SidenBar() {
 
       <div className="w-full flex flex-col">
         {categories?.map((category) => (
-          <CategorySection
-            key={category?.id}
-            category={category}
-            // active={category === 'RUGS'}
-          />
+          <CategorySection key={category?.id} categoryName={category?.name} >
+            <section className="flex flex-col bg-white px-6 pt-5 pb-6 gap-6">
+              {getAllFiltersByCategory(category)?.filters?.map(
+                (filter, idx) => {
+                  return <CategoryFilters key={idx} filter={filter} />;
+                },
+              )}
+            </section>
+          </CategorySection>
         ))}
       </div>
     </div>

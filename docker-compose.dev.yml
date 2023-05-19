@@ -4,6 +4,8 @@ services:
   app:
     container_name: verdi_front
     image: desarrolloant/verdi_front:dev
+    environment:
+      - INFISICAL_TOKEN=st.6466e007df1c556d7b747479.9e4da598de98d9032af98feb1116cfff.ece5586469b88f4c9699a2b346176943
     ports:
       - 4033:4033
     restart: "always"

@@ -9,7 +9,7 @@ export const ClothLarge = (props: IconProps) => {
       {...restSVGProps}
       width={size}
       height={size}
-      viewBox="0 0 38 32"
+      viewBox="0 0 33 37"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
