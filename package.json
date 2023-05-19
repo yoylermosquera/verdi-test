@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4033",
+    "dev": "infisical run -- next dev -p 4033",
     "build": "next build",
-    "start": "next start -p 4033",
+    "start": "infisical run -- next start -p 4033",
     "serve:prod": "yarn install --production && next start -p 4033",
     "lint": "next lint",
     "build:image": "yarn build && docker buildx build --platform linux/amd64 -t desarrolloant/verdi_front:dev -f ./Dockerfile.dev .",
