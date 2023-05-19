@@ -45,18 +45,21 @@ const SignInPage: NextPageWithLayout = () => {
   };
 
   const handleLanguageChange = () => {
-    // Código que se ejecuta cuando se hace click en cualquier de las 2 opciones. 
-  }
+    // Código que se ejecuta cuando se hace click en cualquier de las 2 opciones.
+  };
+
+  console.log(process.env.NEXT_PUBLIC_API_HOST);
 
   return (
     <div className="h-full px-4 pt-11 pb-13 lg:flex justify-center lg:flex-col items-center lg:p-0 ">
       <Head>
         <title>Iniciar Sesión</title>
-        <meta name='description' 
-        content='Inicia sesión en nuestra plataforma para acceder a todos nuestros servicios y disfrutar de una experiencia personalizada. Ingresa tu correo electrónico y contraseña para comenzar a utilizar nuestros servicios.'/>
-        
+        <meta
+          name="description"
+          content="Inicia sesión en nuestra plataforma para acceder a todos nuestros servicios y disfrutar de una experiencia personalizada. Ingresa tu correo electrónico y contraseña para comenzar a utilizar nuestros servicios."
+        />
       </Head>
-      
+
       {/* <LanguageChangerBox language={'EN'} onLanguageChange={handleLanguageChange} /> */}
 
       <h1 className="text-title text-center mb-11">INGRESO</h1>
@@ -101,8 +104,11 @@ const SignInPage: NextPageWithLayout = () => {
           </Link>
 
           <div className="flex items-left mb-24 lg:justify-center lg:mb-3 lg:mt-20">
-            <CheckBox color='black-verdi' id="test" labelText="Recordar mis datos." />
-
+            <CheckBox
+              color="black-verdi"
+              id="test"
+              labelText="Recordar mis datos."
+            />
           </div>
         </section>
 
