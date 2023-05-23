@@ -63,7 +63,7 @@ function FolderCard({
           <Image className="w-full h-2/5 object-fill" src={img3} alt={title3} />
         </section>
 
-        <div className="bg-blend-multiply bg-black30 w-[1.875rem] h-[1.875rem] absolute bottom-0 right-0 pl-1 pt-1 flex justify-center items-center ">
+        <div className=" cursor-pointer bg-blend-multiply bg-black30 w-[1.875rem] h-[1.875rem] absolute bottom-0 right-0 pl-1 pt-1 flex justify-center items-center ">
           <Icon
             iconName="ThreeDots"
             color={Colors.beige}
@@ -82,7 +82,7 @@ function FolderCard({
                 onClick={() => {
                   if (onClickRename) onClickRename(id!);
                 }}
-                className="text-paragraph italic text-black-verdi"
+                className="cursor-pointer text-paragraph italic text-black-verdi"
               >
                 Cambiar nombre
               </span>
@@ -90,7 +90,7 @@ function FolderCard({
                 onClick={() => {
                   if (onClickDelete) onClickDelete(id!);
                 }}
-                className="text-paragraph italic text-black-verdi"
+                className="cursor-pointer text-paragraph italic text-black-verdi"
               >
                 Eliminar carpeta
               </span>

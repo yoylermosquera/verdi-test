@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icon, { IconName } from '@/components/icon';
 
 type FolderData = {
@@ -17,6 +17,10 @@ function FoldersContainer({
   onClickNewFolder,
   onClickAddFavorites,
 }: FoldersContainerProps) {
+
+  const onClickFolder = (folderId: string) => {
+    if(onClickAddFavorites) onClickAddFavorites(folderId);
+  }
   return (
     <div className="w-[22.5rem] bg-white ">
       <h1 className="mx-auto text-center my-6 text-font_18  text-black-verdi">
@@ -27,7 +31,7 @@ function FoldersContainer({
           <FolderRow
             key={item.id}
             {...item}
-            onClickFolder={onClickAddFavorites}
+            onClickFolder={onClickFolder}
           />
         ))}
         <div className="w-full h-[72px] flex items-center gap-4 ">
@@ -55,14 +59,15 @@ function FoldersContainer({
 
 interface FolderRowProps extends FolderData {
   onClickFolder?: (folderId: string) => void;
+  isSelected?: boolean;
 }
-function FolderRow({ icon, id, title, onClickFolder }: FolderRowProps) {
+function FolderRow({ icon, id, title, isSelected = false, onClickFolder }: FolderRowProps) {
   return (
     <button
       onClick={() => {
         if (onClickFolder) onClickFolder(id);
       }}
-      className="w-full h-[72px] flex items-center gap-4 cursor-pointer"
+      className={`w-full h-[72px] flex items-center gap-4 cursor-pointer hover:bg-beige`}
     >
       <div className="w-[72px] h-[72px] bg-gold flex justify-center items-center">
         <Icon iconName={icon} color="black" size={32} />

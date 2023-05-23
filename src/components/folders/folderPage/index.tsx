@@ -51,29 +51,29 @@ function FolderPage({}: FolderPageProps) {
           ))}
         </div>
       </div>
-      <ConfirmationModal
+      {/* <ConfirmationModal
         message="¿Estás seguro que deseas eliminar está carpeta?"
-        open={false}
+        open={true}
         onClose={() => {}}
         showCloseIcon={false}
-      />
-      <SuccessMessageModal
+      /> */}
+      {/* <SuccessMessageModal
         message="ELIMINADA CON ÉXITO"
         onClose={() => {}}
         showCloseIcon={false}
-        open={false}
-      />
-      <RenameFavoriteFolder
+        open={true}
+      /> */}
+      {/* <RenameFavoriteFolder
         onClose={() => {}}
         showCloseIcon={false}
-        open={false}
-      />
-      <ErrorMessageModal
+        open={true}
+      /> */}
+      {/* <ErrorMessageModal
         message="Se presento un error al eliminar la carpeta inténtalo nuevamente"
         onClose={() => {}}
         showCloseIcon={false}
-        open={false}
-      />
+        open={true}
+      /> */}
     </section>
   );
 }

@@ -46,15 +46,15 @@ function FolderNameModal({
             {IconsFoldersNames.map((item, idx) => {
               const isSelected = selectedIcon === item;
               return (
-                <div
+                <button
                   onClick={() => setSelectedIcon(item)}
                   key={idx}
-                  className={`w-[50px] h-[50px] basis-12 border flex justify-center items-center ${
+                  className={`cursor-pointer  w-[50px] h-[50px] basis-12 border flex justify-center items-center ${
                     isSelected ? 'border-0 bg-gold' : ''
                   }`}
                 >
                   <Icon iconName={item as any} key={idx} size={40} />
-                </div>
+                </button>
               );
             })}
           </div>
