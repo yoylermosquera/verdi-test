@@ -65,9 +65,9 @@ const FoldersPage: NextPageWithLayout = () => {
       </section>
        */}
 
-      {/* <FolderPage /> */}
+      <FolderPage />
       
-      <FolderProductsPage/>
+      {/* <FolderProductsPage/> */}
       
       {/* <QuotationPage /> */}
 

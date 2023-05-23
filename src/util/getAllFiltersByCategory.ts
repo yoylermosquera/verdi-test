@@ -19,6 +19,7 @@ export const getAllFiltersByCategory = (category: Categorie) => {
     characteristics: removeDuplicateByKey(materialList!, 'name'),
     id: '',
     type: 'MultiChecks',
+    filterKey: 'materials',
   };
 
   const collectionsList = category?.collections?.map((item) => {
@@ -33,6 +34,7 @@ export const getAllFiltersByCategory = (category: Categorie) => {
     characteristics: removeDuplicateByKey(collectionsList!, 'name'),
     id: '',
     type: 'MultiChecks',
+    filterKey: 'collections',
   };
 
   const filters = [material, collections, ...category?.filters];

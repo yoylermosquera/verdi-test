@@ -7,18 +7,18 @@ import {
 import Range from '../filters/filters-type/Range';
 import OnlyCheck from '../filters/filters-type/OnlyCheck';
 
-const mockColors = [
-  '#AD5C5C',
-  '#CB9494',
-  '#E0BD9C',
-  '#DCC077',
-  '#B4A287',
-  '#AD5C5C',
-  '#CB9494',
-  '#E0BD9C',
-  '#DCC077',
-  '#B4A287',
-];
+// const mockColors = [
+//   '#AD5C5C',
+//   '#CB9494',
+//   '#E0BD9C',
+//   '#DCC077',
+//   '#B4A287',
+//   '#AD5C5C',
+//   '#CB9494',
+//   '#E0BD9C',
+//   '#DCC077',
+//   '#B4A287',
+// ];
 
 function CategoryFilters(props: CategoryFiltersProps) {
   const { filter } = props;

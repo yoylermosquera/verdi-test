@@ -6,8 +6,9 @@ import { Colors } from '@/styles/config/base';
 interface ReturnContainerProps {
   title?: string;
   className?: string;
+  children?: React.ReactNode;
 }
-function ReturnContainer({ title, className }: ReturnContainerProps) {
+function ReturnContainer({ title, className, children }: ReturnContainerProps) {
   return (
     <section
       className={`w-full h-6 flex flex-row justify-between lg:w-[17.5rem] lg:max-w-[31.25rem] ${className}`}
@@ -25,7 +26,7 @@ function ReturnContainer({ title, className }: ReturnContainerProps) {
     </div>
       
       <div className="text-font_18 flex justify-items-center my-auto">
-        {title}
+        {children || title || ""}
       </div>
       <div className="lg:hidden"></div>
     </section>

@@ -37,22 +37,22 @@ function ProductsCarusel({ products, sectionName }: ProductsCaruselProps) {
             color={Colors.gold}
           />
         </div>
-        <Swiper
-          modules={[Navigation]}
-          navigation={{
-            nextEl: `#${rightIconId}`,
-            prevEl: `#${leftIconId}`,
-          }}
-          spaceBetween={spaceBetween}
-          slidesPerView={slidesPerView}
-          className={'w-full'}
-        >
-          {products.map((product) => (
-            <SwiperSlide key={product.id}>
-              <ProductCard {...product}  />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <Swiper
+            modules={[Navigation]}
+            navigation={{
+              nextEl: `#${rightIconId}`,
+              prevEl: `#${leftIconId}`,
+            }}
+            spaceBetween={spaceBetween}
+            slidesPerView={slidesPerView}
+            className={'w-full'}
+          >
+            {products.map((product) => (
+              <SwiperSlide key={product.id}>
+                <ProductCard {...product} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         <div className="hidden lg:block w-10 h-10 -mt-16 hover:opacity-90 cursor-pointer">
           <Icon
             id={rightIconId}

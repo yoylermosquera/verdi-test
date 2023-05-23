@@ -26,14 +26,17 @@ export interface Collection {
 
 type CategoryFilterType = 'OnlyCheck' | 'MultiChecks' | 'Colors' | 'Range' | 'MultiCheck';
 
+export type FilterKey = 'categories' | 'collections' | 'materials' | 'colors' | 'characteristics';
 export interface CategoryFilter {
     id:               string;
     name:             string;
     type:             null | CategoryFilterType;
     characteristics?: Characteristic[];
+    filterKey?: FilterKey
 }
 
 export interface Characteristic {
     id:   string;
     name: string;
+    key?:  string;
 }

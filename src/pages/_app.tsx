@@ -4,9 +4,6 @@ import type { AppProps } from 'next/app';
 import localFont from 'next/font/local';
 import { Toaster } from 'react-hot-toast';
 import { SessionProvider } from 'next-auth/react';
-import { register } from 'swiper/element/bundle';
-// register Swiper custom elements
-register();
 
 import '@/styles/globals.scss';
 import 'animate.css';

@@ -9,6 +9,7 @@ import productSample from '@/assets/images/examples/productSample.png';
 import LanguageChangerBox from '@/components/languageChanger';
 import useAppContext from '@/hooks/useAppContext';
 import Icon from '@/components/icon';
+import Modalbase from '../components/modals/modalBase/index';
 
 const mockData = Array.from({ length: 20 }).map((_, i) => ({
   id: `${i + 1}`,
@@ -18,7 +19,7 @@ const mockData = Array.from({ length: 20 }).map((_, i) => ({
 }));
 
 const HomePage: NextPageWithLayout = () => {
-  const { showSidebar, user } = useAppContext();
+  const { user } = useAppContext();
 
   return (
     <div>
