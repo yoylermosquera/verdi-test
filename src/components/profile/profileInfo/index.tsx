@@ -69,7 +69,7 @@ function ProfileInfo() {
           </section>
 
           <section className="h-full">
-            <section className=" flex flex-col grow   gap-4 ">
+            <section className=" flex flex-col grow gap-4 ">
               <Button type="submit" size="full">
                 VER COTIZACIONES PENDIENTES
               </Button>
