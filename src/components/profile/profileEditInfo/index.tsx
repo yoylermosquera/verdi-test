@@ -96,7 +96,6 @@ function EditInfo() {
               <Button type="submit" size="full">
                 GUARDAR
               </Button>
-
               <section
                 className={
                   'text-center text-button__line hover:cursor-pointer underline underline-offset-1 lg:mb-4 '
