@@ -52,7 +52,7 @@ function FolderProductsPage({
     <section className=' hidden w-full h-full px-[11.25rem] pt-6 lg:flex lg:flex-col gap-4 pb-[8.625rem] '>
       <FolderTypeHero description='NUEVA CARPETA' folderIconName='CarpetLarge'/>
       <section>
-        <div
+        {/* <div
           style={{
             height: 65,
           }}
@@ -70,7 +70,7 @@ function FolderProductsPage({
           ]}
         />
         </div>
-    
+     */}
     
       </section>
       <section className=' grid grid-cols-4 gap-10  '>

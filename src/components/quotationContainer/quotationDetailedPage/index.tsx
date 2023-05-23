@@ -34,8 +34,8 @@ FolderPageProps) {
           </span>
         </section >
         <section className="w-full grid grid-cols-1 gap-6 mt-4 lg:grid-cols-3">
-          {mockData.map((product) => (
-            <QuotationContainer {...product} />
+          {mockData.map((product, idx) => (
+            <QuotationContainer key={idx} {...product} />
           ))}
         </section>
       </div>

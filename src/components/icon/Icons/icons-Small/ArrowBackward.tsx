@@ -16,8 +16,8 @@ export const ArrowBackward = (props: IconProps) => {
       <path
         d="M9.76923 18L1 9.5L9.76923 1M2.21795 9.5H20" 
         stroke={color}
-        stroke-linecap="round" 
-        stroke-linejoin="round"
+        strokeLinecap="round" 
+        strokeLinejoin="round"
       />
     </svg>
   );

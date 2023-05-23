@@ -1,15 +1,18 @@
 import React, { useReducer, useState, useEffect } from 'react';
 import AppContext from '.';
-import { AppReducer } from './reducer';
+import { AppReducer, initialState } from './reducer';
 import { getAllCategoriesAndFilters } from '@/services/categories/getCateriesAndFilters';
 import { useSession } from 'next-auth/react';
 
 interface AppContextProviderProps extends React.PropsWithChildren {}
 
 function AppContextProvider({ children }: AppContextProviderProps) {
-  const [state, dispatch] = useReducer(AppReducer, {});
+  const [state, dispatch] = useReducer(AppReducer, initialState);
+
   const { data } = useSession()
+
   const [showSidebar, setShowSidebar] = useState(false);
+
 
   const { user } = data! || {};
 
@@ -25,9 +28,6 @@ function AppContextProvider({ children }: AppContextProviderProps) {
     })();
   }, []);
 
-  useEffect(() => {
-  }, [])
-
   return (
     <AppContext.Provider
       value={{
@@ -36,6 +36,7 @@ function AppContextProvider({ children }: AppContextProviderProps) {
         categories: state.categories || [],
         user,
         dispatch,
+        state
       }}
     >
       {children}

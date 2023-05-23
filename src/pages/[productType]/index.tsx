@@ -9,9 +9,10 @@ import { getAllFiltersByCategory } from '../../util/getAllFiltersByCategory';
 import CategoryFilters from '@/components/sidebar/CategoryFilters';
 import ProductCard from '@/components/productCard';
 import productSample from '@/assets/images/examples/productSample.png';
-import NoProductsContainer from '@/components/folders/noProducts';
 import NoContentContainer from '@/components/noContent';
 import SectionSlider from '@/components/sectionSlider';
+import Button from '@/components/button';
+import Icon from '@/components/icon';
 
 const mockData = Array.from({ length: 20 }).map((_, i) => ({
   id: `${i + 1}`,
@@ -24,6 +25,8 @@ const ProductFilterPage: NextPageWithLayout = () => {
   const router = useRouter();
   const { categories } = useAppContext();
 
+  const [showFilters, setShowFilters] = useState(false);
+
   const categoryKey = router.asPath.split('/').at(-1) || '';
 
   const category = categories?.find(
@@ -32,33 +35,43 @@ const ProductFilterPage: NextPageWithLayout = () => {
 
   const { filters } = getAllFiltersByCategory(category!);
 
-  const products: typeof mockData = [];
+  const products: typeof mockData = mockData;
+
   return (
     <div className="h-full flex flex-col grow items-center">
       <div className="w-full max-w-lg-wrapper">
         <div className="hidden lg:block lg:mt-6 lg:mb-4 ">
-          <FolderTypeHero
-            description="TAPETES"
-            folderIconName="RugsCarpet"
-          />
+          <FolderTypeHero description="TAPETES" folderIconName="RugsCarpet" />
         </div>
 
-        <section className="grid grid-cols-4 mb-6">
-          {filters.map((filter, idx) => {
-            return (
-              <div key={idx} className="w-full">
-                <CategorySection categoryName={filter?.name}>
-                  <div className="flex flex-col bg-beige px-6 pt-5 pb-6 gap-6">
-                    <CategoryFilters
-                      showTitle={false}
-                      key={idx}
-                      filter={filter}
-                    />
+        <div className="flex justify-end w-full mb-6">
+          <Button variant="white" onClick={() => setShowFilters(!showFilters)}>
+            <div className="flex items-center gap-5 justify-between ">
+              <Icon iconName={ showFilters ? 'Close' : 'Filter' } size={20} />
+              <span>FILTER</span>
+            </div>
+          </Button>
+        </div>
+        <section className={`grid grid-cols-4 mb-6`}>
+          {showFilters ? (
+            <>
+              {filters.map((filter, idx) => {
+                return (
+                  <div key={idx} className="w-full">
+                    <CategorySection categoryName={filter?.name}>
+                      <div className="flex flex-col bg-beige px-6 pt-5 pb-6 gap-6">
+                        <CategoryFilters
+                          showTitle={false}
+                          key={idx}
+                          filter={filter}
+                        />
+                      </div>
+                    </CategorySection>
                   </div>
-                </CategorySection>
-              </div>
-            );
-          })}
+                );
+              })}
+            </>
+          ) : null}
         </section>
 
         {products?.length > 0 ? (
@@ -80,8 +93,11 @@ const ProductFilterPage: NextPageWithLayout = () => {
                 }}
               />
             </div>
-            <div className='w-full'>
-              <SectionSlider sectionTitle="Te pueden interesar" products={mockData} />
+            <div className="w-full">
+              <SectionSlider
+                sectionTitle="Te pueden interesar"
+                products={mockData}
+              />
             </div>
           </section>
         )}
