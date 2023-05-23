@@ -12,6 +12,9 @@ import ProductCard from '@/components/productCard';
 import QuotationPage from '@/components/quotationContainer/quotationPage';
 import QuotationType from '@/components/quotationType';
 import QuotationDetailedPage from '@/components/quotationContainer/quotationDetailedPage';
+import FolderNameModal from '@/components/modals/folderName';
+import FoldersContainer from '@/components/folders/foldersContainer';
+
 
 
 const FoldersPage: NextPageWithLayout = () => {
@@ -67,7 +70,7 @@ const FoldersPage: NextPageWithLayout = () => {
 
       {/* <FolderPage /> */}
       
-      <FolderProductsPage/>
+      {/* <FolderProductsPage/> */}
       
       {/* <QuotationPage /> */}
 
@@ -75,7 +78,9 @@ const FoldersPage: NextPageWithLayout = () => {
 
       {/* <QuotationDetailedPage/> */}
 
-    
+       {/* <FolderNameModal/> */}
+       <FoldersContainer/>
+
 
     </div>
   );
