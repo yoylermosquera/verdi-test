@@ -5,18 +5,13 @@ FROM --platform=linux/amd64 node:16-alpine
 # Set working directory
 WORKDIR /usr/src
 
-# Create verdi_front user and give permissions
-RUN adduser --disabled-password verdi_front \
-    && chown -R verdi_front ./ \
-    # Clean yarn cache for better modules installation
-    && yarn cache clean --force
+RUN apk add --no-cache bash curl
+RUN curl -1sLf \
+    'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.alpine.sh' \
+    | bash
 
-USER verdi_front
-
-RUN apk add --no-cache bash curl && curl -1sLf \
-    'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.alpine.sh' | bash \
-    && apk add infisical
-
+RUN apk update && apk add infisical
+RUN yarn cache clean --force
 
 # Copy project files
 COPY ./.next ./.next
@@ -25,4 +20,4 @@ COPY ./next.config.js ./next.config.js
 COPY ./.env.production ./.env.production
 
 # Run app
-CMD ["infisical", "run", "--env=front", "--", "yarn serve:prod"]
+CMD ["infisical", "run", "--env=front", "--command", "yarn serve:prod"]
