@@ -1,4 +1,4 @@
-import React, { useCallback, useReducer, useRef } from 'react';
+import { useCallback, useReducer, useRef } from 'react';
 import { getProductsParams } from '@/services/products/getProducts';
 import { IProductFilter } from '@/interfaces/product';
 import { getProducts } from '../../services/products/getProducts';
@@ -73,5 +73,6 @@ export default function useProducts() {
   return {
     ...state,
     fetchProducsts,
+    loading: !state.data && !state.error,
   };
 }

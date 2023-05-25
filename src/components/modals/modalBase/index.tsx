@@ -62,7 +62,7 @@ function Modalbase({
           accessKey="modal"
         >
           <div
-            className={`z-50 bg-[rgba(0,0,0,0.15)] mix-blend-screen h-full w-full flex justify-center items-center ${contentWrapperClassName}`}
+            className={`z-50 bg-black15 mix-blend-screen h-full w-full flex justify-center items-center ${contentWrapperClassName}`}
           >
             <div
               ref={elementRef}

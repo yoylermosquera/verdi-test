@@ -16,6 +16,7 @@ import { productsMockData } from '@/util/products';
 import useDebounce from '@/hooks/useDebounce';
 import useProducts from '../../hooks/data/useProducts';
 import { useOuterClick } from '@/hooks/useOuterClick';
+import { getLinksForHeaderAndBottomBar } from '@/helpers/links';
 
 type ListIconsHeader = {
   [key in 'left' | 'rigth']: NavLinkItemProps[];
@@ -125,15 +126,12 @@ function Header() {
 
   const isComercial = false;
 
-  const headerLinks = isComercial
-    ? LinksHeaderComercial
-    : LinksHeaderIntermediary;
+  // const headerLinks = isComercial
+  // ? LinksHeaderComercial
+  // : LinksHeaderIntermediary;
 
-  const allLinksWithIconAndActiveStatu = headerLinks.left
-    .concat(headerLinks.rigth)
-    ?.map((link) => {
-      return { ...link, active: isActive(link.link) };
-    });
+  const { allLinksWithIconAndActiveStatu, headerLinks } =
+    getLinksForHeaderAndBottomBar(isComercial, isActive);
 
   const loadingProducts = !data && !error;
   const errorLoadingProducts = error;
@@ -247,7 +245,6 @@ function Header() {
           </section>
         </nav>
 
-        <BottomNavigationBar links={allLinksWithIconAndActiveStatu} />
       </header>
     </>
   );

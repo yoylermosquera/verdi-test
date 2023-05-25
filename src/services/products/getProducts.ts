@@ -20,7 +20,7 @@ export const getProducts = (params: getProductsParams, token?: string) => {
   const query = params.query
     ? `?${createQueryParamsFromObject(params.query)}`
     : '';
-  return API.post<GetProductResponse>(`/products/search/${query}`, {}, {
+  return API.post<GetProductResponse>(`/products/search/${query}`, params.filters || {}, {
     headers: {
       Authorization: `${token}`,
     },

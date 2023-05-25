@@ -18,3 +18,5 @@ export const Colors = {
 
 export const HEADER_HEIGHT_MOBILE = '4.5rem';
 export const HEADER_HEIGHT_DESKTOP = '7.5rem';
+
+export const BOTTON_NAVIGATION_HEIGHT = '5.625rem';

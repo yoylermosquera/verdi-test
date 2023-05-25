@@ -27,7 +27,7 @@ function FolderTypeHero({
         <section className="flex flex-row justify-center  ">
           <Icon size={iconSize} color="black" iconName={folderIconName} />
         </section>
-        <h3 className="text-input mt-5 w-full h-8 flex flex-row  justify-center text-center">
+        <h3 className="text-input mt-5 w-full h-8 flex flex-row uppercase  justify-center text-center">
           {description}
         </h3>
       </section>

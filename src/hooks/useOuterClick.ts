@@ -23,3 +23,5 @@ export function useOuterClick(callback: any) {
       
   return innerRef; // convenience for client (doesn't need to init ref himself) 
 }
+
+export default useOuterClick

@@ -1,3 +1,4 @@
+import { Color } from '@/services/categories/colors';
 import { Categorie } from '@/services/categories/getCateriesAndFilters';
 import { FilterKey } from '../../services/categories/getCateriesAndFilters';
 
@@ -9,15 +10,27 @@ const actionTypeNameList = {
 };
 
 export type IFilterValue = {
-    name: string;
-    id: string;
+  name: string;
+  id: string;
+  filterKey: FilterKey;
+  categoryId: string;
+  categoryKey: string;
+};
+
+export type ColorFilter = {
+  id: string;
+  name: string;
+  hexacode: string;
 }
-  
 
 export type ActionType =
   | {
       type: 'GET_ALL_CATEGORIES_AND_FILTERS';
       payload: Categorie[];
+    }
+    | {
+      type: 'GET_ALL_COLORS';
+      payload: Color[];
     }
   | {
       type: 'TOGGE_SEACH_SECTION_MOBILE';
@@ -37,9 +50,19 @@ export type ActionType =
   | {
       type: 'FILTERS_ADD_CHARACTERISTIC';
       payload: IFilterValue;
-    };
+    }
+  | {
+      type: 'FILTERS_ADD_BEST_SELLER';
+    }
+  | {
+      type: 'FILTERS_ADD_COLOR';
+      payload: ColorFilter
+    }
 
-export const getActionTypeByFilterKey = (filterKey: FilterKey)  => {
+
+export const getActionTypeByFilterKey = (filterKey: FilterKey) => {
+  if (!filterKey) return actionTypeNameList.FILTERS_ADD_CHARACTERISTIC;
+
   switch (filterKey) {
     case 'categories':
       return actionTypeNameList.FILTERS_ADD_CATEGORY;

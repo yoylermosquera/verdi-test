@@ -1,8 +1,13 @@
 import { getSession, signOut,  } from "next-auth/react"
 
 export const getMyToken = async () => {
-    const session  = await getSession()
-    return session?.user?.token
+    try {
+        const session  = await getSession()
+        return session?.user?.token
+        
+    } catch (error) {
+        return ''
+    }
 }
 
 export const logOutUser = async () => {

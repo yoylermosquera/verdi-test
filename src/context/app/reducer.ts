@@ -1,27 +1,34 @@
+import { Color } from '@/services/categories/colors';
 import { Categorie } from '@/services/categories/getCateriesAndFilters';
 import {
   AddOrRemoveValueFromArarysByKey,
-  AddOrRemoveValueFromArray,
 } from '@/util/array';
-import { ActionType, IFilterValue } from './actions';
+import { ActionType, ColorFilter, IFilterValue } from './actions';
 
 export type State = {
   categories?: Categorie[];
+  colors: Color[];
   showSearchSection: boolean;
   filters: {
-    categories: IFilterValue[];
+    // categories: IFilterValue[];
+    isBestSeller?: boolean;
     collections: IFilterValue[];
     materials: IFilterValue[];
+    characteristics: IFilterValue[];
+    colors: ColorFilter[];
   };
 };
 
 export const initialState: State = {
   showSearchSection: false,
   categories: undefined,
+  colors: [],
   filters: {
-    categories: [],
+    colors: [],
+    isBestSeller: undefined,
     collections: [],
     materials: [],
+    characteristics: [],
   },
 };
 
@@ -39,20 +46,25 @@ export const AppReducer = (state: State, action: ActionType): State => {
         ...state,
         showSearchSection: !state.showSearchSection,
       };
-
-    // FILTERS
-    case 'FILTERS_ADD_CATEGORY':
+    case 'GET_ALL_COLORS':
       return {
         ...state,
-        filters: {
-          ...state.filters,
-          categories: AddOrRemoveValueFromArarysByKey(
-            action.payload,
-            state.filters.categories,
-            'id',
-          ),
-        },
+        colors: action.payload,
       };
+
+    // FILTERS
+    // case 'FILTERS_ADD_CATEGORY':
+    //   return {
+    //     ...state,
+    //     filters: {
+    //       ...state.filters,
+    //       categories: AddOrRemoveValueFromArarysByKey(
+    //         action.payload,
+    //         state.filters.categories,
+    //         'id',
+    //       ),
+    //     },
+    //   };
 
     case 'FILTERS_ADD_COLLECTION':
       return {
@@ -68,16 +80,6 @@ export const AppReducer = (state: State, action: ActionType): State => {
       };
 
     case 'FILTERS_ADD_MATERIAL':
-      const newMaterials = AddOrRemoveValueFromArarysByKey(
-        action.payload,
-        state.filters.materials,
-        'id',
-      )
-      console.log(
-        'payload',
-        action.payload,
-        newMaterials
-      )
       return {
         ...state,
         filters: {
@@ -89,6 +91,53 @@ export const AppReducer = (state: State, action: ActionType): State => {
           ),
         },
       };
+    case 'FILTERS_ADD_CHARACTERISTIC':
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          characteristics: AddOrRemoveValueFromArarysByKey(
+            action.payload,
+            state.filters.characteristics,
+            'id',
+          ),
+        },
+      };
+
+    case 'FILTERS_ADD_CHARACTERISTIC':
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          characteristics: AddOrRemoveValueFromArarysByKey(
+            action.payload,
+            state.filters.characteristics,
+            'id',
+          ),
+        },
+      };
+
+    case 'FILTERS_ADD_BEST_SELLER':
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          isBestSeller: !state.filters.isBestSeller,
+        }
+      }
+
+      case 'FILTERS_ADD_COLOR':
+        return {
+          ...state,
+          filters: {
+            ...state.filters,
+            colors: AddOrRemoveValueFromArarysByKey(
+              action.payload,
+              state.filters.colors,
+              'id',
+            ),
+          },
+        };
 
     default:
       return state;

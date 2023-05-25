@@ -6,5 +6,8 @@ export { Colors } from './Colors'
 export interface CategoryFiltersProps {
     filter?: CategoryFilter;
     showTitle?: boolean;
+    isFromSideBar?: boolean;
+    shouldNavigateToFilterPage?: boolean;
+    navigateToFilterPage?: () => void;
 }
   
