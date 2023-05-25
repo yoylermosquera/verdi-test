@@ -4,6 +4,7 @@ import { BaseLayout } from '../../components/layouts/BaseLayout';
 import ProfileInfo from '@/components/profile/profileInfo';
 
 
+
 const  ProfilePage: NextPageWithLayout = () => {
 
   return (

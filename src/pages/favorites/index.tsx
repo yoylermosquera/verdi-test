@@ -10,16 +10,21 @@ import UserDetailsContainer from '@/components/userDetailsContainer';
 import FolderCard from '@/components/folderCard';
 import ProductCard from '@/components/productCard';
 import QuotationPage from '@/components/quotationContainer/quotationPage';
-import QuotationType from '@/components/quotationType';
+import OptionsType from '@/components/optionsType';
 import QuotationDetailedPage from '@/components/quotationContainer/quotationDetailedPage';
 import FoldersContainer from '@/components/folders/foldersContainer';
+import UserType from '@/components/userType';
+
 
 
 
 const FoldersPage: NextPageWithLayout = () => {
   return (
     <div className="h-full flex flex-col lg:flex-row lg:justify-center">
-     
+      <OptionsType
+        onClick={(i) => console.log(i , 'TEST')}
+        userType='metrics'
+       />
     </div>
   );
 };

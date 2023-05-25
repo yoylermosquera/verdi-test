@@ -2,7 +2,7 @@ import React from 'react';
 import productSample from '@/assets/images/examples/productSample.png';
 import ReturnContainer from '@/components/returnContainer';
 import Button from '@/components/button';
-import QuotationType from '@/components/quotationType';
+import QuotationType from '@/components/optionsType';
 import QuotationContainer from '../quotationDetailed';
 
 const mockData = Array.from({ length: 6 }).map((_, i) => ({
