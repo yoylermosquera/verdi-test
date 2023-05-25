@@ -5,19 +5,8 @@ import CategorySection from './CategorySections';
 import { getAllFiltersByCategory } from '../../util/getAllFiltersByCategory';
 import CategoryFilters from './CategoryFilters';
 
-const mockCategoryList = [
-  'RUGS',
-  'WINDOWS COVERING',
-  'WALLCOVERING',
-  'ACCESORIES',
-  'COLLECTIBLE DESIGN',
-  'BESTSELLER',
-  'NEW',
-  'TRADE SERVICES',
-];
-
 function SidenBar() {
-  const { showSidebar, toggleSidebar, categories } = useAppContext();
+  const { showSidebar, toggleSidebar, categories, state: { colors } } = useAppContext();
   return (
     <div
       className={`overflow-y-auto  h-full w-full lg:w-[19.75rem] lg:pb-10 z-20 bg-beige-light animate__animated ${
@@ -35,9 +24,9 @@ function SidenBar() {
         {categories?.map((category) => (
           <CategorySection key={category?.id} categoryName={category?.name} >
             <section className="flex flex-col bg-white px-6 pt-5 pb-6 gap-6">
-              {getAllFiltersByCategory(category)?.filters?.map(
+              {getAllFiltersByCategory(category, colors)?.filters?.map(
                 (filter, idx) => {
-                  return <CategoryFilters key={idx} filter={filter} />;
+                  return <CategoryFilters isFromSideBar key={idx} filter={filter} />;
                 },
               )}
             </section>

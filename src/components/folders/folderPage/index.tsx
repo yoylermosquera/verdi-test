@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FolderCard from '@/components/folderCard';
 import productSample from '@/assets/images/examples/productSample.png';
 import ReturnContainer from '@/components/returnContainer';
 import Icon from '@/components/icon';
+import ConfirmationModal from '../../modals/confirmationModal/ConfirmationModal';
+import SuccessMessageModal from '@/components/modals/successMessage';
+import RenameFavoriteFolder from '@/components/modals/renameFavoriteFolder/RenameFavoriteFolder';
+import ErrorMessageModal from '@/components/modals/errorMessage';
 
 const mockData = Array.from({ length: 20 }).map((_, i) => ({
   id: `${i + 1}`,
@@ -12,26 +16,64 @@ const mockData = Array.from({ length: 20 }).map((_, i) => ({
   title1: `Tapete Heritage - ${i + 1}`,
   title2: `Tapete Heritage - ${i + 1}`,
   title3: `Tapete Heritage - ${i + 1}`,
-  folderTitle: 'Todos mis favoritos',
+  folderTitle: 'Todos mis favoritos' + i,
   productsAmmount: '20',
 }));
 
 interface FolderPageProps {
   // description: string;
 }
+type FolderCardActions = 'delete' | 'rename';
 
-function FolderPage({}: // description,
-FolderPageProps) {
+function FolderPage({}: FolderPageProps) {
+  const [selectedFolder, setSelectedFolder] = useState('');
+  const [folderActionType, setFolderActionType] = useState<FolderCardActions>();
+
   return (
     <section className="w-full h-full lg:flex lg:flex-row lg:justify-center ">
-      <section className=" w-full px-4 lg-w-[65.75rem] lg:max-w-[75rem]">
+      <div className=" w-full px-4 lg-w-[65.75rem] lg:max-w-[75rem]">
         <ReturnContainer title="Mis favoritos" className="my-7 lg:my-12 " />
-        <section className="w-full h-full px-4 grid grid-cols-2 gap-2 justify-between lg:grid-cols-4 lg:gap-8 ">
-          {mockData.map((product, idx) => (
-            <FolderCard key={idx} {...product} />
+        <div className="w-full h-full px-4 grid grid-cols-2 gap-2 justify-between lg:grid-cols-4 lg:gap-8 ">
+          <FolderCard {...mockData[0]} />
+          {mockData.map((folder, idx) => (
+            <FolderCard
+              key={idx}
+              {...folder}
+              onClickDelete={(id) => {
+                setSelectedFolder(id);
+                setFolderActionType('delete');
+              }}
+              onClickRename={(id) => {
+                setSelectedFolder(id);
+                setFolderActionType('rename');
+              }}
+            />
           ))}
-        </section>
-      </section>
+        </div>
+      </div>
+      {/* <ConfirmationModal
+        message="¿Estás seguro que deseas eliminar está carpeta?"
+        open={true}
+        onClose={() => {}}
+        showCloseIcon={false}
+      /> */}
+      {/* <SuccessMessageModal
+        message="ELIMINADA CON ÉXITO"
+        onClose={() => {}}
+        showCloseIcon={false}
+        open={true}
+      /> */}
+      {/* <RenameFavoriteFolder
+        onClose={() => {}}
+        showCloseIcon={false}
+        open={true}
+      /> */}
+      {/* <ErrorMessageModal
+        message="Se presento un error al eliminar la carpeta inténtalo nuevamente"
+        onClose={() => {}}
+        showCloseIcon={false}
+        open={true}
+      /> */}
     </section>
   );
 }

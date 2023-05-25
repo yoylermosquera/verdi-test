@@ -1,15 +1,17 @@
 import { createContext } from "react";
 import { Categorie } from "@/services/categories/getCateriesAndFilters";
-import { ActionType } from "./reducer";
+import { State } from "./reducer";
 import { UserLoginResponse } from "@/services/user";
+import { ActionType } from "./actions";
 
 interface IAppContext {
     showSidebar: boolean;
     toggleSidebar(): void;
     categories?: Categorie[];
     user: UserLoginResponse & {
-        token: string;
+      token: string;
     }
+    state: State;
     dispatch: React.Dispatch<ActionType>
 }
 

@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+import { HEADER_HEIGHT_DESKTOP, HEADER_HEIGHT_MOBILE, BOTTON_NAVIGATION_HEIGHT } from "./src/styles/config/base";
+
 module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -17,7 +19,8 @@ module.exports = {
       'green-accept': 'var(--green-accept)',
       'red-cancel': 'var(--red-cancel)',
       'transparent': 'var(--transparent)',
-      'black30': 'rgba(0, 0, 0, 0.3)'
+      'black30': 'rgba(0, 0, 0, 0.3)',
+      'black15': 'rgba(0,0,0,0.15)',
     },
     fontSize: {
       title: ['16px', {
@@ -68,8 +71,9 @@ module.exports = {
     },
     extend: {
       spacing: {
-        'h_sm': '4.5rem',
-        'h_lg': '7.5rem',
+        'h_sm': HEADER_HEIGHT_MOBILE,
+        'h_lg': HEADER_HEIGHT_DESKTOP,
+        'b_nav': BOTTON_NAVIGATION_HEIGHT,
       },        
       backgroundImage: {
         'auth-hero': 'url("../assets/images/EstudioTextil.Tapetesencobre.Tapetesenfibrasnaturales.png")',

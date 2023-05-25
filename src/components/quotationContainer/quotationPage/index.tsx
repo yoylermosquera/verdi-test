@@ -27,11 +27,8 @@ FolderPageProps) {
           className="my-7 lg:my-12 align-items-left"
         />
         <section className="w-full h-full px-4 grid grid-cols-1 items-center justify-items-center gap-4 lg:grid lg:grid-cols-3  ">
-          {mockData.map((product, i) => (
-            <QuotationProduct
-              key={`${i}-${product?.productName}`}
-              {...product}
-            />
+          {mockData.map((product, idx) => (
+            <QuotationProduct key={idx} {...product} />
           ))}
         </section>
         <div className="w-full mt-6 mb-2">

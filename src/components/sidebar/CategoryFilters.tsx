@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   CategoryFiltersProps,
   Colors,
@@ -6,37 +6,66 @@ import {
 } from '../filters/filters-type';
 import Range from '../filters/filters-type/Range';
 import OnlyCheck from '../filters/filters-type/OnlyCheck';
-
-const mockColors = [
-  '#AD5C5C',
-  '#CB9494',
-  '#E0BD9C',
-  '#DCC077',
-  '#B4A287',
-  '#AD5C5C',
-  '#CB9494',
-  '#E0BD9C',
-  '#DCC077',
-  '#B4A287',
-];
+import { useRouter } from 'next/router';
+import { useAppContext } from '@/hooks';
 
 function CategoryFilters(props: CategoryFiltersProps) {
   const { filter } = props;
+
+  const router = useRouter();
+
+  const { toggleSidebar } = useAppContext();
+
+
+  const { asPath } = router;
+
+  const alreadyInPage = asPath.includes(`/${filter?.categoryKey}`);
+
+  const navigateToFilterPage = useCallback(() => {
+    router.push(`/filters/${filter?.categoryKey}`);
+    toggleSidebar();
+  }, [filter?.categoryKey, toggleSidebar, router]);
+
+  const shouldNavigate = props.isFromSideBar || !alreadyInPage;
 
   if (!filter?.type) return null;
 
   switch (filter?.type) {
     case 'MultiChecks':
-      return <MultiChecks {...props} />;
+      return (
+        <MultiChecks
+          {...props}
+          shouldNavigateToFilterPage={shouldNavigate}
+          navigateToFilterPage={navigateToFilterPage}
+        />
+      );
 
     case 'MultiCheck':
-      return <MultiChecks {...props} />;
+      return (
+        <MultiChecks
+          {...props}
+          shouldNavigateToFilterPage={shouldNavigate}
+          navigateToFilterPage={navigateToFilterPage}
+        />
+      );
 
     case 'Colors':
-      return <Colors {...props} />;
+      return (
+        <Colors
+          {...props}
+          shouldNavigateToFilterPage={shouldNavigate}
+          navigateToFilterPage={navigateToFilterPage}
+        />
+      );
 
     case 'Range':
-      return <Range {...props} />;
+      return (
+        <Range
+          {...props}
+          shouldNavigateToFilterPage={shouldNavigate}
+          navigateToFilterPage={navigateToFilterPage}
+        />
+      );
 
     case 'OnlyCheck':
       return <OnlyCheck {...props} />;
@@ -60,7 +89,6 @@ function CategoryFilters(props: CategoryFiltersProps) {
     //   );
     // }
 
-  
     default:
       return null;
   }

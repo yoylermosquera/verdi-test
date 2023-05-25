@@ -1,4 +1,7 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next';
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import { getServerSession } from 'next-auth';
+
 
 import { NextPageWithLayout } from '../_app';
 
@@ -20,6 +23,9 @@ import {
 } from '@/components/products';
 import SectionSlider from '@/components/sectionSlider';
 import productSample from '@/assets/images/examples/productSample.png';
+import { baseURL } from '@/helpers/axios';
+import { getProductByIdServer } from '@/services/products/getProduct';
+import Head from 'next/head';
 
 const mockData = Array.from({ length: 20 }).map((_, i) => ({
   id: `${i + 1}`,
@@ -41,6 +47,9 @@ const ProductPage: NextPageWithLayout<Props> = ({ product }) => {
 
   return (
     <div className="relative flex flex-col mt-7 gap-5">
+      <Head>
+        <title>VERDI - CLIENTS - {name}</title>
+      </Head>
       {/* Basic Product Information */}
       <ProductInfo
         code={key}
@@ -82,36 +91,40 @@ const ProductPage: NextPageWithLayout<Props> = ({ product }) => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async (ctx) => {
-  const { data } = await getProducts();
-  const products = data?.data?.rows;
+// export const getStaticPaths: GetStaticPaths = async (ctx) => {
+//   const { data } = await getProducts({ });
+//   const { rows: products } = data.data;
 
-  return {
-    paths: products.map(({ key }) => ({
-      params: { key: `${key}` },
-    })),
-    fallback: 'blocking',
-  };
-};
+//   return {
+//     paths: products.map(({ key }) => ({
+//       params: { key: `${key}` },
+//     })),
+//     fallback: 'blocking',
+//   };
+// };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { params, req, res } = ctx;
   const { key = '' } = params as { key: string };
 
   try {
-    const { data } = await getProductById(key);
+    const session = await getServerSession(ctx.req, ctx.res, authOptions)
 
-    const product = data.data;
+    const token = session?.user?.token;
+
+    const { data } = await getProductByIdServer(key, token!);
+
+    const product = data?.data;
 
     return {
       props: {
         product,
       },
-      revalidate: 60 * 60 * 24,
     };
   } catch (error) {
     return {
       redirect: {
-        destination: '/',
+        destination: '/404',
         permanent: false,
       },
     };

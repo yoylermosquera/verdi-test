@@ -1,0 +1,1 @@
+export const ID_BEST_SELLER_FILTER = '5a11285f-2e02-4509-a2ca-77d63348f53f';
