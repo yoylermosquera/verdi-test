@@ -8,11 +8,6 @@ import {
 } from '../../context/app/actions';
 import useAppContext from '@/hooks/useAppContext';
 
-interface FilterTagProps {
-  id?: string;
-  name?: string;
-  FilterKey?: FilterKey;
-}
 
 function FilterTag({ id, name, filterKey, categoryId }: IFilterValue) {
   const { dispatch } = useAppContext();
@@ -26,7 +21,7 @@ function FilterTag({ id, name, filterKey, categoryId }: IFilterValue) {
         name,
         filterKey,
         categoryId
-      },
+      } as IFilterValue,
     });
   };
 

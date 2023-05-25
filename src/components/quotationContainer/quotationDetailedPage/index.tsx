@@ -2,8 +2,8 @@ import React from 'react';
 import productSample from '@/assets/images/examples/productSample.png';
 import ReturnContainer from '@/components/returnContainer';
 import Button from '@/components/button';
-import QuotationType from '@/components/optionsType';
 import QuotationContainer from '../quotationDetailed';
+import OptionsType from '@/components/optionsType';
 
 const mockData = Array.from({ length: 6 }).map((_, i) => ({
   quotationType: 'recibida',
@@ -27,7 +27,7 @@ FolderPageProps) {
   return (
     <section className="w-full h-full lg:w-[67.75rem] lg:mt-12 ">
       <div className='px-4 flex flex-col mb-7 lg:mb-16'>
-        <QuotationType className='my-4'/>
+        <OptionsType onClick={() => []}  className='my-4'/>
         <section className='w-full flex flex-row justify-center my-4'>
           <span className=' text-paragraph underline underline-offset-8'>
             NUMERO DE COTIZACIONES
