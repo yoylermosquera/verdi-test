@@ -61,3 +61,4 @@ interface ICategory {
 interface ICollection extends ICategory {
 
 }
+

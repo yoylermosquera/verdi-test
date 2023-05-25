@@ -12,7 +12,8 @@ const mockData = Array.from({ length: 6 }).map((_, i) => ({
   quotationNumber: '1234',
   dateQuoteAccepted: '02/0/21',
   productType: 'Tapete',
-  productDescription: 'Tapete tejido con lana de alpaca y bordados de metales finos con acabados en materiales naturales',
+  productDescription:
+    'Tapete tejido con lana de alpaca y bordados de metales finos con acabados en materiales naturales',
   userType: 'Comercial',
   userName: 'Juan Perez',
   productCost: '1,000,000',
@@ -32,7 +33,7 @@ FolderPageProps) {
           <span className=' text-paragraph underline underline-offset-8'>
             NUMERO DE COTIZACIONES
           </span>
-        </section >
+        </section>
         <section className="w-full grid grid-cols-1 gap-6 mt-4 lg:grid-cols-3">
           {mockData.map((product, idx) => (
             <QuotationContainer key={idx} {...product} />

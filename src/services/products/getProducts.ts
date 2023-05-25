@@ -26,3 +26,4 @@ export const getProducts = (params: getProductsParams, token?: string) => {
     },
   });
 };
+
