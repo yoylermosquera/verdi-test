@@ -21,7 +21,10 @@ import UserType from '@/components/userType';
 const FoldersPage: NextPageWithLayout = () => {
   return (
     <div className="h-full flex flex-col lg:flex-row lg:justify-center">
-      
+      <QuotationType
+        onClick={(i) => console.log(i , 'TEST')}
+        userType='metrics'
+       />
     </div>
   );
 };
