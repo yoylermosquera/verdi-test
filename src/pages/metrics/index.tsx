@@ -9,7 +9,7 @@ import productSample from '@/assets/images/examples/productSample.png';
 import LanguageChangerBox from '@/components/languageChanger';
 import useAppContext from '@/hooks/useAppContext';
 import Icon from '@/components/icon';
-import QuotationType from '@/components/quotationType';
+import OptionsType from '@/components/optionsType';
 
 
 const mockData = Array.from({ length: 20 }).map((_, i) => ({
@@ -49,9 +49,9 @@ const MetricsPage: NextPageWithLayout = () => {
               DATE COMPONENT (In progress)
             </section>
 
-            <QuotationType
+            <OptionsType
             onClick={(i) => console.log(i , 'TEST')}
-            userType='comercial'
+            userType='metrics'
             />|
 
         </div>
