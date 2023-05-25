@@ -16,10 +16,13 @@ import FoldersContainer from '@/components/folders/foldersContainer';
 
 
 
+
 const FoldersPage: NextPageWithLayout = () => {
   return (
     <div className="h-full flex flex-col lg:flex-row lg:justify-center">
-     
+      <QuotationType 
+        // userType='comercial'
+      />
     </div>
   );
 };

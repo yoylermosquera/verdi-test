@@ -4,40 +4,42 @@ import Icon from '../icon';
 import { Colors } from '@/styles/config/base';
 
 interface QuotationTypeProps {
+  userType?: string;
   className?: string;
 }
 
 function QuotationType({
+  userType,
   className,
-}: // description,
+}:
 QuotationTypeProps) {
-  const [quotationType, setQuotationType] = useState('todas');
+  const [quotationType, setQuotationType] = useState('first');
 
   return (
     <section className={`w-full h-12 flex flex-row justify-between ${className}`}>
       <span
         className={`h-12 w-1/3 text-center text-button__line border border-beige hover:cursor-pointer flex flex-col justify-center mr-2 ${
-          quotationType === 'todas' ? 'bg-beige' : 'bg-white'
+          quotationType === 'first' ? 'bg-beige' : 'bg-white'
         }`}
-        onClick={() => setQuotationType('todas')}
+        onClick={() => setQuotationType('first')}
       >
-        TODAS
+         {userType === 'comercial' ? 'NUEVAS' : 'TODOS'}
       </span>
       <span
         className={`h-12 w-1/3 text-center text-button__line border border-beige hover:cursor-pointer flex flex-col justify-center mx-1 ${
-          quotationType === 'enviadas' ? 'bg-beige ' : 'bg-white'
+          quotationType === 'second' ? 'bg-beige ' : 'bg-white'
         }`}
-        onClick={() => setQuotationType('enviadas')}
+        onClick={() => setQuotationType('second')}
       >
-        ENVIADAS
+        {userType === 'comercial' ? 'PENDIENTES' : 'ENVIADAS'}
       </span>
       <span
         className={`h-12 w-1/3 text-center text-button__line border border-beige hover:cursor-pointer flex flex-col justify-center ml-2 ${
-          quotationType === 'recibidas' ? 'bg-beige ' : 'bg-white'
+          quotationType === 'third' ? 'bg-beige ' : 'bg-white'
         }`}
-        onClick={() => setQuotationType('recibidas')}
+        onClick={() => setQuotationType('third')}
       >
-        RECIBIDAS
+        {userType === 'comercial' ? 'HISTORIAL' : 'RECIBIDAS'}
       </span>
     </section>
   );
