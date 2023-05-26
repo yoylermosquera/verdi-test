@@ -21,6 +21,14 @@ export type ColorFilter = {
   id: string;
   name: string;
   hexacode: string;
+  filterKey: FilterKey;
+  categoryId: string;
+  categoryKey: string;
+}
+
+export type PriceRangeFilter = {
+  min: number;
+  max: number;
 }
 
 export type ActionType =
@@ -57,6 +65,10 @@ export type ActionType =
   | {
       type: 'FILTERS_ADD_COLOR';
       payload: ColorFilter
+    }
+  | {
+      type: 'FILTERS_ADD_PRICE_RANGE';
+      payload: PriceRangeFilter
     }
 
 

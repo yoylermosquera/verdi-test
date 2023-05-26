@@ -36,11 +36,14 @@ const getCategoriesFromFilters = (filters: State['filters']) => {
     (characteristic) => characteristic.categoryId,
   );
 
+  const colorsCategories = filters.colors.map((color) => color.categoryId);
+
   const allCategories = [
     ...new Set([
       ...characteristicsCategories,
       ...materialsCategories,
       ...collectionsCategories,
+      ...colorsCategories,
     ]),
   ];
 
@@ -64,6 +67,8 @@ export const mapIFitlersStateToRequestFilters = (
     filters.characteristics.length > 0
       ? mapListToIds(filters.characteristics)
       : undefined;
+  const colors =
+    filters.colors.length > 0 ? mapListToIds(filters.colors) : undefined;
 
   return {
     categories: categories?.length > 0 ? categories : undefined,
@@ -71,5 +76,8 @@ export const mapIFitlersStateToRequestFilters = (
     materials,
     characteristics,
     isBestSeller: filters.isBestSeller ? true : undefined,
+    colors,
+    minPrice: filters.minPrice ?? undefined,
+    maxPrice: filters.maxPrice ?? undefined,
   };
 };

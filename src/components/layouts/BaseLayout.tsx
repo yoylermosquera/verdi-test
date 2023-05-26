@@ -38,7 +38,7 @@ export const BaseLayout = ({ title, children }: Props) => {
 
       {showSidebar && (
         <div
-          className={`absolute top-header_mobile lg:top-header_dektop z-40 h-full w-full min-h-screen`}
+          className={`fixed top-header_mobile lg:top-header_dektop z-40 h-full w-full min-h-screen`}
         >
           <SidenBar />
         </div>

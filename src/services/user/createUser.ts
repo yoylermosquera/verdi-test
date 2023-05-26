@@ -1,4 +1,4 @@
-import { API } from "@/helpers/axios"
+import { API, APIServer } from "@/helpers/axios"
 import { IRegisterUser } from '../../pages/auth/register';
 
 const roleIntermediario = "210e9f4d-64a9-476c-b6f3-a0cd0d8a18d0";
@@ -26,7 +26,7 @@ export const resetUserPassword = (data: IResetUserPasswordDto) => {
 }
 
 export const loginUser = (data: { email: string, password: string}) => {
-    return API.post<ILoginUserResponse>(`/auth/signin`, data)
+    return APIServer.post<ILoginUserResponse>(`/auth/signin`, data)
 }
 
 export interface ILoginUserResponse {

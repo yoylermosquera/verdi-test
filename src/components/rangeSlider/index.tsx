@@ -1,16 +1,18 @@
 import React from 'react';
-import Slider from 'rc-slider';
+import Slider, { SliderProps } from 'rc-slider';
 
 import { Colors } from '@/styles/config/base';
 import { handleRender } from './HandleTooltip';
 import 'rc-slider/assets/index.css';
 
-interface RangeSliderProps {
+interface RangeSliderProps  {
   min?: number;
   max?: number;
+  onChange?: SliderProps["onChange"]
+  value?: SliderProps["value"]
 }
 
-function RangeSlider({ min, max }: RangeSliderProps) {
+function RangeSlider({ min, max, value,  onChange }: RangeSliderProps) {
   return (
     <div>
       <Slider
@@ -31,8 +33,9 @@ function RangeSlider({ min, max }: RangeSliderProps) {
         max={max}
         step={10}
         allowCross={false}
-        defaultValue={[0, 20]}
-        onChange={() => {}}
+        value={value}
+        defaultValue={[min || 0, max || 1000 ]}
+        onChange={onChange}
         draggableTrack
         handleRender={handleRender}
       />

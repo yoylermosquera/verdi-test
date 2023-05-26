@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "infisical run -- next dev -p 4033",
+    "local": "next dev -p 4033",
     "build": "export NODE_OPTIONS=--max-old-space-size=4096 && infisical run --env=front -- next build",
     "start": "infisical run -- next start -p 4033",
     "serve:prod": "yarn install --production && next start -p 4033",
