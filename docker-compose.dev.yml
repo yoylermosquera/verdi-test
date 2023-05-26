@@ -6,7 +6,6 @@ services:
     image: desarrolloant/verdi_front:dev
     environment:
       - INFISICAL_TOKEN=st.6470c87772aaea801bc53f66.845f66e45a596d113dc9149795c2b858.0831327cd3ea31a54df24165d8f34429
-      - INFISICAL_VAULT_FILE_PASSPHRASE=
     ports:
       - 4033:4033
     restart: "always"
