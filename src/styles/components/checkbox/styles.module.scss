@@ -1,0 +1,40 @@
+.checkbox__container {
+  // -moz-appearance:none;
+  -webkit-appearance: none;
+  appearance: none;
+  // -o-appearance:none;
+  // outline: none;
+  // content: none;
+  background-color: transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  &::after {
+    height: 100%;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    content: '\2713';
+    color: currentColor;
+    font-weight: 500;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:checked {
+    &::after {
+      display: flex;
+      font-size: 13px;
+      font-weight: bold;
+    }
+  }
+
+  &.gold{
+    &::after{
+      color: var(--gold);
+    }
+  }
+}
