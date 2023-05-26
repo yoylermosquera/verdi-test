@@ -4,9 +4,13 @@ import useAppContext from '../../hooks/useAppContext';
 import CategorySection from './CategorySections';
 import { getAllFiltersByCategory } from '../../util/getAllFiltersByCategory';
 import CategoryFilters from './CategoryFilters';
+import { useOuterClick } from '@/hooks';
 
 function SidenBar() {
-  const { showSidebar, toggleSidebar, categories, state: { colors } } = useAppContext();
+  const { showSidebar, toggleSidebar,  categories, state: { colors,  } } = useAppContext();
+
+  if(!showSidebar) return null
+
   return (
     <div
       className={`overflow-y-auto  h-full w-full lg:w-[19.75rem] lg:pb-10 z-20 bg-beige-light animate__animated ${

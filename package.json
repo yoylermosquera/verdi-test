@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "infisical run -- next dev -p 4033",
+    "local": "next dev -p 4033",
     "export_envs": "export NODE_OPTIONS=--max-old-space-size=4096",
     "build": "yarn export_envs && infisical run --env=front -- next build",
     "start": "infisical run -- next start -p 4033",

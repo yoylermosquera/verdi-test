@@ -1,10 +1,12 @@
 import Icon from '@/components/icon';
-import { useAppContextSelector } from '@/hooks';
+import { useAppContext, useAppContextSelector } from '@/hooks';
 import { Color } from '@/services/categories/colors';
 import React from 'react';
 import { CategoryFiltersProps } from '.';
 import { ColorFilter } from '../../../context/app/actions';
-export function Colors({ filter, showTitle = true }: CategoryFiltersProps) {
+export function Colors({ filter, showTitle = true, navigateToFilterPage, shouldNavigateToFilterPage }: CategoryFiltersProps) {
+
+  const { dispatch } = useAppContext();
   const colors = useAppContextSelector((state) => state.filters.colors);
 
   if (!filter?.type) return null;
@@ -13,6 +15,14 @@ export function Colors({ filter, showTitle = true }: CategoryFiltersProps) {
 
   const handleChange = (value: ColorFilter) => {
     
+    if (navigateToFilterPage && shouldNavigateToFilterPage) {
+      navigateToFilterPage();
+    }
+    dispatch({
+      type: 'FILTERS_ADD_COLOR',
+      payload: value,
+    })
+
   };
 
   return (
@@ -30,6 +40,9 @@ export function Colors({ filter, showTitle = true }: CategoryFiltersProps) {
                   id: item?.id,
                   name: item?.name,
                   hexacode: item?.colorValue!,
+                  filterKey: filter?.filterKey!,
+                  categoryId: filter?.categoryId,
+                  categoryKey: filter?.categoryKey,
                 })
               }
               style={{ backgroundColor: item?.colorValue }}

@@ -11,6 +11,8 @@ export type State = {
   showSearchSection: boolean;
   filters: {
     // categories: IFilterValue[];
+    minPrice?: number;
+    maxPrice?: number;
     isBestSeller?: boolean;
     collections: IFilterValue[];
     materials: IFilterValue[];
@@ -24,8 +26,10 @@ export const initialState: State = {
   categories: undefined,
   colors: [],
   filters: {
-    colors: [],
+    minPrice: undefined,
+    maxPrice: undefined,
     isBestSeller: undefined,
+    colors: [],
     collections: [],
     materials: [],
     characteristics: [],
@@ -136,6 +140,16 @@ export const AppReducer = (state: State, action: ActionType): State => {
               state.filters.colors,
               'id',
             ),
+          },
+        };
+
+      case 'FILTERS_ADD_PRICE_RANGE':
+        return {
+          ...state,
+          filters: {
+            ...state.filters,
+            minPrice: action.payload.min,
+            maxPrice: action.payload.max,
           },
         };
 
