@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "infisical run -- next dev -p 4033",
-    "export_envs": "export NODE_OPTIONS=--max-old-space-size=4096 && export INFISICAL_TOKEN=st.6470c87772aaea801bc53f66.845f66e45a596d113dc9149795c2b858.0831327cd3ea31a54df24165d8f34429",
+    "export_envs": "export NODE_OPTIONS=--max-old-space-size=4096",
     "build": "yarn export_envs && infisical run --env=front -- next build",
     "start": "infisical run -- next start -p 4033",
     "serve:prod": "yarn install --production && next start -p 4033",
