@@ -3,7 +3,7 @@ import { Categorie } from '@/services/categories/getCateriesAndFilters';
 import {
   AddOrRemoveValueFromArarysByKey,
 } from '@/util/array';
-import { ActionType, ColorFilter, IFilterValue } from './actions';
+import { ActionType, ColorFilter, IFilterValue, PriceRangeFilter } from './actions';
 
 export type State = {
   categories?: Categorie[];
@@ -11,8 +11,12 @@ export type State = {
   showSearchSection: boolean;
   filters: {
     // categories: IFilterValue[];
-    minPrice?: number;
-    maxPrice?: number;
+    prices?: {
+      name?: string
+      minPrice?: number;
+      maxPrice?: number;
+      filterKey?: string
+    };
     isBestSeller?: boolean;
     collections: IFilterValue[];
     materials: IFilterValue[];
@@ -26,8 +30,11 @@ export const initialState: State = {
   categories: undefined,
   colors: [],
   filters: {
-    minPrice: undefined,
-    maxPrice: undefined,
+    // prices: {
+    //   name: 'Prices',
+    //   minPrice: undefined,
+    //   maxPrice: undefined,
+    // },
     isBestSeller: undefined,
     colors: [],
     collections: [],
@@ -144,12 +151,17 @@ export const AppReducer = (state: State, action: ActionType): State => {
         };
 
       case 'FILTERS_ADD_PRICE_RANGE':
+        console.log(action.payload.name);
         return {
           ...state,
           filters: {
             ...state.filters,
-            minPrice: action.payload.min,
-            maxPrice: action.payload.max,
+            prices: {
+              minPrice: action.payload.minPrice,
+              maxPrice: action.payload.maxPrice,
+              name: action.payload.name,
+              filterKey: action.payload.filterKey
+            }
           },
         };
 

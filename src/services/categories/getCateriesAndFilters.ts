@@ -34,7 +34,7 @@ export interface Collection {
 
 type CategoryFilterType = 'OnlyCheck' | 'MultiChecks' | 'Colors' | 'Range' | 'MultiCheck';
 
-export type FilterKey = 'categories' | 'collections' | 'materials' | 'colors' | 'characteristics';
+export type FilterKey = 'categories' | 'collections' | 'materials' | 'colors' | 'characteristics' | 'prices';
 export interface CategoryFilter {
     id:               string;
     name:             string;

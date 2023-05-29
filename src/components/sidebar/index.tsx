@@ -13,7 +13,7 @@ function SidenBar() {
 
   return (
     <div
-      className={`overflow-y-auto  h-full w-full lg:w-[19.75rem] lg:pb-10 z-20 bg-beige-light animate__animated ${
+      className={` fixed top-1 overflow-y-auto h-screen w-full lg:w-[19.75rem] lg:pb-10 z-20 bg-beige-light animate__animated ${
         showSidebar
           ? 'animate__bounceInLeft animate__faster'
           : 'animate__bounceOutLeft animate__faster'

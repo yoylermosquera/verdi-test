@@ -17,18 +17,13 @@ export type IFilterValue = {
   categoryKey: string;
 };
 
-export type ColorFilter = {
-  id: string;
-  name: string;
+export type ColorFilter  = IFilterValue &  {
   hexacode: string;
-  filterKey: FilterKey;
-  categoryId: string;
-  categoryKey: string;
 }
 
-export type PriceRangeFilter = {
-  min: number;
-  max: number;
+export type PriceRangeFilter = IFilterValue & {
+  minPrice?: number
+  maxPrice?:number
 }
 
 export type ActionType =

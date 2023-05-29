@@ -56,17 +56,11 @@ const ProductFilterPage: NextPageWithLayout<Props> = ({ category }) => {
 
   const isMobile = useMediaQuery('(max-width: 768px)');
 
-  const [showFiltersSections, setShowFilters] = useState(false);
+  const [showFiltersSections, setShowFilters] = useState(true);
 
   const isMounted = useIsMounted();
 
   const { fetchProducsts, data: productsData, error, loading } = useProducts();
-
-  // const categoryKey = router.asPath.split('/').at(-1) || '';
-
-  // const category = categories?.find(
-  //   (category) => category?.key === categoryKey,
-  // );
 
   const { filters } = getAllFiltersByCategory(category!, state.colors);
 
@@ -85,18 +79,20 @@ const ProductFilterPage: NextPageWithLayout<Props> = ({ category }) => {
   useEffect(() => {
     if (!isMounted()) return;
 
-    // const filtersToRequest = 
+    // const filtersToRequest =
     fetchProducsts({
       filters: mapIFitlersStateToRequestFilters(state.filters),
     });
   }, [state.filters, fetchProducsts, isMounted]);
 
-
   return (
     <div className="h-full flex flex-col grow items-center pb-6">
       <div className="w-full max-w-lg-wrapper">
         <div className="hidden lg:block lg:mt-6 lg:mb-4 ">
-          <FolderTypeHero description={category?.name} folderIconName="RugsCarpet" />
+          <FolderTypeHero
+            description={category?.name}
+            folderIconName="RugsCarpet"
+          />
         </div>
 
         <div className="hidden lg:flex  justify-end w-full mb-6">
@@ -132,7 +128,7 @@ const ProductFilterPage: NextPageWithLayout<Props> = ({ category }) => {
         {tags && tags.length > 0 ? (
           <section className="mb-6 overflow-scroll hide__scroll_bar">
             <div className="flex gap-y-3 gap-x-6 lg:flex-wrap  max-sm:gap-x-3 max-sm:pl-4 ">
-              {tags.map((filterValue) => (
+              {tags.map((filterValue: any) => (
                 <FilterTag {...filterValue} key={filterValue.id} />
               ))}
             </div>
@@ -231,10 +227,9 @@ export const getStaticProps: GetStaticProps<
       props: {
         category,
       },
-    //   revalidate: 60 * 60 * 24,
+      //   revalidate: 60 * 60 * 24,
     };
   } catch (error) {
-    console.log('Error en static props', error);
     return {
       redirect: {
         destination: '/404',

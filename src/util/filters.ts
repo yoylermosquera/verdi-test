@@ -13,10 +13,22 @@ export const getAllTagsFromFilters = (filters: State['filters']) => {
       return [...acc, ...filtersValues[key]];
     }
 
+    if (key === 'prices') {
+      return [
+        ...acc,
+        {
+          name: filtersValues[key]?.name,
+          minPrice: filtersValues[key]?.minPrice,
+          maxPrice: filtersValues[key]?.maxPrice,
+          filterKey: filtersValues[key]?.filterKey,
+        },
+      ];
+    }
+
     // TODO handle other types
 
-    return [];
-  }, [] as IFilterValue[]);
+    return acc;
+  }, [] as any);
 
   return tags;
 };
@@ -77,7 +89,7 @@ export const mapIFitlersStateToRequestFilters = (
     characteristics,
     isBestSeller: filters.isBestSeller ? true : undefined,
     colors,
-    minPrice: filters.minPrice ?? undefined,
-    maxPrice: filters.maxPrice ?? undefined,
+    minPrice: filters?.prices?.minPrice ?? undefined,
+    maxPrice: filters?.prices?.maxPrice ?? undefined,
   };
 };
