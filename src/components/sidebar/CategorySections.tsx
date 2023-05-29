@@ -15,7 +15,7 @@ const CategorySection = ({ categoryName, initialActive = false, categoryContaine
     setActiveSection(!activeSection);
   };
   return (
-    <div className={`overflow-y-auto hide__scroll_bar ${className}`}>
+    <div className={`h-max cursor-pointer overflow-y-auto hide__scroll_bar ${className}`}>
       <section
         onClick={toggleSection}
         className={`pointer h-16 bg-beige-light pl-5 pr-4 flex w-full justify-between items-center ${categoryContainerClassName}`}

@@ -1,7 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import RangeSlider from '@/components/rangeSlider';
 import { PriceRangeFilter } from '@/context/app/actions';
-import { useAppContext, useAppContextSelector, useDebounce } from '@/hooks';
-import React, { useEffect, useState } from 'react';
+import {
+  useAppContext,
+  useAppContextSelector,
+  useDebounce,
+  useIsMounted,
+} from '@/hooks';
+import React, { useEffect, useRef, useState } from 'react';
 import { CategoryFiltersProps } from '.';
 
 function Range({
@@ -12,42 +18,55 @@ function Range({
 }: CategoryFiltersProps) {
   const { dispatch } = useAppContext();
 
-  const [stateValues, setStateValues] = useState<PriceRangeFilter>({
-    min: 0,
-    max: 1000,
-  })
+  const firtsSliderRelaseRef = useRef(true);
 
-  const { minPrice, maxPrice } = useAppContextSelector((state) => state.filters);
+  const { minPrice = 0, maxPrice = 0 } = useAppContextSelector(
+    (state) => state?.filters?.prices || {},
+  );
 
-  const debouncedValue = useDebounce<PriceRangeFilter>(stateValues, 500);
+  const [stateValues, setStateValues] = useState<{
+    min: number;
+    max: number;
+  }>({
+    min: minPrice!,
+    max: maxPrice!,
+  });
+
+  const mounted = useIsMounted();
 
   useEffect(() => {
-    if (!debouncedValue) return;
+    if (!mounted()) return;
 
-    if (navigateToFilterPage && shouldNavigateToFilterPage) {
-      navigateToFilterPage();
+    if (firtsSliderRelaseRef.current) {
+      return;
     }
-    dispatch({
-      type: 'FILTERS_ADD_PRICE_RANGE',
-      payload: debouncedValue,
-    });
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [debouncedValue]);
+    const timeOut = setTimeout(() => {
+      if (navigateToFilterPage && shouldNavigateToFilterPage) {
+        navigateToFilterPage();
+      }
+      dispatch({
+        type: 'FILTERS_ADD_PRICE_RANGE',
+        payload: {
+          minPrice: stateValues?.min!,
+          maxPrice: stateValues?.max!,
+          categoryId: filter?.categoryId!,
+          filterKey: 'prices',
+          categoryKey: filter?.categoryKey!,
+          name: filter?.name!,
+          id: filter?.id!,
+        },
+      });
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, [stateValues, mounted]);
 
   if (!filter?.type) return null;
 
-  const { name, characteristics = [] } = filter;
-
-  // const handleChange = (value: PriceRangeFilter) => {
-  //   if (navigateToFilterPage && shouldNavigateToFilterPage) {
-  //     navigateToFilterPage();
-  //   }
-  //   dispatch({
-  //     type: 'FILTERS_ADD_PRICE_RANGE',
-  //     payload: value,
-  //   });
-  // };
+  const { name } = filter;
 
   return (
     <section>
@@ -58,15 +77,23 @@ function Range({
         <RangeSlider
           min={0}
           max={1000}
-          value={[minPrice!, maxPrice!]}
+          value={[stateValues?.min!, stateValues?.max!]}
           onChange={(values) => {
             if (Array.isArray(values)) {
               const [min, max] = values;
+
+              firtsSliderRelaseRef.current = false;
               setStateValues({
                 min,
                 max,
               });
             }
+          }}
+          onFocus={() => {
+            console.log('focus');
+          }}
+          onBlur={() => {
+            console.log('blur');
           }}
         />
       </div>

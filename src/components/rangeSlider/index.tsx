@@ -5,11 +5,13 @@ import { Colors } from '@/styles/config/base';
 import { handleRender } from './HandleTooltip';
 import 'rc-slider/assets/index.css';
 
-interface RangeSliderProps  {
+interface RangeSliderProps {
   min?: number;
   max?: number;
   onChange?: SliderProps["onChange"]
   value?: SliderProps["value"]
+  onFocus?: SliderProps["onFocus"]
+  onBlur?: SliderProps["onBlur"]
 }
 
 function RangeSlider({ min, max, value,  onChange }: RangeSliderProps) {
@@ -34,10 +36,11 @@ function RangeSlider({ min, max, value,  onChange }: RangeSliderProps) {
         step={10}
         allowCross={false}
         value={value}
-        defaultValue={[min || 0, max || 1000 ]}
+        // defaultValue={[min || 0, max || 1000 ]}
         onChange={onChange}
         draggableTrack
         handleRender={handleRender}
+        
       />
     </div>
   );
